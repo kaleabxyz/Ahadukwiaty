@@ -262,7 +262,7 @@ body {
     margin-bottom: 2%;
     width: 20%;
     
-    background-image: url({% static 'edge/images/bouquetsmix.jpg' %});
+    background-image: url({% static 'edge/../images/bouquetsmix.jpg' %});
     background-repeat: no-repeat;
     background-color: black;
     
@@ -308,7 +308,7 @@ body {
     margin-top: 2%;
     margin-bottom: 2%;
     width: 20%;
-    background-image: url('{{ STATIC_URL }}edge/images/bouquetsofroses.jpg');
+    background-image: url({% static 'edge/../images/bouquetsofroses.jpg' %});
     background-repeat: no-repeat;
     background-color: black;
     position: relative;
@@ -324,7 +324,7 @@ body {
     margin-bottom: 2%;
     width: 20%;
     
-    background-image: url({% static 'edge/images/flowercomposition\ \(1\).jpg' %});
+    background-image: url({% static 'edge/../images/flowercomposition\ \(1\).jpg' %});
     background-repeat: no-repeat;
     background-color: black;
     position: relative;
@@ -383,7 +383,7 @@ body {
     
     margin-left: 2rem;
     margin-right: 2rem;
-    background-image: url({% static 'edge/images/monobouquets.jpg' %});
+    background-image: url({% static 'edge/../images/monobouquets.jpg' %});
     background-color: black;
     background-repeat: no-repeat;
     padding-top: 12rem;
@@ -398,7 +398,7 @@ body {
     
     margin-left: 2rem;
     margin-right: 2rem;
-    background-image: url({% static 'edge/images/calaful-prints-gMLfNd3iums-unsplash\ \(1\).jpg' %});
+    background-image: url({% static 'edge/../images/calaful-prints-gMLfNd3iums-unsplash\ \(1\).jpg' %});
     background-color: black;
     background-repeat: no-repeat;
     padding-top: 12rem;
