@@ -1230,5 +1230,201 @@ body {
 .right .push {
     display: flex;
     justify-content: flex-end;
+}
+.productsmain {
+    padding-inline: 18rem;
+    padding-block: 4rem;
+    background: #F8F4F6;
+}
+.products {
+    background: white;
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    padding: 6rem;
+}
+.product >.row {
+    margin: 0;
+}
+.product img{
+    height: clamp(1rem, 25vw, 42rem);
+}
+.productdetail {
+    padding-left: 3rem;
+}
+.productdetail h3{
+    font-size: clamp(1rem, 1rem, 3rem);
+    font-weight: 160;
+}
+.productdetail h2 {
+    font-size: clamp(1rem, 1rem, 3rem);
+    font-weight: 350;
+    margin-block: 1rem;
+}
+
+.productdetail h1 {
+    font-weight: 500;
+}
+.productdetail h4 {
+    font-size: clamp(1rem, 1.5rem, 3rem);
+    font-weight: 700;
+    margin-block: 1rem;
+    color: #5D4D58;
+}
+.productdetail > h5 {
+    margin-left: 2.5rem;
+    font-weight: 200;
+    font-size: clamp(.5rem, 1rem, 2rem);
+    width: 40ch;
+}
+.productdetail .row h5
+{
+    font-size: clamp(.5rem, 1rem, 2rem);
+    font-family: serif;
+    width: 15ch;
+    font-weight: 600;
+    margin-left: 0;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-block: 2rem;
+}
+.row h6 {
+    font-size: clamp(.5rem, 1rem, 2rem);
+    font-weight: 300;
+    font-family: serif;
+}
+.add {
+    border-top  : 2px solid #E9E8EA;  
+    margin-block: 1rem;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 2rem;
+}
+.minus {
+    border: 2px solid #E9E8EA;
+    border-right: none;
+    padding-block: 0.4rem;
+    padding-inline: 0.8rem;
+    background: white;
+}
+.add .row {
+    margin-block: 1rem;
+    margin-right: 1rem;
+
+}
+.row input {
+    border: 2px solid #E9E8EA;
+    border-left: none;
+    border-right: none;
+    width: 2rem;
+    text-align: center;
+}
+.plus {
+    border: 2px solid #E9E8EA;
+    border-left: none;
+    padding-block: 0.4rem;
+    padding-inline: 0.8rem;
+    background: white;
+}
+.addcart {
+    border: none;
+    color: white;
+    padding-inline: 8rem;
+    padding-block: 0;
+    margin-block: 1rem;
+    background: #CF4784;
+    font-size: clamp(.5rem, 1rem, 2rem);
+
+}
+.add h6 {
+    font-size: clamp(.5rem, .8rem, 2rem);
+    color: green;
+    font-weight: 300;
+
+}
+.small:hover {
+    border-color: black;
+}
+.descriptionreview {
+    border-top : 2px solid #E9E8EA;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+
+    display: flex;
+    flex-direction: row;
+}
+#review {
+   margin-left: 2rem;
+}
+.descriptionreview h5 {
+    margin-top: 1rem;
+    font-size: clamp(.5rem, 1rem, 2rem);
+    font-weight: 500;
     
+}
+
+#review {
+    border-top: 3px solid black;
+    
+}
+.wide h4 {
+    width: 20ch;
+}
+.wide p {
+    width: 70ch;
+    text-align: center;
+}
+.wide p{
+    margin-bottom: 3rem;
+}
+.befirst {
+    border: 2px solid #E9E8EA;
+    padding: 2rem;
+
+}
+.befirst h2 {
+    font-weight: 500;
+    color: #5A4A5A;
+    font-size: clamp(.5rem, 1.3rem, 3rem);
+}
+.befirst h3  {
+    font-weight: 200;
+    color: #5A4A5A;
+    font-size: clamp(.5rem, 1rem, 3rem);
+    margin-block: 1rem;
+   
+}
+.befirst h2 {
+    margin-block: 2rem;
+}
+.befirst .input2 {
+    padding-block: 0.7rem;
+    padding-inline: 1rem;
+    font-size: clamp(1rem, 1rem, 3rem);
+    border  : 2px solid #E9E8EA;
+    padding-right: 0;
+}
+.befirst .row h2 {
+    margin-top: 0;
+    font-size: clamp(.5rem, 1rem, 3rem);
+
+}
+.befirst .row {
+    /* gap: 10rem; */
+    justify-content: space-between;
+}
+.befirst input {
+    padding-block: 0.7rem;
+    /* padding-inline: 3rem; */
+    font-size: clamp(1rem, 1rem, 3rem);
+    width: 100%;
+    text-align: left;
+    border  : 2px solid #E9E8EA;
+}
+.befirst .column {
+    width: 48%;
 }
