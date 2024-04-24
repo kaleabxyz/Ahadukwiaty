@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'edge/css/styles.css' %}" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">Ahadu</div>
+            <div class="navcontents">
+                <li>
+                    <div class="dropdown">
+                        <a href="newsletter.html">Flowers</a>
+                        <div class="dropdowncontent">
+                            <div class="dropdown2">
+                                <a href="#1">Bouquets</a>
+                                <div class="dropdowncontent2">
+                                    <a href="#1">Bouquets of roses</a>
+                                    <a href="#1">Bouquets mix</a>
+                                    <a href="#1">Monobouquets</a>
+                                    <a href="#1">Tulips</a>
+                                </div>
+                            </div>
+                            <a href="#1">Flower compositions</a>
+                            <div class="dropdown3">
+                                <a href="#1">Wedding floristry</a>
+                                <div class="dropdowncontent3">
+                                    <a href="#1">Wedding bouquets</a>
+                                    <a href="#1">Decorations</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <div class="content">
+                    <li><a href="newsletter.html">Delivery and payment</a></li>
+                    <li><a href="newsletter.html">About us</a></li>
+                    <li><a href="newsletter.html">Contact</a></li>
+                </div>
+            </div>
+            <div class="icons">
+                <img
+                    src="{% static 'edge/images/phone-call-svgrepo-com.svg' %}"
+                />
+                <img src="{% static 'edge/images/heart-svgrepo-com.svg' %}" />
+                <img src="{% static 'edge/images/basket-svgrepo-com.svg' %}" />
+            </div>
+        </div>
+        {% block content %}{% endblock content %}
+        <div class="footer">
+            <div class="adress">
+                <h2>Florima flowers</h2>
+                <h4>Street Al 29 Listopada 32D/LU8</h4>
+                <h4>Mon-Fri: 9:00-19:00</h4>
+                <h4>Sat: 9:00-14:00</h4>
+                <h4>Sun: Delivery only</h4>
+                <div class="copywrite">
+                    <h4>&copy; 2024 Florima Flowers.</h4>
+                </div>
+            </div>
+            <div class="shop">
+                <h4>shop</h4>
+                <h4>Street Al 29 Listopada 32D/LU8</h4>
+                <h4>Mon-Fri: 9:00-19:00</h4>
+                <h4>Sat: 9:00-14:00</h4>
+                <h4>Sun: Delivery only</h4>
+            </div>
+            <div class="join">
+                <img src="{% static 'edge/images/join.svg' %}" />
+                <h4>Join us</h4>
+            </div>
+        </div>
+    </body>
+</html>
