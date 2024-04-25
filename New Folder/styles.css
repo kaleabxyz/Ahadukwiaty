@@ -1328,6 +1328,7 @@ body {
   background: #f8f4f6;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .checkleft {
   background: white;
@@ -1397,7 +1398,8 @@ body {
   margin-top: 2.5rem;
 }
 .checkleft .space {
-  margin-block: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 .checkleft h5 {
   margin-block: 2rem;
@@ -1436,21 +1438,43 @@ body {
   width: clamp(1rem, 4vw, 6rem);
   padding: 1rem;
 }
-.checkright h4 {
+.checkright .row .column h4 {
   padding-left: 1rem;
   font-size: clamp(0.5rem, 0.9vw, 2rem);
   font-weight: 500;
+  padding-top: 0;
+}
+.checkright .row h4 {
+  padding-left: 1rem;
+  font-size: clamp(0.5rem, 0.9vw, 2rem);
+  font-weight: 500;
+  padding-top: 2rem;
 }
 .checkright .column {
   padding-bottom: 2rem;
-  border-bottom: 2px solid #e9e8ea;
-}
-.checkright .row div {
-  width: 100%;
-}
-.checkright .row div h4 {
-  padding-top: 1rem;
 }
 .end {
   text-align: end;
+  margin-left: 2rem;
+}
+.checkright .row {
+  border-bottom: 2px solid #e9e8ea;
+  margin-block: 0;
+}
+.checkfirst .column {
+  padding-block: 2rem;
+  padding-right: 1rem;
+}
+.column .row2 {
+  justify-content: left;
+  width: 17ch;
+  align-items: flex-start;
+}
+.column .row2 h4 {
+  font-weight: 400;
+  /* width: 15ch; */
+}
+.column .row2 .check {
+  margin-top: 0.3rem;
+  border-radius: 100%;
 }
