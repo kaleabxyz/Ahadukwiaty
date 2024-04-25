@@ -47,7 +47,7 @@
                 />
                 <a href={% url "wishlist" %}>
                 <img src="{% static 'edge/images/heart-svgrepo-com.svg' %}" /></a>
-               <a href="{% url "checkout" %}"> <img src="{% static 'edge/images/basket-svgrepo-com.svg' %}" /></a>
+               <a href={% url "products" %}> <img src="{% static 'edge/images/basket-svgrepo-com.svg' %}" /></a>
             </div>
         </div>
         {% block content %}{% endblock content %}
