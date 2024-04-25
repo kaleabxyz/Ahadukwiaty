@@ -21,3 +21,6 @@ def wishlist(request):
 
 def products(request):
     return render(request, "edge/products.html")
+
+def checkout(request):
+    return render(request, "edge/checkout.html")
