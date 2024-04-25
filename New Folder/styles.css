@@ -1008,7 +1008,7 @@ body {
   margin-top: 2rem;
   font-size: clamp(1rem, 1rem, 3rem);
 }
-.right .searchbtn:hover {
+.searchbtn:hover {
   background: black;
 }
 .right .push {
@@ -1031,8 +1031,8 @@ body {
 .product > .row {
   margin: 0;
 }
-.product img {
-  height: clamp(1rem, 25vw, 42rem);
+.productimg {
+  height: clamp(20rem, 25vw, 42rem);
 }
 .productdetail {
   padding-left: 3rem;
@@ -1115,11 +1115,11 @@ body {
 .addcart {
   border: none;
   color: white;
-  padding-inline: 8rem;
+  padding-inline: clamp(1rem, 8vw, 10rem);
   padding-block: 0;
   margin-block: 1rem;
   background: #cf4784;
-  font-size: clamp(0.5rem, 1rem, 2rem);
+  font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .add h6 {
   font-size: clamp(0.5rem, 0.8rem, 2rem);
@@ -1180,6 +1180,7 @@ body {
 .befirst .input2 {
   padding-block: 0.7rem;
   padding-inline: 1rem;
+  width: 98%;
   font-size: clamp(1rem, 1rem, 3rem);
   border: 2px solid #e9e8ea;
   padding-right: 0;
@@ -1221,4 +1222,235 @@ body {
 }
 .shine:hover .shine {
   fill: #cf4784;
+}
+.hit {
+  width: clamp(1rem, 16vw, 20vw);
+}
+.checkout {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  background: white;
+  z-index: 10000;
+  padding-inline: 1rem;
+  padding-block: 1.5rem;
+  height: 96%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.close {
+  width: clamp(1rem, 1vw, 2rem);
+}
+.checkout .row {
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e9e8ea;
+  margin-bottom: 1rem;
+}
+.checkout .row h2 {
+  font-size: clamp(1rem, 0.8vw, 3rem);
+  font-weight: 200;
+  font-family: serif;
+}
+.checkoutlist {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 2px solid #e9e8ea;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+.checkoutlist img {
+  width: clamp(1rem, 4vw, 6rem);
+  padding: 1.5rem;
+}
+.checkfirst {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 23.5vw;
+}
+.checkfirst h2 {
+  font-size: clamp(1rem, 0.8vw, 3rem);
+  font-weight: 400;
+  font-family: serif;
+}
+.checksecond {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-left: 2px solid #e9e8ea;
+  margin-block: 1rem;
+}
+.checksecond h2 {
+  font-size: clamp(1rem, 0.8vw, 3rem);
+  font-weight: 400;
+  font-family: serif;
+  color: #71636d;
+  margin-right: 2rem;
+  margin-left: 1rem;
+}
+.checkout input {
+  border: 2px solid #e9e8ea;
+  border-left: none;
+  border-right: none;
+  width: 2rem;
+  text-align: center;
+  padding-block: 0.4rem;
+}
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #e9e8ea;
+  padding-top: 2rem;
+}
+.subtotal .row {
+  padding-bottom: 2rem;
+  border: none;
+}
+.subtotal button {
+  padding-block: 0.7rem;
+  font-size: clamp(0.5rem, 0.8vw, 2rem);
+  background: #cf4784;
+  color: white;
+  border: none;
+}
+.checkoutmain {
+  padding-inline: clamp(16rem, 16vw, 20rem);
+  padding-block: 4rem;
+  background: #f8f4f6;
+  display: flex;
+  flex-direction: row;
+}
+.checkleft {
+  background: white;
+  width: 35vw;
+  padding: 5rem;
+}
+.checkleft h2 {
+  font-family: serif;
+  font-size: clamp(1rem, 2vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+.checkleft h3 {
+  font-size: clamp(1rem, 1.5vw, 4rem);
+  font-weight: 400;
+
+  font-family: serif;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e9e8ea;
+}
+.checkleft .short {
+  width: 16ch;
+}
+.checkleft input {
+  width: 95%;
+  border: 2px solid #e9e8ea;
+  font-size: clamp(1rem, 1vw, 2rem);
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  margin-bottom: 1.5rem;
+}
+.checkleft .row {
+  gap: 3.5rem;
+}
+.halfleft {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+.halfleft input {
+  text-align: left;
+}
+.row2 .check {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  margin-right: 1rem;
+}
+.checkleft .row2 {
+  margin-top: 2rem;
+}
+.checkleft .row2 h3 {
+  font-size: clamp(1rem, 1.4vw, 2rem);
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.checkleft .dash {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e9e8ea;
+}
+.checkleft .input {
+  width: clamp(25rem, 30vw, 36rem);
+  font-family: serif;
+  margin-top: 2.5rem;
+}
+.checkleft .space {
+  margin-block: 2rem;
+}
+.checkleft h5 {
+  margin-block: 2rem;
+  font-size: clamp(1rem, 1vw, 3rem);
+  font-weight: 300;
+}
+.checkleft .searchbtn {
+  margin-block: 2rem;
+  width: 100%;
+  border-radius: 0;
+  font-size: clamp(1rem, 1vw, 3rem);
+}
+.checkright {
+  background: white;
+  width: 35vw;
+  padding: 5rem;
+  padding-top: 12rem;
+}
+.checkright h3 {
+  font-size: clamp(1rem, 1.5vw, 4rem);
+  font-weight: 400;
+  font-family: serif;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.checkright .box {
+  border: 2px solid #e9e8ea;
+}
+.checkright h2 {
+  margin: 1rem;
+}
+.checkright .checkfirst {
+  border-bottom: 2px solid #e9e8ea;
+}
+.checkright img {
+  width: clamp(1rem, 4vw, 6rem);
+  padding: 1rem;
+}
+.checkright h4 {
+  padding-left: 1rem;
+  font-size: clamp(0.5rem, 0.9vw, 2rem);
+  font-weight: 500;
+}
+.checkright .column {
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e9e8ea;
+}
+.checkright .row div {
+  width: 100%;
+}
+.checkright .row div h4 {
+  padding-top: 1rem;
+}
+.end {
+  text-align: end;
 }
