@@ -9,7 +9,7 @@
     </head>
     <body>
         <div class="navbar">
-            <div class="logo">Ahadu</div>
+            <div class="logo"><a href="{% url "home" %}">Ahadu</a></div>
             <div class="navcontents">
                 <li>    
                     <div class="dropdown">
@@ -45,7 +45,8 @@
                 <img
                     src="{% static 'edge/images/phone-call-svgrepo-com.svg' %}"
                 />
-                <img src="{% static 'edge/images/heart-svgrepo-com.svg' %}" />
+                <a href={% url "wishlist" %}>
+                <img src="{% static 'edge/images/heart-svgrepo-com.svg' %}" /></a>
                 <img src="{% static 'edge/images/basket-svgrepo-com.svg' %}" />
             </div>
         </div>
