@@ -7,6 +7,13 @@
 body {
     margin: 0;
 }
+*[aria-expanded="true"] {
+    visibility: visible;
+}
+
+*[aria-expanded="false"] {
+    visibility: hidden;
+}
 .navbar {
     height: 8.5vh;
     display: flex;
@@ -119,6 +126,7 @@ body {
 .icons img {
     width: 2rem;
     height: 1.5rem;
+    cursor: pointer;
 }
 .main {
     width: 100%;
@@ -500,7 +508,10 @@ body {
 }
 .hits {
     padding-top: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 .hits h4 {
     font-weight: 100;
@@ -1225,8 +1236,14 @@ body {
 .hit {
     width: clamp(1rem, 16vw, 20vw);
 }
+.addtocart {
+    padding: 0.7rem;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
+    background: #cf4784;
+    color: white;
+    border: none;
+}
 .checkout {
-    position: absolute;
     position: fixed;
     top: 0;
     right: 0;
@@ -1241,9 +1258,7 @@ body {
     justify-content: space-between;
     overflow: hidden;
 }
-.close {
-    width: clamp(1rem, 1vw, 2rem);
-}
+
 .checkout .row {
     justify-content: space-between;
     align-items: center;
