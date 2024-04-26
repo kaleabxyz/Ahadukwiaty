@@ -1,1495 +1,1507 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
-    margin: 0;
+  margin: 0;
 }
 *[aria-expanded="true"] {
-    visibility: visible;
+  visibility: visible;
 }
 
 *[aria-expanded="false"] {
-    visibility: hidden;
+  visibility: hidden;
 }
 .navbar {
-    height: 8.5vh;
-    display: flex;
-    border-bottom-width: 1px;
-    border-bottom-color: #eaeaea;
-    border-bottom-style: solid;
-    justify-content: space-evenly;
-    align-items: center;
+  height: 8.5vh;
+  display: flex;
+  border-bottom-width: 1px;
+  border-bottom-color: #eaeaea;
+  border-bottom-style: solid;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .navcontents {
-    display: flex;
-    /* margin-left: 26rem; */
-    gap: 2rem;
+  display: flex;
+  /* margin-left: 26rem; */
+  gap: 2rem;
 }
 
 .navcontents li a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .navcontents li {
-    list-style-type: none;
+  list-style-type: none;
 }
 .content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2rem;
-    width: 20vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  width: 20vw;
 }
 .dropdowncontent {
-    width: 14rem;
+  width: 14rem;
 
-    top: 8vh;
+  top: 8vh;
 
-    display: none;
-    background-color: white;
-    position: absolute;
-    z-index: 100;
-    border-top-width: 3px;
-    border-top-color: #f83e91;
-    border-top-style: solid;
-    flex-direction: column;
-    padding-bottom: 1rem;
+  display: none;
+  background-color: white;
+  position: absolute;
+  z-index: 100;
+  border-top-width: 3px;
+  border-top-color: #f83e91;
+  border-top-style: solid;
+  flex-direction: column;
+  padding-bottom: 1rem;
 }
 .dropdown {
-    height: 10vh;
-    display: flex;
-    align-items: center;
+  height: 10vh;
+  display: flex;
+  align-items: center;
 }
 .dropdowncontent a {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 .dropdowncontent2 {
-    width: 14rem;
-    top: -0.2rem;
-    left: 14rem;
-    display: none;
+  width: 14rem;
+  top: -0.2rem;
+  left: 14rem;
+  display: none;
 
-    background-color: white;
-    position: absolute;
-    z-index: 100;
-    flex-direction: column;
-    padding-bottom: 1rem;
-    border-top-width: 3px;
-    border-top-color: #f83e91;
-    border-top-style: solid;
+  background-color: white;
+  position: absolute;
+  z-index: 100;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  border-top-width: 3px;
+  border-top-color: #f83e91;
+  border-top-style: solid;
 }
 .dropdowncontent3 {
-    width: 14rem;
+  width: 14rem;
 
-    top: 4rem;
-    left: 14rem;
-    display: none;
+  top: 4rem;
+  left: 14rem;
+  display: none;
 
-    background-color: white;
-    position: absolute;
-    z-index: 100;
-    flex-direction: column;
-    padding-bottom: 1rem;
-    border-top-width: 3px;
-    border-top-color: #f83e91;
-    border-top-style: solid;
+  background-color: white;
+  position: absolute;
+  z-index: 100;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  border-top-width: 3px;
+  border-top-color: #f83e91;
+  border-top-style: solid;
 }
 .dropdown:hover .dropdowncontent {
-    display: flex;
+  display: flex;
 }
 .navcontents li .dropdown :hover {
-    color: #f83e91;
+  color: #f83e91;
 }
 
 .dropdown2:hover .dropdowncontent2 {
-    display: flex;
+  display: flex;
 }
 .dropdown2:hover .dropdowncontent > a {
-    color: #f83e91;
+  color: #f83e91;
 }
 .dropdown3:hover .dropdowncontent3 {
-    display: flex;
+  display: flex;
 }
 .icons {
-    width: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .icons img {
-    width: 2rem;
-    height: 1.5rem;
-    cursor: pointer;
+  width: 2rem;
+  height: 1.5rem;
+  cursor: pointer;
 }
 .main {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .herosection {
-    width: 100%;
-    background-color: #fefaf1;
-    display: flex;
-    margin-bottom: 5rem;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+  width: 100%;
+  background-color: #fefaf1;
+  display: flex;
+  margin-bottom: 5rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 .herosection::after {
-    content: "";
+  content: "";
 
-    position: absolute;
-    width: 100%;
-    aspect-ratio: 1;
-    background: hsla(339, 50%, 78%, 0.5);
-    top: 0;
-    z-index: -1;
-    transform: scale(3);
-    animation: slide 7s;
-    animation-delay: 0;
-    border-radius: 50%;
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  background: hsla(339, 50%, 78%, 0.5);
+  top: 0;
+  z-index: -1;
+  transform: scale(3);
+  animation: slide 7s;
+  animation-delay: 0;
+  border-radius: 50%;
 }
 
 .hero {
-    width: 33%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-left: 5rem;
-    margin-right: 10%;
+  width: 33%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  margin-right: 10%;
 }
 .flower {
-    position: relative;
-    z-index: 10;
-    /* rotate: -30deg; */
+  position: relative;
+  z-index: 10;
+  /* rotate: -30deg; */
 }
 
 .flower img {
-    width: 100%;
+  width: 100%;
 }
 
 .flower::after,
 .flower::before {
-    content: "";
-    width: 84%;
-    height: 84%;
-    position: absolute;
+  content: "";
+  width: 84%;
+  height: 84%;
+  position: absolute;
 
-    top: 9%;
-    bottom: 0;
-    left: 7%;
-    right: 0;
-    border-radius: 50%;
+  top: 9%;
+  bottom: 0;
+  left: 7%;
+  right: 0;
+  border-radius: 50%;
 }
 .flower::before {
-    animation: pulse 7s;
-    background: hsl(339, 69%, 73%);
-    z-index: -19;
-    transform: scale(1);
+  animation: pulse 7s;
+  background: hsl(339, 69%, 73%);
+  z-index: -19;
+  transform: scale(1);
 }
 .fl1 {
-    animation: rotate 7s;
-    transform: scale(1);
+  animation: rotate 7s;
+  transform: scale(1);
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(0);
-        background: hsl(339, 69%, 73%);
-    }
+  0% {
+    transform: scale(0);
+    background: hsl(339, 69%, 73%);
+  }
 
-    100% {
-        transform: scale(1);
-        background: hsl(339, 69%, 73%);
-    }
+  100% {
+    transform: scale(1);
+    background: hsl(339, 69%, 73%);
+  }
 }
 
 @keyframes slide2 {
-    0% {
-        transform: scale(0);
-        transform-origin: left;
-    }
-    100% {
-        transform: scale(2);
-    }
+  0% {
+    transform: scale(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scale(2);
+  }
 }
 @keyframes slide {
-    0% {
-        transform: scale(0);
-        background: hsla(339, 50%, 78%, 0.5);
-    }
+  0% {
+    transform: scale(0);
+    background: hsla(339, 50%, 78%, 0.5);
+  }
 
-    100% {
-        transform: scale(3);
-        background: hsla(339, 50%, 78%, 0.5);
-    }
+  100% {
+    transform: scale(3);
+    background: hsla(339, 50%, 78%, 0.5);
+  }
 }
 @keyframes rotate {
-    0% {
-        transform: scale(0.4);
-        rotate: -30deg;
-    }
-    100% {
-        rotate: 0deg;
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(0.4);
+    rotate: -30deg;
+  }
+  100% {
+    rotate: 0deg;
+    transform: scale(1);
+  }
 }
 
 .hero h1 {
-    font-family: serif;
-    color: #470d38;
-    font-size: 5rem;
+  font-family: serif;
+  color: #470d38;
+  font-size: 5rem;
 
-    margin-bottom: 4rem;
-    margin-top: 6rem;
+  margin-bottom: 4rem;
+  margin-top: 6rem;
 }
 .hero p {
-    color: rgba(0, 0, 0, 0.541);
-    font-size: 1.4rem;
-    text-align: left;
-    font-weight: 200;
-    margin-bottom: 4rem;
+  color: rgba(0, 0, 0, 0.541);
+  font-size: 1.4rem;
+  text-align: left;
+  font-weight: 200;
+  margin-bottom: 4rem;
 }
 .options {
-    width: 62%;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5rem;
+  width: 62%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5rem;
 }
 .bouquetsmix {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 20%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 20%;
 
-    background-image: url(images/bouquetsmix.jpg);
-    background-repeat: no-repeat;
-    background-color: black;
+  background-image: url(images/bouquetsmix.jpg);
+  background-repeat: no-repeat;
+  background-color: black;
 
-    padding-top: 11rem;
-    padding-bottom: 11rem;
-    position: relative;
-    z-index: 1;
+  padding-top: 11rem;
+  padding-bottom: 11rem;
+  position: relative;
+  z-index: 1;
 }
 .bouquetsmix::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0, 0.5);
-    top: 0;
-    z-index: -1;
-    transition: transform 500ms ease-in;
-    transform: scaley(0);
-    transform-origin: top;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.5);
+  top: 0;
+  z-index: -1;
+  transition: transform 500ms ease-in;
+  transform: scaley(0);
+  transform-origin: top;
 }
 
 .bouquetsmix:hover .container1 {
-    transform: translateY(-2rem);
+  transform: translateY(-2rem);
 }
 
 .monobouquets:hover .container2 {
-    transform: translateY(-2rem);
+  transform: translateY(-2rem);
 }
 .bouquetsofroses:hover .container3 {
-    transform: translateY(-2rem);
+  transform: translateY(-2rem);
 }
 .tulips:hover .container4 {
-    transform: translateY(-2rem);
+  transform: translateY(-2rem);
 }
 .flowercomp:hover .container5 {
-    transform: translateY(-2rem);
+  transform: translateY(-2rem);
 }
 .bouquetsofroses {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 20%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 20%;
 
-    background-image: url(images/bouquetsofroses.jpg);
-    background-repeat: no-repeat;
-    background-color: black;
-    position: relative;
-    z-index: 1;
+  background-image: url(images/bouquetsofroses.jpg);
+  background-repeat: no-repeat;
+  background-color: black;
+  position: relative;
+  z-index: 1;
 
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 .flowercomp {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 20%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 20%;
 
-    background-image: url(images/flowercomposition.jpg);
-    background-repeat: no-repeat;
-    background-color: black;
-    position: relative;
-    z-index: 1;
+  background-image: url(images/flowercomposition.jpg);
+  background-repeat: no-repeat;
+  background-color: black;
+  position: relative;
+  z-index: 1;
 
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 .container1 {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    transition: transform 500ms ease-in;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: transform 500ms ease-in;
 }
 .container2 {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    transition: transform 500ms ease-in;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  transition: transform 500ms ease-in;
 }
 .container3 {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-    transition: transform 500ms ease-in;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  transition: transform 500ms ease-in;
 }
 .container4 {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 4.5rem;
-    padding-right: 4.5rem;
-    transition: transform 500ms ease-in;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  transition: transform 500ms ease-in;
 }
 .container5 {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    transition: transform 500ms ease-in;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: transform 500ms ease-in;
 }
 
 .options h3 {
-    color: white;
+  color: white;
 }
 .monobouquets {
-    width: 20%;
+  width: 20%;
 
-    margin-left: 2rem;
-    margin-right: 2rem;
-    background-image: url(images/monobouquets.jpg);
-    background-color: black;
-    background-repeat: no-repeat;
-    padding-top: 12rem;
-    padding-bottom: 12rem;
-    position: relative;
-    z-index: 1;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-image: url(images/monobouquets.jpg);
+  background-color: black;
+  background-repeat: no-repeat;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  position: relative;
+  z-index: 1;
 }
 .tulips {
-    width: 20%;
+  width: 20%;
 
-    margin-left: 2rem;
-    margin-right: 2rem;
-    background-image: url(images/calaful-prints-gMLfNd3iums-unsplash.jpg);
-    background-color: black;
-    background-repeat: no-repeat;
-    padding-top: 12rem;
-    padding-bottom: 12rem;
-    position: relative;
-    z-index: 1;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-image: url(images/calaful-prints-gMLfNd3iums-unsplash.jpg);
+  background-color: black;
+  background-repeat: no-repeat;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  position: relative;
+  z-index: 1;
 }
 .monobouquets::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0, 0.5);
-    top: 0;
-    z-index: -1;
-    transition: transform 500ms ease-in;
-    transform: scaley(0);
-    transform-origin: top;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.5);
+  top: 0;
+  z-index: -1;
+  transition: transform 500ms ease-in;
+  transform: scaley(0);
+  transform-origin: top;
 }
 .bouquetsofroses::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0, 0.5);
-    top: 0;
-    z-index: -1;
-    transition: transform 500ms ease-in;
-    transform: scaley(0);
-    transform-origin: top;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.5);
+  top: 0;
+  z-index: -1;
+  transition: transform 500ms ease-in;
+  transform: scaley(0);
+  transform-origin: top;
 }
 .tulips::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0, 0.5);
-    top: 0;
-    z-index: -1;
-    transition: transform 500ms ease-in;
-    transform: scaley(0);
-    transform-origin: top;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.5);
+  top: 0;
+  z-index: -1;
+  transition: transform 500ms ease-in;
+  transform: scaley(0);
+  transform-origin: top;
 }
 .flowercomp::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgb(0, 0, 0, 0.5);
-    top: 0;
-    z-index: -1;
-    transition: transform 500ms ease-in;
-    transform: scaley(0);
-    transform-origin: top;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.5);
+  top: 0;
+  z-index: -1;
+  transition: transform 500ms ease-in;
+  transform: scaley(0);
+  transform-origin: top;
 }
 .bouquetsmix:hover::after {
-    transform: scaley(1);
-    transform-origin: bottom;
+  transform: scaley(1);
+  transform-origin: bottom;
 }
 .monobouquets:hover::after {
-    transform: scaley(1);
-    transform-origin: bottom;
+  transform: scaley(1);
+  transform-origin: bottom;
 }
 .bouquetsofroses:hover::after {
-    transform: scaley(1);
-    transform-origin: bottom;
+  transform: scaley(1);
+  transform-origin: bottom;
 }
 .tulips:hover::after {
-    transform: scaley(1);
-    transform-origin: bottom;
+  transform: scaley(1);
+  transform-origin: bottom;
 }
 .flowercomp:hover::after {
-    transform: scaley(1);
-    transform-origin: bottom;
+  transform: scaley(1);
+  transform-origin: bottom;
 }
 
 .monobouquets img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .discriptions {
-    width: 100%;
-    height: 25vh;
-    margin-bottom: 5rem;
-    background-color: #f8f4f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
+  width: 100%;
+  height: 25vh;
+  margin-bottom: 5rem;
+  background-color: #f8f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
 }
 .discriptions img {
-    width: 4rem;
-    height: 4rem;
+  width: 4rem;
+  height: 4rem;
 }
 .discription {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .sales {
-    width: 62%;
+  width: 62%;
 }
 .grid {
-    display: grid;
-    gap: 4rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .hits {
-    padding-top: 3rem;
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  padding-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 .hits h4 {
-    font-weight: 100;
+  font-weight: 100;
 }
 .size {
-    display: flex;
-    gap: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 .small {
-    font-weight: 100;
-    border: 0.1px solid #dfdfdf;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+  font-weight: 100;
+  border: 0.1px solid #dfdfdf;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .review h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 .line {
-    width: 4rem;
-    margin-bottom: 4rem;
-    border: 2px solid #fa7cbb;
+  width: 4rem;
+  margin-bottom: 4rem;
+  border: 2px solid #fa7cbb;
 }
 .reviews {
-    display: flex;
-    flex-grow: 1;
-    margin-left: auto;
-    margin-right: auto;
-    padding-inline: 12rem;
+  display: flex;
+  flex-grow: 1;
+  margin-left: auto;
+  margin-right: auto;
+  padding-inline: 12rem;
 }
 .reviews img {
-    width: 2rem;
-    height: 2rem;
-    margin-left: auto;
-    margin-right: auto;
+  width: 2rem;
+  height: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .reviewcontainer {
-    display: flex;
+  display: flex;
 
-    padding-inline: 8rem;
-    padding-top: 2rem;
-    flex-grow: 1;
-    margin-bottom: 5rem;
+  padding-inline: 8rem;
+  padding-top: 2rem;
+  flex-grow: 1;
+  margin-bottom: 5rem;
 }
 
 .review {
-    text-align: center;
-    width: 45ch;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 4rem;
+  text-align: center;
+  width: 45ch;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
 }
 .reviewmain {
-    width: 100%;
+  width: 100%;
 }
 .review h4 {
-    margin-top: 1rem;
-    color: #fa7cbb;
+  margin-top: 1rem;
+  color: #fa7cbb;
 }
 .review h5 {
-    color: #fa7cbb;
+  color: #fa7cbb;
 }
 .reviewcontainer > img {
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
 
-    top: -2rem;
+  top: -2rem;
 }
 .footer {
-    background-color: #140610;
-    padding-inline: 20rem;
-    padding-block: 5rem;
-    display: flex;
-    justify-content: space-between;
+  background-color: #140610;
+  padding-inline: 20rem;
+  padding-block: 5rem;
+  display: flex;
+  justify-content: space-between;
 }
 .adress {
-    gap: 4rem;
+  gap: 4rem;
 }
 .adress h2 {
-    color: white;
+  color: white;
 }
 .adress h4 {
-    color: white;
-    font-weight: 200;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+  color: white;
+  font-weight: 200;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .shop {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 .join {
-    display: flex;
-    flex-direction: row;
-    margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 1.5rem;
 }
 
 .shop h4 {
-    color: white;
-    font-size: 0.85rem;
-    font-weight: 150;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 150;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .join h4 {
-    color: white;
-    font-size: 1rem;
-    font-weight: 150;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 150;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .join img {
-    width: 1.5rem;
-    height: 1.5rem;
-    font-weight: 150;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-weight: 150;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .copywrite {
-    margin-top: 5rem;
+  margin-top: 5rem;
 }
 .copywrite h4 {
-    color: white;
-    font-size: 1rem;
-    font-weight: 150;
-    margin: 0;
+  color: white;
+  font-size: 1rem;
+  font-weight: 150;
+  margin: 0;
 }
 .flowermain {
-    padding-inline: 10rem;
-    padding-block: 6rem;
-    background: #f8f4f6;
-    display: flex;
-    flex-direction: row;
+  padding-inline: 10rem;
+  padding-block: 6rem;
+  background: #f8f4f6;
+  display: flex;
+  flex-direction: row;
 }
 .search {
-    margin-top: 2rem;
-    margin-right: 4rem;
-    background: #f8f4f6;
+  margin-top: 2rem;
+  margin-right: 4rem;
+  background: #f8f4f6;
 }
 
 .search-input {
-    height: 1.7vw;
-    font-family: serif;
-    font-size: clamp(0.5rem, 0.9vw, 1.2rem);
-    padding-left: 0.3vw;
-    width: clamp(15rem, 10vw, 27rem);
-    border: 2px solid #dee2e6;
+  height: 1.7vw;
+  font-family: serif;
+  font-size: clamp(0.5rem, 0.9vw, 1.2rem);
+  padding-left: 0.3vw;
+  width: clamp(15rem, 10vw, 27rem);
+  border: 2px solid #dee2e6;
 
-    color: #212529bf;
-    margin: 0;
+  color: #212529bf;
+  margin: 0;
 }
 .searchbtn {
-    border-radius: 6%;
-    padding-block: clamp(0.1rem, 0.4vw, 0.7rem);
-    padding-inline: clamp(0.1rem, 0.8vw, 0.7rem);
-    background-color: #cf4784;
-    color: white;
-    font-size: clamp(0.3rem, 0.6vw, 1.2rem);
-    cursor: pointer;
-    border: none;
-    right: 0;
-    bottom: clamp(0rem, 0.19vw, 0.2rem);
+  border-radius: 6%;
+  padding-block: clamp(0.1rem, 0.4vw, 0.7rem);
+  padding-inline: clamp(0.1rem, 0.8vw, 0.7rem);
+  background-color: #cf4784;
+  color: white;
+  font-size: clamp(0.3rem, 0.6vw, 1.2rem);
+  cursor: pointer;
+  border: none;
+  right: 0;
+  bottom: clamp(0rem, 0.19vw, 0.2rem);
 }
 .searcher {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .catagories h2 {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    /* font-size: clamp(1rem, 1vw, 1.2rem); */
-    font-family: serif;
-    font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* font-size: clamp(1rem, 1vw, 1.2rem); */
+  font-family: serif;
+  font-weight: 400;
 }
 .catagories p {
-    padding-left: 2rem;
-    font-family: serif;
-    font-weight: 200;
+  padding-left: 2rem;
+  font-family: serif;
+  font-weight: 200;
 }
 .catagories .third {
-    padding-left: 6rem;
+  padding-left: 6rem;
 }
 .catagories .second {
-    padding-left: 4rem;
+  padding-left: 4rem;
 }
 .list {
-    background: white;
-    padding: 7rem;
+  background: white;
+  padding: 7rem;
 }
 .list p {
-    font-weight: 150;
+  font-weight: 150;
 }
 .list h1 {
-    font-size: clamp(1rem, 5vw, 6rem);
-    font-weight: 400;
-    margin-bottom: 6rem;
+  font-size: clamp(1rem, 5vw, 6rem);
+  font-weight: 400;
+  margin-bottom: 6rem;
 }
 .top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.flowerdropdowncontent {
-    width: 14rem;
+#popup {
+  width: 12rem;
 
-    top: 60vh;
+  top: 80vh;
+  display: block;
+  background-color: white;
+  position: absolute;
+  z-index: 100;
+  border-top-width: 3px;
+  border-top-color: #f83e91;
+  border-top-style: solid;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  cursor: pointer;
+}
+#popup .flowerdropdown {
+  /* height: 10vh; */
+  display: flex;
+  align-items: center;
+}
+#popup p {
+  margin-left: 1rem;
+}
 
-    visibility: hidden;
-    background-color: white;
-    position: absolute;
-    z-index: 100;
-    border-top-width: 3px;
-    border-top-color: #f83e91;
-    border-top-style: solid;
-    flex-direction: column;
-    padding-bottom: 1rem;
-}
-.drop-flowerdropdowncontent {
-    visibility: visible;
-}
-.flowerdropdown {
-    /* height: 10vh; */
-    display: flex;
-    align-items: center;
+#popup p:hover {
+  color: #f83e91;
 }
 .flowerdropdown p {
-    text-decoration: none;
-    font-weight: 150;
-    color: black;
+  text-decoration: none;
+  font-weight: 150;
+  color: black;
+  cursor: pointer;
 }
 .flowerdropdowncontent a {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 .flowerdropdown:hover .flowerdropdowncontent {
-    display: flex;
+  display: flex;
 }
 .flowergrid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .pagecontainer {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .page h3 {
-    color: #2a0f21;
-    margin-left: auto;
-    margin-right: auto;
+  color: #2a0f21;
+  margin-left: auto;
+  margin-right: auto;
 }
 .active {
-    background: #2a0f21;
+  background: #2a0f21;
 }
 .active h3 {
-    color: white;
+  color: white;
 }
 .page {
-    border: 1.5px solid #2a0f21;
-    font-size: 0.8rem;
-    padding-block: 0.5rem;
-    padding-inline: 0.7rem;
-    width: 1rem;
-    margin: 0.2rem;
+  border: 1.5px solid #2a0f21;
+  font-size: 0.8rem;
+  padding-block: 0.5rem;
+  padding-inline: 0.7rem;
+  width: 1rem;
+  margin: 0.2rem;
 }
 .page:hover {
-    background: #2a0f21;
+  background: #2a0f21;
 }
 .page:hover h3 {
-    color: white;
+  color: white;
 }
 .deliverymain {
-    padding-inline: 15rem;
-    padding-block: 4rem;
-    background: #f8f4f6;
-    display: flex;
-    flex-direction: row;
+  padding-inline: 15rem;
+  padding-block: 4rem;
+  background: #f8f4f6;
+  display: flex;
+  flex-direction: row;
 }
 .delivery {
-    background: white;
-    padding: 5rem;
+  background: white;
+  padding: 5rem;
 }
 .delivery h2 {
-    font-size: clamp(1rem, 2vw, 3rem);
-    font-weight: 400;
-    margin-bottom: 5rem;
+  font-size: clamp(1rem, 2vw, 3rem);
+  font-weight: 400;
+  margin-bottom: 5rem;
 }
 .deliverycontent {
-    border: 1px solid #e0e0e0;
-    display: flex;
-    flex-direction: row;
-    padding-block: 1rem;
-    padding-right: 2rem;
-    padding-left: 1rem;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: row;
+  padding-block: 1rem;
+  padding-right: 2rem;
+  padding-left: 1rem;
 }
 .topic {
-    background: white;
-    padding-block: 0.5rem;
-    padding-inline: 0.8rem;
-    margin-bottom: 1rem;
-    margin-right: 2rem;
+  background: white;
+  padding-block: 0.5rem;
+  padding-inline: 0.8rem;
+  margin-bottom: 1rem;
+  margin-right: 2rem;
 }
 .topicscontainer .active {
-    background: #5a4a55;
+  background: #5a4a55;
 }
 .topicscontainer {
-    background: white;
+  background: white;
 }
 .topicscontainer .active h3 {
-    color: white;
+  color: white;
 }
 .topic h3 {
-    font-size: clamp(1rem, 1vw, 2rem);
-    font-weight: 400;
-    text-align: center;
-    color: #5a4a55;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: clamp(1rem, 1vw, 2rem);
+  font-weight: 400;
+  text-align: center;
+  color: #5a4a55;
+  margin-left: auto;
+  margin-right: auto;
 }
 .details p {
-    width: 100ch;
-    line-height: 3ch;
-    margin-bottom: 1rem;
+  width: 100ch;
+  line-height: 3ch;
+  margin-bottom: 1rem;
 }
 .wishlist {
-    padding-inline: 24rem;
-    padding-block: 4rem;
-    background: #f8f4f6;
-    display: flex;
-    flex-direction: row;
+  padding-inline: 24rem;
+  padding-block: 4rem;
+  background: #f8f4f6;
+  display: flex;
+  flex-direction: row;
 }
 .wishlist h2 {
-    font-size: clamp(1rem, 2.5rem, 3rem);
-    font-weight: 600;
-    margin-bottom: 5rem;
+  font-size: clamp(1rem, 2.5rem, 3rem);
+  font-weight: 600;
+  margin-bottom: 5rem;
 }
 .deliverycontent .productname h3,
 .deliverycontent .unitprice h3 {
-    font-size: clamp(1rem, 1vw, 2rem);
-    font-weight: 500;
-    text-align: center;
+  font-size: clamp(1rem, 1vw, 2rem);
+  font-weight: 500;
+  text-align: center;
 }
 .deliverycontent .productname h3 {
-    margin-left: 10rem;
+  margin-left: 10rem;
 }
 .productname img,
 .deliverycontent .unitprice .name {
-    height: clamp(1rem, 4vw, 6rem);
-    margin-right: 3rem;
+  height: clamp(1rem, 4vw, 6rem);
+  margin-right: 3rem;
 }
 .productname {
-    margin-right: clamp(1rem, 20vw, 21rem);
+  margin-right: clamp(1rem, 20vw, 21rem);
 }
 .deliverycontent .unitprice > .h3 {
-    margin-left: 5rem;
+  margin-left: 5rem;
 }
 .name {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .productname .name h3,
 .deliverycontent .name h3 {
-    font-size: clamp(1rem, 1vw, 2rem);
-    font-weight: 300;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: clamp(1rem, 1vw, 2rem);
+  font-weight: 300;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 .share {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 .share h3 {
-    font-size: clamp(1rem, 1vw, 2rem);
-    font-weight: 300;
+  font-size: clamp(1rem, 1vw, 2rem);
+  font-weight: 300;
 }
 .share img {
-    height: clamp(1rem, 1.5vw, 3rem);
+  height: clamp(1rem, 1.5vw, 3rem);
 }
 .share .smaller {
-    height: clamp(1rem, 1.3vw, 2rem);
-    margin-top: auto;
-    margin-bottom: auto;
+  height: clamp(1rem, 1.3vw, 2rem);
+  margin-top: auto;
+  margin-bottom: auto;
 }
 .aboutus {
-    padding-inline: 20rem;
-    padding-block: 5rem;
+  padding-inline: 20rem;
+  padding-block: 5rem;
 }
 .about {
-    display: flex;
-    flex-direction: row;
-    gap: 5rem;
-    margin-bottom: 4rem;
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  margin-bottom: 4rem;
 }
 .welcome h1 {
-    font-size: clamp(1rem, 5vw, 6rem);
-    font-weight: 400;
-    margin-bottom: 1rem;
+  font-size: clamp(1rem, 5vw, 6rem);
+  font-weight: 400;
+  margin-bottom: 1rem;
 }
 .aboutus img {
-    margin-top: 2rem;
-    height: clamp(18rem, 20vw, 25rem);
+  margin-top: 2rem;
+  height: clamp(18rem, 20vw, 25rem);
 }
 .aboutus .welcome .line {
-    border: 1.5px solid #fa7cbb;
-    width: 4rem;
+  border: 1.5px solid #fa7cbb;
+  width: 4rem;
 }
 .welcome p {
-    margin-left: 1rem;
-    margin-top: 1rem;
-    width: 50ch;
-    font-weight: 170;
-    line-height: 4ch;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  width: 50ch;
+  font-weight: 170;
+  line-height: 4ch;
 }
 .aboutus .line {
-    margin-top: 2rem;
-    border: 1.5px solid #fa7cbb;
-    width: 7rem;
-    margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  border: 1.5px solid #fa7cbb;
+  width: 7rem;
+  margin-bottom: 1.5rem;
 }
 .aboutus h2 {
-    font-size: clamp(1rem, 1.7vw, 3rem);
+  font-size: clamp(1rem, 1.7vw, 3rem);
 }
 .aboutus p {
-    margin-left: 1rem;
-    margin-top: 1rem;
-    font-weight: 170;
-    line-height: 4ch;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-weight: 170;
+  line-height: 4ch;
 }
 .contactus {
-    display: flex;
-    flex-direction: row;
-    padding-inline: 18rem;
-    padding-block: 5rem;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  padding-inline: 18rem;
+  padding-block: 5rem;
+  justify-content: space-between;
 }
 .contactus h2 {
-    font-size: clamp(1rem, 2rem, 3rem);
-    font-weight: 600;
+  font-size: clamp(1rem, 2rem, 3rem);
+  font-weight: 600;
 }
 .right {
-    padding-left: 4rem;
-    padding-top: 4rem;
-    border-left: 2px solid #e9e8ea;
+  padding-left: 4rem;
+  padding-top: 4rem;
+  border-left: 2px solid #e9e8ea;
 }
 .contact {
-    display: flex;
-    flex-direction: row;
-    margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
 }
 .contact img {
-    width: clamp(1rem, 1vw, 2rem);
-    margin-right: 0.5rem;
-    margin-top: 1rem;
+  width: clamp(1rem, 1vw, 2rem);
+  margin-right: 0.5rem;
+  margin-top: 1rem;
 }
 
 .left .contact h3 {
-    font-size: clamp(1rem, 1rem, 3rem);
-    width: 33ch;
-    font-weight: 500;
-    color: #cf4784;
-    margin-left: 0;
+  font-size: clamp(1rem, 1rem, 3rem);
+  width: 33ch;
+  font-weight: 500;
+  color: #cf4784;
+  margin-left: 0;
 }
 .left h3,
 .contactus a {
-    display: flex;
-    margin-left: 2.5rem;
-    margin-top: 1rem;
-    font-size: clamp(1rem, 1rem, 3rem);
-    width: 27ch;
-    color: black;
+  display: flex;
+  margin-left: 2.5rem;
+  margin-top: 1rem;
+  font-size: clamp(1rem, 1rem, 3rem);
+  width: 27ch;
+  color: black;
 }
 .contactus a:hover {
-    color: #cf4784;
+  color: #cf4784;
 }
 .right h2 {
-    margin-right: 6rem;
+  margin-right: 6rem;
 }
 .right h3 {
-    display: flex;
-    margin-top: 1.5rem;
-    font-weight: 400;
-    font-size: clamp(1rem, 1.2rem, 3rem);
-    color: black;
+  display: flex;
+  margin-top: 1.5rem;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.2rem, 3rem);
+  color: black;
 }
 .right input {
-    padding-block: 0.7rem;
-    padding-inline: 1rem;
-    font-size: clamp(1rem, 1rem, 3rem);
-    width: 100%;
-    border: 2px solid #e9e8ea;
+  padding-block: 0.7rem;
+  padding-inline: 1rem;
+  font-size: clamp(1rem, 1rem, 3rem);
+  width: 100%;
+  border: 2px solid #e9e8ea;
 }
 .input {
-    padding-block: 0.7rem;
-    padding-inline: 1rem;
-    font-size: clamp(1rem, 1rem, 3rem);
-    width: 100%;
-    border: 2px solid #e9e8ea;
+  padding-block: 0.7rem;
+  padding-inline: 1rem;
+  font-size: clamp(1rem, 1rem, 3rem);
+  width: 100%;
+  border: 2px solid #e9e8ea;
 }
 .right .searchbtn {
-    margin-top: 2rem;
-    font-size: clamp(1rem, 1rem, 3rem);
+  margin-top: 2rem;
+  font-size: clamp(1rem, 1rem, 3rem);
 }
 .searchbtn:hover {
-    background: black;
+  background: black;
 }
 .right .push {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 .productsmain {
-    padding-inline: 18rem;
-    padding-block: 4rem;
-    background: #f8f4f6;
+  padding-inline: 18rem;
+  padding-block: 4rem;
+  background: #f8f4f6;
 }
 .products {
-    background: white;
+  background: white;
 }
 .product {
-    display: flex;
-    flex-direction: column;
-    padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  padding: 6rem;
 }
 .product > .row {
-    margin: 0;
+  margin: 0;
 }
 .productimg {
-    height: clamp(20rem, 25vw, 42rem);
+  height: clamp(20rem, 25vw, 42rem);
 }
 .productdetail {
-    padding-left: 3rem;
+  padding-left: 3rem;
 }
 .productdetail h3 {
-    font-size: clamp(1rem, 1rem, 3rem);
-    font-weight: 160;
+  font-size: clamp(1rem, 1rem, 3rem);
+  font-weight: 160;
 }
 .productdetail h2 {
-    font-size: clamp(1rem, 1rem, 3rem);
-    font-weight: 350;
-    margin-block: 1rem;
+  font-size: clamp(1rem, 1rem, 3rem);
+  font-weight: 350;
+  margin-block: 1rem;
 }
 
 .productdetail h1 {
-    font-weight: 500;
+  font-weight: 500;
 }
 .productdetail h4 {
-    font-size: clamp(1rem, 1.5rem, 3rem);
-    font-weight: 700;
-    margin-block: 1rem;
-    color: #5d4d58;
+  font-size: clamp(1rem, 1.5rem, 3rem);
+  font-weight: 700;
+  margin-block: 1rem;
+  color: #5d4d58;
 }
 .productdetail > h5 {
-    margin-left: 2.5rem;
-    font-weight: 200;
-    font-size: clamp(0.5rem, 1rem, 2rem);
-    width: 40ch;
+  margin-left: 2.5rem;
+  font-weight: 200;
+  font-size: clamp(0.5rem, 1rem, 2rem);
+  width: 40ch;
 }
 .productdetail .row h5 {
-    font-size: clamp(0.5rem, 1rem, 2rem);
-    font-family: serif;
-    width: 15ch;
-    font-weight: 600;
-    margin-left: 0;
+  font-size: clamp(0.5rem, 1rem, 2rem);
+  font-family: serif;
+  width: 15ch;
+  font-weight: 600;
+  margin-left: 0;
 }
 .row {
-    display: flex;
-    flex-direction: row;
-    margin-block: 2rem;
+  display: flex;
+  flex-direction: row;
+  margin-block: 2rem;
 }
 .row h6 {
-    font-size: clamp(0.5rem, 1rem, 2rem);
-    font-weight: 300;
-    font-family: serif;
+  font-size: clamp(0.5rem, 1rem, 2rem);
+  font-weight: 300;
+  font-family: serif;
 }
 .add {
-    border-top: 2px solid #e9e8ea;
-    margin-block: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-right: 2rem;
+  border-top: 2px solid #e9e8ea;
+  margin-block: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 2rem;
 }
 .minus {
-    border: 2px solid #e9e8ea;
-    border-right: none;
-    padding-block: 0.4rem;
-    padding-inline: 0.8rem;
-    background: white;
+  border: 2px solid #e9e8ea;
+  border-right: none;
+  padding-block: 0.4rem;
+  padding-inline: 0.8rem;
+  background: white;
 }
 .add .row {
-    margin-block: 1rem;
-    margin-right: 1rem;
+  margin-block: 1rem;
+  margin-right: 1rem;
 }
 .row input {
-    border: 2px solid #e9e8ea;
-    border-left: none;
-    border-right: none;
-    width: 2rem;
-    text-align: center;
+  border: 2px solid #e9e8ea;
+  border-left: none;
+  border-right: none;
+  width: 2rem;
+  text-align: center;
 }
 .plus {
-    border: 2px solid #e9e8ea;
-    border-left: none;
-    padding-block: 0.4rem;
-    padding-inline: 0.8rem;
-    background: white;
+  border: 2px solid #e9e8ea;
+  border-left: none;
+  padding-block: 0.4rem;
+  padding-inline: 0.8rem;
+  background: white;
 }
 .addcart {
-    border: none;
-    color: white;
-    padding-inline: clamp(1rem, 8vw, 10rem);
-    padding-block: 0;
-    margin-block: 1rem;
-    background: #cf4784;
-    font-size: clamp(0.5rem, 0.8vw, 2rem);
+  border: none;
+  color: white;
+  padding-inline: clamp(1rem, 8vw, 10rem);
+  padding-block: 0;
+  margin-block: 1rem;
+  background: #cf4784;
+  font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .add h6 {
-    font-size: clamp(0.5rem, 0.8rem, 2rem);
-    color: green;
-    font-weight: 300;
+  font-size: clamp(0.5rem, 0.8rem, 2rem);
+  color: green;
+  font-weight: 300;
 }
 .small:hover {
-    border-color: black;
+  border-color: black;
 }
 .descriptionreview {
-    border-top: 2px solid #e9e8ea;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
+  border-top: 2px solid #e9e8ea;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 #review {
-    margin-left: 2rem;
+  margin-left: 2rem;
+}
+#reviewpart {
+  display: none;
 }
 .descriptionreview h5 {
-    margin-top: 1rem;
-    font-size: clamp(0.5rem, 1rem, 2rem);
-    font-weight: 500;
+  margin-top: 1rem;
+  font-size: clamp(0.5rem, 1rem, 2rem);
+  font-weight: 500;
 }
 
-#review {
-    border-top: 3px solid black;
+#description {
+  border-top: 1px solid black;
+}
+#descriptionpart p {
+  margin-bottom: 2rem;
+  font-weight: 300;
 }
 .wide h4 {
-    width: 20ch;
+  width: 20ch;
 }
 .wide p {
-    width: 70ch;
-    text-align: center;
+  width: 70ch;
+  text-align: center;
 }
 .wide p {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 .befirst {
-    border: 2px solid #e9e8ea;
-    padding: 2rem;
+  border: 2px solid #e9e8ea;
+  padding: 2rem;
 }
 .befirst h2 {
-    font-weight: 500;
-    color: #5a4a5a;
-    font-size: clamp(0.5rem, 1.3rem, 3rem);
+  font-weight: 500;
+  color: #5a4a5a;
+  font-size: clamp(0.5rem, 1.3rem, 3rem);
 }
 .befirst h3 {
-    font-weight: 200;
-    color: #5a4a5a;
-    font-size: clamp(0.5rem, 1rem, 3rem);
-    margin-block: 1rem;
+  font-weight: 200;
+  color: #5a4a5a;
+  font-size: clamp(0.5rem, 1rem, 3rem);
+  margin-block: 1rem;
 }
 .befirst h2 {
-    margin-block: 2rem;
+  margin-block: 2rem;
 }
 .befirst .input2 {
-    padding-block: 0.7rem;
-    padding-inline: 1rem;
-    width: 98%;
-    font-size: clamp(1rem, 1rem, 3rem);
-    border: 2px solid #e9e8ea;
-    padding-right: 0;
+  padding-block: 0.7rem;
+  padding-inline: 1rem;
+  width: 98%;
+  font-size: clamp(1rem, 1rem, 3rem);
+  border: 2px solid #e9e8ea;
+  padding-right: 0;
 }
 .befirst .row h2 {
-    margin-top: 0;
-    font-size: clamp(0.5rem, 1rem, 3rem);
+  margin-top: 0;
+  font-size: clamp(0.5rem, 1rem, 3rem);
 }
 .befirst .row {
-    /* gap: 10rem; */
-    justify-content: space-between;
+  /* gap: 10rem; */
+  justify-content: space-between;
 }
 .befirst input {
-    padding-block: 0.7rem;
-    /* padding-inline: 3rem; */
-    font-size: clamp(1rem, 1rem, 3rem);
-    width: 100%;
-    text-align: left;
-    border: 2px solid #e9e8ea;
+  padding-block: 0.7rem;
+  /* padding-inline: 3rem; */
+  font-size: clamp(1rem, 1rem, 3rem);
+  width: 100%;
+  text-align: left;
+  border: 2px solid #e9e8ea;
 }
 .befirst .column {
-    width: 48%;
+  width: 48%;
 }
 .row2 {
-    display: flex;
-    flex-direction: row;
-    width: auto;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+  margin: 0;
 }
 .befirst .check {
-    width: auto;
+  width: auto;
 }
 .shine:hover {
-    color: #cf4784;
-    fill: #cf4784;
+  color: #cf4784;
+  fill: #cf4784;
 }
 .shine:hover .shine {
-    fill: #cf4784;
+  fill: #cf4784;
 }
 .hit {
-    width: clamp(1rem, 16vw, 20vw);
+  width: clamp(1rem, 16vw, 20vw);
 }
 .addtocart {
-    padding: 0.7rem;
-    font-size: clamp(0.5rem, 0.8vw, 2rem);
-    background: #cf4784;
-    color: white;
-    border: none;
+  padding: 0.7rem;
+  font-size: clamp(0.5rem, 0.8vw, 2rem);
+  background: #cf4784;
+  color: white;
+  border: none;
 }
 .checkout {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 30%;
-    background: white;
-    z-index: 10000;
-    padding-inline: 1rem;
-    padding-block: 1.5rem;
-    height: 96%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  background: white;
+  z-index: 10000;
+  padding-inline: 1rem;
+  padding-block: 1.5rem;
+  height: 96%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .checkout .row {
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #e9e8ea;
-    margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e9e8ea;
+  margin-bottom: 1rem;
 }
 .checkout .row h2 {
-    font-size: clamp(1rem, 0.8vw, 3rem);
-    font-weight: 200;
-    font-family: serif;
+  font-size: clamp(1rem, 0.8vw, 3rem);
+  font-weight: 200;
+  font-family: serif;
 }
 .checkoutlist {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    border-bottom: 2px solid #e9e8ea;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-bottom: 2px solid #e9e8ea;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .checkoutlist img {
-    width: clamp(1rem, 4vw, 6rem);
-    padding: 1.5rem;
+  width: clamp(1rem, 4vw, 6rem);
+  padding: 1.5rem;
 }
 .checkfirst {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 23.5vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 23.5vw;
 }
 .checkfirst h2 {
-    font-size: clamp(1rem, 0.8vw, 3rem);
-    font-weight: 400;
-    font-family: serif;
+  font-size: clamp(1rem, 0.8vw, 3rem);
+  font-weight: 400;
+  font-family: serif;
 }
 .checksecond {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-left: 2px solid #e9e8ea;
-    margin-block: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-left: 2px solid #e9e8ea;
+  margin-block: 1rem;
 }
 .checksecond h2 {
-    font-size: clamp(1rem, 0.8vw, 3rem);
-    font-weight: 400;
-    font-family: serif;
-    color: #71636d;
-    margin-right: 2rem;
-    margin-left: 1rem;
+  font-size: clamp(1rem, 0.8vw, 3rem);
+  font-weight: 400;
+  font-family: serif;
+  color: #71636d;
+  margin-right: 2rem;
+  margin-left: 1rem;
 }
 .checkout input {
-    border: 2px solid #e9e8ea;
-    border-left: none;
-    border-right: none;
-    width: 2rem;
-    text-align: center;
-    padding-block: 0.4rem;
+  border: 2px solid #e9e8ea;
+  border-left: none;
+  border-right: none;
+  width: 2rem;
+  text-align: center;
+  padding-block: 0.4rem;
 }
 .subtotal {
-    display: flex;
-    flex-direction: column;
-    border-top: 2px solid #e9e8ea;
-    padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-top: 2px solid #e9e8ea;
+  padding-top: 2rem;
 }
 .subtotal .row {
-    padding-bottom: 2rem;
-    border: none;
+  padding-bottom: 2rem;
+  border: none;
 }
 .subtotal button {
-    padding-block: 0.7rem;
-    font-size: clamp(0.5rem, 0.8vw, 2rem);
-    background: #cf4784;
-    color: white;
-    border: none;
+  padding-block: 0.7rem;
+  font-size: clamp(0.5rem, 0.8vw, 2rem);
+  background: #cf4784;
+  color: white;
+  border: none;
 }
 .checkoutmain {
-    padding-inline: clamp(16rem, 16vw, 20rem);
-    padding-block: 4rem;
-    background: #f8f4f6;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  padding-inline: clamp(16rem, 16vw, 20rem);
+  padding-block: 4rem;
+  background: #f8f4f6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .checkleft {
-    background: white;
-    width: 35vw;
-    padding: 5rem;
+  background: white;
+  width: 35vw;
+  padding: 5rem;
 }
 .checkleft h2 {
-    font-family: serif;
-    font-size: clamp(1rem, 2vw, 4rem);
-    font-weight: 400;
-    margin-bottom: 3rem;
+  font-family: serif;
+  font-size: clamp(1rem, 2vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 3rem;
 }
 .checkleft h3 {
-    font-size: clamp(1rem, 1.5vw, 4rem);
-    font-weight: 400;
+  font-size: clamp(1rem, 1.5vw, 4rem);
+  font-weight: 400;
 
-    font-family: serif;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #e9e8ea;
+  font-family: serif;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e9e8ea;
 }
 .checkleft .short {
-    width: 16ch;
+  width: 16ch;
 }
 .checkleft input {
-    width: 95%;
-    border: 2px solid #e9e8ea;
-    font-size: clamp(1rem, 1vw, 2rem);
-    padding-inline: 1rem;
-    padding-block: 1rem;
-    margin-bottom: 1.5rem;
+  width: 95%;
+  border: 2px solid #e9e8ea;
+  font-size: clamp(1rem, 1vw, 2rem);
+  padding-inline: 1rem;
+  padding-block: 1rem;
+  margin-bottom: 1.5rem;
 }
 .checkleft .row {
-    gap: 3.5rem;
+  gap: 3.5rem;
 }
 .halfleft {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
 }
 .halfleft input {
-    text-align: left;
+  text-align: left;
 }
 .row2 .check {
-    width: auto;
-    padding: 0;
-    margin: 0;
-    margin-right: 1rem;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  margin-right: 1rem;
 }
 .checkleft .row2 {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 .checkleft .row2 h3 {
-    font-size: clamp(1rem, 1.4vw, 2rem);
-    font-weight: 700;
-    padding: 0;
-    margin: 0;
-    border: none;
+  font-size: clamp(1rem, 1.4vw, 2rem);
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 .checkleft .dash {
-    padding-bottom: 2rem;
-    border-bottom: 2px solid #e9e8ea;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #e9e8ea;
 }
 .checkleft .input {
-    width: clamp(25rem, 30vw, 36rem);
-    font-family: serif;
-    margin-top: 2.5rem;
+  width: clamp(25rem, 30vw, 36rem);
+  font-family: serif;
+  margin-top: 2.5rem;
 }
 .checkleft .space {
-    margin-top: 2rem;
-    margin-bottom: 0;
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 .checkleft h5 {
-    margin-block: 2rem;
-    font-size: clamp(1rem, 1vw, 3rem);
-    font-weight: 300;
+  margin-block: 2rem;
+  font-size: clamp(1rem, 1vw, 3rem);
+  font-weight: 300;
 }
 .checkleft .searchbtn {
-    margin-block: 2rem;
-    width: 100%;
-    border-radius: 0;
-    font-size: clamp(1rem, 1vw, 3rem);
+  margin-block: 2rem;
+  width: 100%;
+  border-radius: 0;
+  font-size: clamp(1rem, 1vw, 3rem);
 }
 .checkright {
-    background: white;
-    width: 35vw;
-    padding: 5rem;
-    padding-top: 12rem;
+  background: white;
+  width: 35vw;
+  padding: 5rem;
+  padding-top: 12rem;
 }
 .checkright h3 {
-    font-size: clamp(1rem, 1.5vw, 4rem);
-    font-weight: 400;
-    font-family: serif;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 4rem);
+  font-weight: 400;
+  font-family: serif;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .checkright .box {
-    border: 2px solid #e9e8ea;
+  border: 2px solid #e9e8ea;
 }
 .checkright h2 {
-    margin: 1rem;
+  margin: 1rem;
 }
 .checkright .checkfirst {
-    border-bottom: 2px solid #e9e8ea;
+  border-bottom: 2px solid #e9e8ea;
 }
 .checkright img {
-    width: clamp(1rem, 4vw, 6rem);
-    padding: 1rem;
+  width: clamp(1rem, 4vw, 6rem);
+  padding: 1rem;
 }
 .checkright .row .column h4 {
-    padding-left: 1rem;
-    font-size: clamp(0.5rem, 0.9vw, 2rem);
-    font-weight: 500;
-    padding-top: 0;
+  padding-left: 1rem;
+  font-size: clamp(0.5rem, 0.9vw, 2rem);
+  font-weight: 500;
+  padding-top: 0;
 }
 .checkright .row h4 {
-    padding-left: 1rem;
-    font-size: clamp(0.5rem, 0.9vw, 2rem);
-    font-weight: 500;
-    padding-top: 2rem;
+  padding-left: 1rem;
+  font-size: clamp(0.5rem, 0.9vw, 2rem);
+  font-weight: 500;
+  padding-top: 2rem;
 }
 .checkright .column {
-    padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 .end {
-    text-align: end;
-    margin-left: 2rem;
+  text-align: end;
+  margin-left: 2rem;
 }
 .checkright .row {
-    border-bottom: 2px solid #e9e8ea;
-    margin-block: 0;
+  border-bottom: 2px solid #e9e8ea;
+  margin-block: 0;
 }
 .checkfirst .column {
-    padding-block: 2rem;
-    padding-right: 1rem;
+  padding-block: 2rem;
+  padding-right: 1rem;
 }
 .column .row2 {
-    justify-content: left;
-    width: 17ch;
-    align-items: flex-start;
+  justify-content: left;
+  width: 17ch;
+  align-items: flex-start;
 }
 .column .row2 h4 {
-    font-weight: 400;
-    /* width: 15ch; */
+  font-weight: 400;
+  /* width: 15ch; */
 }
 .column .row2 .check {
-    margin-top: 0.3rem;
-    border-radius: 100%;
+  margin-top: 0.3rem;
+  border-radius: 100%;
 }
