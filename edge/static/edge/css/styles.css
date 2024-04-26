@@ -7,6 +7,13 @@
 body {
     margin: 0;
 }
+*[aria-expanded="true"] {
+    visibility: visible;
+}
+
+*[aria-expanded="false"] {
+    visibility: hidden;
+}
 .navbar {
     height: 8.5vh;
     display: flex;
@@ -119,6 +126,7 @@ body {
 .icons img {
     width: 2rem;
     height: 1.5rem;
+    cursor: pointer;
 }
 .main {
     width: 100%;
@@ -187,8 +195,8 @@ body {
     transform: scale(1);
 }
 .fl1 {
-  animation: rotate 7s;
-  transform: scale(1);
+    animation: rotate 7s;
+    transform: scale(1);
 }
 
 @keyframes pulse {
@@ -196,11 +204,13 @@ body {
         transform: scale(0);
         background: hsl(339, 69%, 73%);
     }
+    
     100% {
         transform: scale(1);
         background: hsl(339, 69%, 73%);
     }
 }
+
 @keyframes slide2 {
     0% {
         transform: scale(0);
@@ -212,15 +222,15 @@ body {
 }
 @keyframes slide {
     0% {
-      transform: scale(0);
-      background: hsla(339, 50%, 78%, 0.5);
+        transform: scale(0);
+        background: hsla(339, 50%, 78%, 0.5);
     }
-  
+
     100% {
-      transform: scale(3);
-      background: hsla(339, 50%, 78%, 0.5);
+        transform: scale(3);
+        background: hsla(339, 50%, 78%, 0.5);
     }
-  }
+}
 @keyframes rotate {
     0% {
         transform: scale(0.4);
@@ -497,7 +507,10 @@ body {
 }
 .hits {
     padding-top: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 .hits h4 {
     font-weight: 100;
@@ -629,25 +642,25 @@ body {
     background: #f8f4f6;
     display: flex;
     flex-direction: row;
-  }
-  .search {
+}
+.search {
     margin-top: 2rem;
     margin-right: 4rem;
     background: #f8f4f6;
-  }
-  
-  .search-input {
+}
+
+.search-input {
     height: 1.7vw;
     font-family: serif;
     font-size: clamp(0.5rem, 0.9vw, 1.2rem);
     padding-left: 0.3vw;
     width: clamp(15rem, 10vw, 27rem);
     border: 2px solid #dee2e6;
-  
+
     color: #212529bf;
     margin: 0;
-  }
-  .searchbtn {
+}
+.searchbtn {
     border-radius: 6%;
     padding-block: clamp(0.1rem, 0.4vw, 0.7rem);
     padding-inline: clamp(0.1rem, 0.8vw, 0.7rem);
@@ -658,51 +671,51 @@ body {
     border: none;
     right: 0;
     bottom: clamp(0rem, 0.19vw, 0.2rem);
-  }
-  .searcher {
+}
+.searcher {
     display: flex;
     flex-direction: row;
-  }
-  .catagories h2 {
+}
+.catagories h2 {
     margin-top: 2rem;
     margin-bottom: 2rem;
     /* font-size: clamp(1rem, 1vw, 1.2rem); */
     font-family: serif;
     font-weight: 400;
-  }
-  .catagories p {
+}
+.catagories p {
     padding-left: 2rem;
     font-family: serif;
     font-weight: 200;
-  }
-  .catagories .third {
+}
+.catagories .third {
     padding-left: 6rem;
-  }
-  .catagories .second {
+}
+.catagories .second {
     padding-left: 4rem;
-  }
-  .list {
+}
+.list {
     background: white;
     padding: 7rem;
-  }
-  .list p {
+}
+.list p {
     font-weight: 150;
-  }
-  .list h1 {
+}
+.list h1 {
     font-size: clamp(1rem, 5vw, 6rem);
     font-weight: 400;
     margin-bottom: 6rem;
-  }
-  .top {
+}
+.top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  .flowerdropdowncontent {
+}
+.flowerdropdowncontent {
     width: 14rem;
-  
+
     top: 60vh;
-  
+
     visibility: hidden;
     background-color: white;
     position: absolute;
@@ -712,403 +725,403 @@ body {
     border-top-style: solid;
     flex-direction: column;
     padding-bottom: 1rem;
-  }
-  .drop-flowerdropdowncontent {
+}
+.drop-flowerdropdowncontent {
     visibility: visible;
-  }
-  .flowerdropdown {
+}
+.flowerdropdown {
     /* height: 10vh; */
     display: flex;
     align-items: center;
-  }
-  .flowerdropdown p {
+}
+.flowerdropdown p {
     text-decoration: none;
     font-weight: 150;
     color: black;
-  }
-  .flowerdropdowncontent a {
+}
+.flowerdropdowncontent a {
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 1rem;
-  }
-  .flowerdropdown:hover .flowerdropdowncontent {
+}
+.flowerdropdown:hover .flowerdropdowncontent {
     display: flex;
-  }
-  .flowergrid {
+}
+.flowergrid {
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr 1fr 1fr;
-  }
-  .pagecontainer {
+}
+.pagecontainer {
     display: flex;
     flex-direction: row;
-  }
-  .page h3 {
+}
+.page h3 {
     color: #2a0f21;
     margin-left: auto;
     margin-right: auto;
-  }
-  .active {
+}
+.active {
     background: #2a0f21;
-  }
-  .active h3 {
+}
+.active h3 {
     color: white;
-  }
-  .page {
+}
+.page {
     border: 1.5px solid #2a0f21;
     font-size: 0.8rem;
     padding-block: 0.5rem;
     padding-inline: 0.7rem;
     width: 1rem;
     margin: 0.2rem;
-  }
-  .page:hover {
+}
+.page:hover {
     background: #2a0f21;
-  }
-  .page:hover h3 {
+}
+.page:hover h3 {
     color: white;
-  }
-  .deliverymain {
+}
+.deliverymain {
     padding-inline: 15rem;
     padding-block: 4rem;
     background: #f8f4f6;
     display: flex;
     flex-direction: row;
-  }
-  .delivery {
+}
+.delivery {
     background: white;
     padding: 5rem;
-  }
-  .delivery h2 {
+}
+.delivery h2 {
     font-size: clamp(1rem, 2vw, 3rem);
     font-weight: 400;
     margin-bottom: 5rem;
-  }
-  .deliverycontent {
+}
+.deliverycontent {
     border: 1px solid #e0e0e0;
     display: flex;
     flex-direction: row;
     padding-block: 1rem;
     padding-right: 2rem;
     padding-left: 1rem;
-  }
-  .topic {
+}
+.topic {
     background: white;
     padding-block: 0.5rem;
     padding-inline: 0.8rem;
     margin-bottom: 1rem;
     margin-right: 2rem;
-  }
-  .topicscontainer .active {
+}
+.topicscontainer .active {
     background: #5a4a55;
-  }
-  .topicscontainer {
+}
+.topicscontainer {
     background: white;
-  }
-  .topicscontainer .active h3 {
+}
+.topicscontainer .active h3 {
     color: white;
-  }
-  .topic h3 {
+}
+.topic h3 {
     font-size: clamp(1rem, 1vw, 2rem);
     font-weight: 400;
     text-align: center;
     color: #5a4a55;
     margin-left: auto;
     margin-right: auto;
-  }
-  .details p {
+}
+.details p {
     width: 100ch;
     line-height: 3ch;
     margin-bottom: 1rem;
-  }
-  .wishlist {
+}
+.wishlist {
     padding-inline: 24rem;
     padding-block: 4rem;
     background: #f8f4f6;
     display: flex;
     flex-direction: row;
-  }
-  .wishlist h2 {
+}
+.wishlist h2 {
     font-size: clamp(1rem, 2.5rem, 3rem);
     font-weight: 600;
     margin-bottom: 5rem;
-  }
-  .deliverycontent .productname h3,
-  .deliverycontent .unitprice h3 {
+}
+.deliverycontent .productname h3,
+.deliverycontent .unitprice h3 {
     font-size: clamp(1rem, 1vw, 2rem);
     font-weight: 500;
     text-align: center;
-  }
-  .deliverycontent .productname h3 {
+}
+.deliverycontent .productname h3 {
     margin-left: 10rem;
-  }
-  .productname img,
-  .deliverycontent .unitprice .name {
+}
+.productname img,
+.deliverycontent .unitprice .name {
     height: clamp(1rem, 4vw, 6rem);
     margin-right: 3rem;
-  }
-  .productname {
+}
+.productname {
     margin-right: clamp(1rem, 20vw, 21rem);
-  }
-  .deliverycontent .unitprice > .h3 {
+}
+.deliverycontent .unitprice > .h3 {
     margin-left: 5rem;
-  }
-  .name {
+}
+.name {
     display: flex;
     flex-direction: row;
-  }
-  .productname .name h3,
-  .deliverycontent .name h3 {
+}
+.productname .name h3,
+.deliverycontent .name h3 {
     font-size: clamp(1rem, 1vw, 2rem);
     font-weight: 300;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
-  }
-  .share {
+}
+.share {
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 1rem;
-  }
-  .share h3 {
+}
+.share h3 {
     font-size: clamp(1rem, 1vw, 2rem);
     font-weight: 300;
-  }
-  .share img {
+}
+.share img {
     height: clamp(1rem, 1.5vw, 3rem);
-  }
-  .share .smaller {
+}
+.share .smaller {
     height: clamp(1rem, 1.3vw, 2rem);
     margin-top: auto;
     margin-bottom: auto;
-  }
-  .aboutus {
+}
+.aboutus {
     padding-inline: 20rem;
     padding-block: 5rem;
-  }
-  .about {
+}
+.about {
     display: flex;
     flex-direction: row;
     gap: 5rem;
     margin-bottom: 4rem;
-  }
-  .welcome h1 {
+}
+.welcome h1 {
     font-size: clamp(1rem, 5vw, 6rem);
     font-weight: 400;
     margin-bottom: 1rem;
-  }
-  .aboutus img {
+}
+.aboutus img {
     margin-top: 2rem;
     height: clamp(18rem, 20vw, 25rem);
-  }
-  .aboutus .welcome .line {
+}
+.aboutus .welcome .line {
     border: 1.5px solid #fa7cbb;
     width: 4rem;
-  }
-  .welcome p {
+}
+.welcome p {
     margin-left: 1rem;
     margin-top: 1rem;
     width: 50ch;
     font-weight: 170;
     line-height: 4ch;
-  }
-  .aboutus .line {
+}
+.aboutus .line {
     margin-top: 2rem;
     border: 1.5px solid #fa7cbb;
     width: 7rem;
     margin-bottom: 1.5rem;
-  }
-  .aboutus h2 {
+}
+.aboutus h2 {
     font-size: clamp(1rem, 1.7vw, 3rem);
-  }
-  .aboutus p {
+}
+.aboutus p {
     margin-left: 1rem;
     margin-top: 1rem;
     font-weight: 170;
     line-height: 4ch;
-  }
-  .contactus {
+}
+.contactus {
     display: flex;
     flex-direction: row;
     padding-inline: 18rem;
     padding-block: 5rem;
     justify-content: space-between;
-  }
-  .contactus h2 {
+}
+.contactus h2 {
     font-size: clamp(1rem, 2rem, 3rem);
     font-weight: 600;
-  }
-  .right {
+}
+.right {
     padding-left: 4rem;
     padding-top: 4rem;
     border-left: 2px solid #e9e8ea;
-  }
-  .contact {
+}
+.contact {
     display: flex;
     flex-direction: row;
     margin-top: 2rem;
-  }
-  .contact img {
+}
+.contact img {
     width: clamp(1rem, 1vw, 2rem);
     margin-right: 0.5rem;
     margin-top: 1rem;
-  }
-  
-  .left .contact h3 {
+}
+
+.left .contact h3 {
     font-size: clamp(1rem, 1rem, 3rem);
     width: 33ch;
     font-weight: 500;
     color: #cf4784;
     margin-left: 0;
-  }
-  .left h3,
-  .contactus a {
+}
+.left h3,
+.contactus a {
     display: flex;
     margin-left: 2.5rem;
     margin-top: 1rem;
     font-size: clamp(1rem, 1rem, 3rem);
     width: 27ch;
     color: black;
-  }
-  .contactus a:hover {
+}
+.contactus a:hover {
     color: #cf4784;
-  }
-  .right h2 {
+}
+.right h2 {
     margin-right: 6rem;
-  }
-  .right h3 {
+}
+.right h3 {
     display: flex;
     margin-top: 1.5rem;
     font-weight: 400;
     font-size: clamp(1rem, 1.2rem, 3rem);
     color: black;
-  }
-  .right input {
+}
+.right input {
     padding-block: 0.7rem;
     padding-inline: 1rem;
     font-size: clamp(1rem, 1rem, 3rem);
     width: 100%;
     border: 2px solid #e9e8ea;
-  }
-  .input {
+}
+.input {
     padding-block: 0.7rem;
     padding-inline: 1rem;
     font-size: clamp(1rem, 1rem, 3rem);
     width: 100%;
     border: 2px solid #e9e8ea;
-  }
-  .right .searchbtn {
+}
+.right .searchbtn {
     margin-top: 2rem;
     font-size: clamp(1rem, 1rem, 3rem);
-  }
-  .searchbtn:hover {
+}
+.searchbtn:hover {
     background: black;
-  }
-  .right .push {
+}
+.right .push {
     display: flex;
     justify-content: flex-end;
-  }
-  .productsmain {
+}
+.productsmain {
     padding-inline: 18rem;
     padding-block: 4rem;
     background: #f8f4f6;
-  }
-  .products {
+}
+.products {
     background: white;
-  }
-  .product {
+}
+.product {
     display: flex;
     flex-direction: column;
     padding: 6rem;
-  }
-  .product > .row {
+}
+.product > .row {
     margin: 0;
-  }
-  .productimg {
+}
+.productimg {
     height: clamp(20rem, 25vw, 42rem);
-  }
-  .productdetail {
+}
+.productdetail {
     padding-left: 3rem;
-  }
-  .productdetail h3 {
+}
+.productdetail h3 {
     font-size: clamp(1rem, 1rem, 3rem);
     font-weight: 160;
-  }
-  .productdetail h2 {
+}
+.productdetail h2 {
     font-size: clamp(1rem, 1rem, 3rem);
     font-weight: 350;
     margin-block: 1rem;
-  }
-  
-  .productdetail h1 {
+}
+
+.productdetail h1 {
     font-weight: 500;
-  }
-  .productdetail h4 {
+}
+.productdetail h4 {
     font-size: clamp(1rem, 1.5rem, 3rem);
     font-weight: 700;
     margin-block: 1rem;
     color: #5d4d58;
-  }
-  .productdetail > h5 {
+}
+.productdetail > h5 {
     margin-left: 2.5rem;
     font-weight: 200;
     font-size: clamp(0.5rem, 1rem, 2rem);
     width: 40ch;
-  }
-  .productdetail .row h5 {
+}
+.productdetail .row h5 {
     font-size: clamp(0.5rem, 1rem, 2rem);
     font-family: serif;
     width: 15ch;
     font-weight: 600;
     margin-left: 0;
-  }
-  .row {
+}
+.row {
     display: flex;
     flex-direction: row;
     margin-block: 2rem;
-  }
-  .row h6 {
+}
+.row h6 {
     font-size: clamp(0.5rem, 1rem, 2rem);
     font-weight: 300;
     font-family: serif;
-  }
-  .add {
+}
+.add {
     border-top: 2px solid #e9e8ea;
     margin-block: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-right: 2rem;
-  }
-  .minus {
+}
+.minus {
     border: 2px solid #e9e8ea;
     border-right: none;
     padding-block: 0.4rem;
     padding-inline: 0.8rem;
     background: white;
-  }
-  .add .row {
+}
+.add .row {
     margin-block: 1rem;
     margin-right: 1rem;
-  }
-  .row input {
+}
+.row input {
     border: 2px solid #e9e8ea;
     border-left: none;
     border-right: none;
     width: 2rem;
     text-align: center;
-  }
-  .plus {
+}
+.plus {
     border: 2px solid #e9e8ea;
     border-left: none;
     padding-block: 0.4rem;
     padding-inline: 0.8rem;
     background: white;
-  }
-  .addcart {
+}
+.addcart {
     border: none;
     color: white;
     padding-inline: clamp(1rem, 8vw, 10rem);
@@ -1116,91 +1129,91 @@ body {
     margin-block: 1rem;
     background: #cf4784;
     font-size: clamp(0.5rem, 0.8vw, 2rem);
-  }
-  .add h6 {
+}
+.add h6 {
     font-size: clamp(0.5rem, 0.8rem, 2rem);
     color: green;
     font-weight: 300;
-  }
-  .small:hover {
+}
+.small:hover {
     border-color: black;
-  }
-  .descriptionreview {
+}
+.descriptionreview {
     border-top: 2px solid #e9e8ea;
     margin-top: 3rem;
     margin-bottom: 2rem;
-  
+
     display: flex;
     flex-direction: row;
-  }
-  #review {
+}
+#review {
     margin-left: 2rem;
-  }
-  .descriptionreview h5 {
+}
+.descriptionreview h5 {
     margin-top: 1rem;
     font-size: clamp(0.5rem, 1rem, 2rem);
     font-weight: 500;
-  }
-  
-  #review {
+}
+
+#review {
     border-top: 3px solid black;
-  }
-  .wide h4 {
+}
+.wide h4 {
     width: 20ch;
-  }
-  .wide p {
+}
+.wide p {
     width: 70ch;
     text-align: center;
-  }
-  .wide p {
+}
+.wide p {
     margin-bottom: 3rem;
-  }
-  .befirst {
+}
+.befirst {
     border: 2px solid #e9e8ea;
     padding: 2rem;
-  }
-  .befirst h2 {
+}
+.befirst h2 {
     font-weight: 500;
     color: #5a4a5a;
     font-size: clamp(0.5rem, 1.3rem, 3rem);
-  }
-  .befirst h3 {
+}
+.befirst h3 {
     font-weight: 200;
     color: #5a4a5a;
     font-size: clamp(0.5rem, 1rem, 3rem);
     margin-block: 1rem;
-  }
-  .befirst h2 {
+}
+.befirst h2 {
     margin-block: 2rem;
-  }
-  .befirst .input2 {
+}
+.befirst .input2 {
     padding-block: 0.7rem;
     padding-inline: 1rem;
     width: 98%;
     font-size: clamp(1rem, 1rem, 3rem);
     border: 2px solid #e9e8ea;
     padding-right: 0;
-  }
-  .befirst .row h2 {
+}
+.befirst .row h2 {
     margin-top: 0;
     font-size: clamp(0.5rem, 1rem, 3rem);
-  }
-  .befirst .row {
+}
+.befirst .row {
     /* gap: 10rem; */
     justify-content: space-between;
-  }
-  .befirst input {
+}
+.befirst input {
     padding-block: 0.7rem;
     /* padding-inline: 3rem; */
     font-size: clamp(1rem, 1rem, 3rem);
     width: 100%;
     text-align: left;
     border: 2px solid #e9e8ea;
-  }
-  .befirst .column {
+}
+.befirst .column {
     width: 48%;
-  }
-  .row2 {
+}
+.row2 {
     display: flex;
     flex-direction: row;
     width: auto;
@@ -1208,22 +1221,28 @@ body {
     align-items: center;
     padding: 0;
     margin: 0;
-  }
-  .befirst .check {
+}
+.befirst .check {
     width: auto;
-  }
-  .shine:hover {
+}
+.shine:hover {
     color: #cf4784;
     fill: #cf4784;
-  }
-  .shine:hover .shine {
+}
+.shine:hover .shine {
     fill: #cf4784;
-  }
-  .hit {
+}
+.hit {
     width: clamp(1rem, 16vw, 20vw);
-  }
-  .checkout {
-    position: absolute;
+}
+.addtocart {
+  padding: 0.7rem;
+  font-size: clamp(0.5rem, 0.8vw, 2rem);
+  background: #cf4784;
+  color: white;
+  border: none;
+}
+.checkout {
     position: fixed;
     top: 0;
     right: 0;
@@ -1237,240 +1256,237 @@ body {
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-  }
-  .close {
-    width: clamp(1rem, 1vw, 2rem);
-  }
-  .checkout .row {
+}
+.checkout .row {
     justify-content: space-between;
     align-items: center;
     margin: 0;
     padding-bottom: 1rem;
     border-bottom: 2px solid #e9e8ea;
     margin-bottom: 1rem;
-  }
-  .checkout .row h2 {
+}
+.checkout .row h2 {
     font-size: clamp(1rem, 0.8vw, 3rem);
     font-weight: 200;
     font-family: serif;
-  }
-  .checkoutlist {
+}
+.checkoutlist {
     display: flex;
     flex-direction: row;
     width: 100%;
     border-bottom: 2px solid #e9e8ea;
     padding-bottom: 1.5rem;
     margin-bottom: 1rem;
-  }
-  .checkoutlist img {
+}
+.checkoutlist img {
     width: clamp(1rem, 4vw, 6rem);
     padding: 1.5rem;
-  }
-  .checkfirst {
+}
+.checkfirst {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 23.5vw;
-  }
-  .checkfirst h2 {
+}
+.checkfirst h2 {
     font-size: clamp(1rem, 0.8vw, 3rem);
     font-weight: 400;
     font-family: serif;
-  }
-  .checksecond {
+}
+.checksecond {
     display: flex;
     flex-direction: row;
     align-items: center;
     border-left: 2px solid #e9e8ea;
     margin-block: 1rem;
-  }
-  .checksecond h2 {
+}
+.checksecond h2 {
     font-size: clamp(1rem, 0.8vw, 3rem);
     font-weight: 400;
     font-family: serif;
     color: #71636d;
     margin-right: 2rem;
     margin-left: 1rem;
-  }
-  .checkout input {
+}
+.checkout input {
     border: 2px solid #e9e8ea;
     border-left: none;
     border-right: none;
     width: 2rem;
     text-align: center;
     padding-block: 0.4rem;
-  }
-  .subtotal {
+}
+.subtotal {
     display: flex;
     flex-direction: column;
     border-top: 2px solid #e9e8ea;
     padding-top: 2rem;
-  }
-  .subtotal .row {
+}
+.subtotal .row {
     padding-bottom: 2rem;
     border: none;
-  }
-  .subtotal button {
+}
+.subtotal button {
     padding-block: 0.7rem;
     font-size: clamp(0.5rem, 0.8vw, 2rem);
     background: #cf4784;
     color: white;
     border: none;
-  }
-  .checkoutmain {
+}
+.checkoutmain {
     padding-inline: clamp(16rem, 16vw, 20rem);
     padding-block: 4rem;
     background: #f8f4f6;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  .checkleft {
+}
+.checkleft {
     background: white;
     width: 35vw;
     padding: 5rem;
-  }
-  .checkleft h2 {
+}
+.checkleft h2 {
     font-family: serif;
     font-size: clamp(1rem, 2vw, 4rem);
     font-weight: 400;
     margin-bottom: 3rem;
-  }
-  .checkleft h3 {
+}
+.checkleft h3 {
     font-size: clamp(1rem, 1.5vw, 4rem);
     font-weight: 400;
-  
+
     font-family: serif;
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 2px solid #e9e8ea;
-  }
-  .checkleft .short {
+}
+.checkleft .short {
     width: 16ch;
-  }
-  .checkleft input {
+}
+.checkleft input {
     width: 95%;
     border: 2px solid #e9e8ea;
     font-size: clamp(1rem, 1vw, 2rem);
     padding-inline: 1rem;
     padding-block: 1rem;
     margin-bottom: 1.5rem;
-  }
-  .checkleft .row {
+}
+.checkleft .row {
     gap: 3.5rem;
-  }
-  .halfleft {
+}
+.halfleft {
     width: 45%;
     display: flex;
     flex-direction: column;
-  }
-  .halfleft input {
+}
+.halfleft input {
     text-align: left;
-  }
-  .row2 .check {
+}
+.row2 .check {
     width: auto;
     padding: 0;
     margin: 0;
     margin-right: 1rem;
-  }
-  .checkleft .row2 {
+}
+.checkleft .row2 {
     margin-top: 2rem;
-  }
-  .checkleft .row2 h3 {
+}
+.checkleft .row2 h3 {
     font-size: clamp(1rem, 1.4vw, 2rem);
     font-weight: 700;
     padding: 0;
     margin: 0;
     border: none;
-  }
-  .checkleft .dash {
+}
+.checkleft .dash {
     padding-bottom: 2rem;
     border-bottom: 2px solid #e9e8ea;
-  }
-  .checkleft .input {
+}
+.checkleft .input {
     width: clamp(25rem, 30vw, 36rem);
     font-family: serif;
     margin-top: 2.5rem;
-  }
-  .checkleft .space {
+}
+.checkleft .space {
     margin-top: 2rem;
     margin-bottom: 0;
-  }
-  .checkleft h5 {
+}
+.checkleft h5 {
     margin-block: 2rem;
     font-size: clamp(1rem, 1vw, 3rem);
     font-weight: 300;
-  }
-  .checkleft .searchbtn {
+}
+.checkleft .searchbtn {
     margin-block: 2rem;
     width: 100%;
     border-radius: 0;
     font-size: clamp(1rem, 1vw, 3rem);
-  }
-  .checkright {
+}
+.checkright {
     background: white;
     width: 35vw;
     padding: 5rem;
     padding-top: 12rem;
-  }
-  .checkright h3 {
+}
+.checkright h3 {
     font-size: clamp(1rem, 1.5vw, 4rem);
     font-weight: 400;
     font-family: serif;
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
-  }
-  .checkright .box {
+}
+.checkright .box {
     border: 2px solid #e9e8ea;
-  }
-  .checkright h2 {
+}
+.checkright h2 {
     margin: 1rem;
-  }
-  .checkright .checkfirst {
+}
+.checkright .checkfirst {
     border-bottom: 2px solid #e9e8ea;
-  }
-  .checkright img {
+}
+.checkright img {
     width: clamp(1rem, 4vw, 6rem);
     padding: 1rem;
-  }
-  .checkright .row .column h4 {
+}
+.checkright .row .column h4 {
     padding-left: 1rem;
     font-size: clamp(0.5rem, 0.9vw, 2rem);
     font-weight: 500;
     padding-top: 0;
-  }
-  .checkright .row h4 {
+}
+.checkright .row h4 {
     padding-left: 1rem;
     font-size: clamp(0.5rem, 0.9vw, 2rem);
     font-weight: 500;
     padding-top: 2rem;
-  }
-  .checkright .column {
+}
+.checkright .column {
     padding-bottom: 2rem;
-  }
-  .end {
+}
+.end {
     text-align: end;
     margin-left: 2rem;
-  }
-  .checkright .row {
+}
+.checkright .row {
     border-bottom: 2px solid #e9e8ea;
     margin-block: 0;
-  }
-  .checkfirst .column {
+}
+.checkfirst .column {
     padding-block: 2rem;
     padding-right: 1rem;
-  }
-  .column .row2 {
+}
+.column .row2 {
     justify-content: left;
     width: 17ch;
     align-items: flex-start;
-  }
-  .column .row2 h4 {
+}
+.column .row2 h4 {
     font-weight: 400;
     /* width: 15ch; */
-  }
-  .column .row2 .check {
+}
+.column .row2 .check {
     margin-top: 0.3rem;
     border-radius: 100%;
-  }
+}
