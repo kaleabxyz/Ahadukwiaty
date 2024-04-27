@@ -5,6 +5,7 @@ from django.shortcuts import HttpResponse
 from django.views.decorators.http import require_POST
 import json
 from django.http import JsonResponse
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -92,4 +93,34 @@ def get_cart(request):
     return JsonResponse({'html': cart_html})
 
 def checkout(request):
-    return render(request, "edge/checkout.html")
+    cart = request.session.get('cart', [])
+    # You may want to retrieve the actual product objects based on the product IDs in the cart
+    # For simplicity, I'll just return the product IDs as JSON
+    print(cart)
+    cart_html = ''
+    flowers = []
+    flower_sizes = []
+    flower_price = []
+    if cart:
+        for flower in cart:
+            flower = flower.split(',')
+            flower_id = flower[0]
+            flower_size = flower[1]
+            flower_sizes.append(flower_size)
+            flower = Flower.objects.get(pk=flower_id)
+            flowers.append(flower)
+            if flower_size == 'S':
+                flower_price.append(flower.price_s)
+            elif flower_size == 'M':
+                flower_price.append(flower.price_m)
+            elif flower_size == 'L':
+                flower_price.append(flower.price_l)
+            elif flower_size == 'XL':
+                flower_price.append(flower.price_xl)
+            elif flower_size == 'XXL':
+                flower_price.append(flower.price_xxl)
+        total_price = 0
+        for price in flower_price:
+            total_price += price
+        return render(request, "edge/checkout.html", {'flowers': flowers, 'flower_sizes': flower_sizes, 'flower_price': flower_price,'total_price': total_price})
+    return redirect("edge/Flowers.html")

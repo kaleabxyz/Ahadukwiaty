@@ -13,3 +13,7 @@ def calculate_id(index):
     else:
         num = 1
         return index * 10 + num
+    
+@register.filter(name='get_item')
+def get_item(lst, i):
+    return lst[i] if i < len(lst) else None

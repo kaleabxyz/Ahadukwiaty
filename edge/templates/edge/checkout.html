@@ -1,4 +1,5 @@
-{% extends 'edge/base.html' %} {% block content %} {% load static %}
+{% extends 'edge/base.html' %} {% block content %} {% load static %} 
+{% load custom_filters %}
 <div class="checkoutmain">
     <div class="checkleft">
         <h2>Checkout</h2>
@@ -82,27 +83,22 @@
                 <h2>Product</h2>
                 <h2>Subtotal</h2>
             </div>
+            {% for flower in flowers %}
             <div class="row">
                 <div class="column">
-                    <img src="{% static "edge/images/product.jpg" %}" alt="" />
+                    <img src="/edge/media/{{flower.image}}" alt="" />
                     <h4>&#215; 1</h4>
-                    <h4>Size: M</h4>
+                    <h4>Size: {{flower_sizes|get_item:forloop.counter0}}</h4>
                 </div>
-                <h4>Bukiet "Blissful" - M</h4>
-                <h4 class="end">227,00 zł</h4>
+                <h4>{{flower.name}}</h4>
+                <h4 class="end">
+                    {{flower_price|get_item:forloop.counter0}} zł
+                </h4>
             </div>
-            <div class="row">
-                <div class="column">
-                    <img src="{% static "edge/images/product.jpg" %}" alt="" />
-                    <h4>&#215; 1</h4>
-                    <h4>Size: M</h4>
-                </div>
-                <h4>Bukiet "Blissful" - M</h4>
-                <h4 class="end">227,00 zł</h4>
-            </div>
+            {% endfor %}
             <div class="checkfirst">
                 <h2>Subtotal</h2>
-                <h2>647,00 zł</h2>
+                <h2>{{total_price}} zł</h2>
             </div>
             <div class="checkfirst">
                 <h2>Shipping</h2>
