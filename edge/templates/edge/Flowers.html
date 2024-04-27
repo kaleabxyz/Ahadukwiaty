@@ -42,102 +42,24 @@
             </div>
         </div>
         <div class="flowergrid">
-            <div class="hits">
-                <a href={% url "products" %}><img src="{% static 'edge/images/new.jpg' %}" /></a>
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(1)">S</div>
-                    <div class="small" onclick="showbtn(1)">M</div>
-                    <div class="small" onclick="showbtn(1)">L</div>
-                    <div class="small" onclick="showbtn(1)">XL</div>
-                    <div class="small" onclick="showbtn(1)">XXL</div>
+            {% for flower in flowers %}
+                <div class="hits">
+                    <a href={% url "products" %}><img src="{% static 'edge/images/new.jpg' %}" /></a>
+                    <h3>{{ flower.name }}</h3>
+                    <h4>Bouquet mix</h4>
+                    <h3>{{flower.price_s}} zi - {% if flower.price_xll %} {{ flower.price_xll }} {% else %} {{ flower.price_xl }} {% endif %} zi</h3>
+                    <div class="size">
+                        {% if flower.price_s %} <div class="small" onclick="showbtn(1)">S</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_m %} <div class="small" onclick="showbtn(1)">M</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_l %} <div class="small" onclick="showbtn(1)">L</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xl %} <div class="small" onclick="showbtn(1)">XL</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xll %} <div class="small" onclick="showbtn(1)">XXL</div> {% else %} <div></div> {% endif %}
+                    </div>
+                    <button aria-expanded="false" class="addtocart">
+                        Add To Cart
+                    </button>
                 </div>
-                <button aria-expanded="false" class="addtocart">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <a href={% url "products" %}><img src="{% static 'edge/images/flower2.jpg' %}" /></a>
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(2)">S</div>
-                    <div class="small" onclick="showbtn(2)">M</div>
-                    <div class="small" onclick="showbtn(2)">L</div>
-                    <div class="small" onclick="showbtn(2)">XL</div>
-                    <div class="small" onclick="showbtn(2)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <a href={% url "products" %}><img src="{% static 'edge/images/flower3.jpg' %}" /></a>
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(3)">S</div>
-                    <div class="small" onclick="showbtn(3)">M</div>
-                    <div class="small" onclick="showbtn(3)">L</div>
-                    <div class="small" onclick="showbtn(3)">XL</div>
-                    <div class="small" onclick="showbtn(3)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <a href={% url "products" %}><img src="{% static 'edge/images/new.jpg' %}" /></a>
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(4)">S</div>
-                    <div class="small" onclick="showbtn(4)">M</div>
-                    <div class="small" onclick="showbtn(4)">L</div>
-                    <div class="small" onclick="showbtn(4)">XL</div>
-                    <div class="small" onclick="showbtn(4)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <a href={% url "products" %}><img src="{% static 'edge/images/flower4.jpg' %}" /></a>
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(5)">S</div>
-                    <div class="small" onclick="showbtn(5)">M</div>
-                    <div class="small" onclick="showbtn(5)">L</div>
-                    <div class="small" onclick="showbtn(5)">XL</div>
-                    <div class="small" onclick="showbtn(5)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                    Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <a href={% url "products" %}><img src="{% static 'edge/images/flower5.jpg' %}" /></a>
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(6)">S</div>
-                    <div class="small" onclick="showbtn(6)">M</div>
-                    <div class="small" onclick="showbtn(6)">L</div>
-                    <div class="small" onclick="showbtn(6)">XL</div>
-                    <div class="small" onclick="showbtn(6)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                    Add To Cart
-                </button>
-            </div>
+            {% endfor %}
         </div>
         <div class="pagecontainer">
             <div class="page active">

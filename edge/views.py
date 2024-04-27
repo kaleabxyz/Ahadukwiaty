@@ -1,11 +1,13 @@
 from django.shortcuts import render
+from .models import Flower
 
 # Create your views here.
 def index(request):
     return render(request, 'edge/index.html')
 
 def flowers(request):
-    return render(request, 'edge/Flowers.html')
+    flowers = Flower.objects.all()
+    return render(request, 'edge/Flowers.html', {'flowers': flowers})
 
 def aboutus(request):
     return render(request, 'edge/aboutus.html')
