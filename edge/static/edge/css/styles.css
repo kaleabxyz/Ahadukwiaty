@@ -517,8 +517,13 @@ body {
     font-weight: 100;
 }
 .hits img {
-    width: 20rem;
-    height: 20rem;
+    width: 20vw;
+    height: auto;
+}
+.hits .flower_img {
+    width: 18vw;
+    height: 18vw;
+    overflow: hidden;
 }
 .size {
     display: flex;
@@ -721,9 +726,8 @@ body {
 }
 #popup {
     width: 12rem;
-
     top: 80vh;
-    display: block;
+    display: none;
     background-color: white;
     position: absolute;
     z-index: 100;
@@ -1261,6 +1265,7 @@ body {
     background: #cf4784;
     color: white;
     border: none;
+    width: 100%;
 }
 .checkout {
     position: fixed;

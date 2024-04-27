@@ -8,7 +8,7 @@ function show() {
     panel.setAttribute("aria-expanded", true);
 }
 
-function showbtn(index, btn, id) {
+function showbtn(index, btn, id, size) {
     var buttons = document.querySelectorAll(".addtocart");
     var price = document.querySelectorAll(".price");
     var size_btn = document.getElementById(id);
@@ -29,27 +29,61 @@ function showbtn(index, btn, id) {
         }
     });
 
+    document.getElementById("flower_size_input_" + index).value = size;
+
     // buttons.forEach((button) => {
     //     button.setAttribute("aria-expanded", false);
     // });
     buttons[index - 1].setAttribute("aria-expanded", true);
 }
 
-const firstDiv = document.getElementById("popup");
-const secondDiv = document.getElementById("po");
+function addToCart(productId) {
+    var formData = new FormData(
+        document.getElementById("add-to-cart-form-" + productId)
+    );
 
-let isVisible = true; // Track the visibility state of the first div
-
-document.addEventListener("click", function (event) {
-    if (!secondDiv.contains(event.target)) {
-        if (isVisible) {
-            firstDiv.style.display = "none";
-            isVisible = false;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/add_to_cart/", true);
+    xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            // Handle success, e.g., show a message to the user
+            alert("Product added to cart successfully!");
+        } else {
+            // Handle errors
+            alert("Error adding product to cart. Please try again later.");
         }
-    } else {
-        if (!isVisible) {
-            firstDiv.style.display = "block";
-            isVisible = true;
+    };
+    xhr.send(formData);
+}
+
+function loadCart() {
+    fetch("/get_cart/")
+        .then((response) => response.json())
+        .then((data) => {
+            // Update the cart display on the page
+            // For example, you can append the cart data to a <div> element
+            console.log(data.html);
+            document.querySelector(".checkoutlists").innerHTML = data.html;
+        })
+        .catch((error) => {
+            console.error("Error loading cart:", error);
+        });
+}
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+        var cookies = document.cookie.split(";");
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === name + "=") {
+                cookieValue = decodeURIComponent(
+                    cookie.substring(name.length + 1)
+                );
+                break;
+            }
         }
     }
-});
+    return cookieValue;
+}

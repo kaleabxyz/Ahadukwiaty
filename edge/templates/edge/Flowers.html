@@ -42,20 +42,27 @@
         <div class="flowergrid">
             {% for flower in flowers %}
                 <div class="hits">
-                    <a href={% url "products" %}><img src="/edge/media/{{flower.image}}" /></a>
+                    <a href={% url "products" %}>
+                        <div class="flower_img">
+                            <img src="/edge/media/{{flower.image}}" />
+                        </div>
+                    </a>
                     <h3>{{ flower.name }}</h3>
-                    <h4>Bouquet mix</h4>
+                    <h4>{{flower.type}}</h4>
                     <h3 class="price" id="{{forloop.counter}}">{{flower.price_s}} zi - {% if flower.price_xll %} {{ flower.price_xll }} {% else %} {{ flower.price_xl }} {% endif %} zi</h3>
                     <div class="size">
-                        {% if flower.price_s %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_s}}, this.id)">S</div> {% else %} <div></div> {% endif %}
-                        {% if flower.price_m %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_m}}, this.id)">M</div> {% else %} <div></div> {% endif %}
-                        {% if flower.price_l %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_l}}, this.id)">L</div> {% else %} <div></div> {% endif %}
-                        {% if flower.price_xl %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xl}}, this.id)">XL</div> {% else %} <div></div> {% endif %}
-                        {% if flower.price_xll %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xll}}, this.id)">XXL</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_s %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_s}}, this.id, 'S')">S</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_m %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_m}}, this.id, 'M')">M</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_l %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_l}}, this.id, 'L')">L</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xl %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xl}}, this.id, 'XL')">XL</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xll %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xll}}, this.id, 'XXL')">XXL</div> {% else %} <div></div> {% endif %}
                     </div>
-                    <button aria-expanded="false" class="addtocart">
-                        Add To Cart
-                    </button>
+                    <form id="add-to-cart-form-{{ flower.id }}">
+                        {% csrf_token %}
+                        <input type="hidden" name="flower_id" value="{{ flower.id }}">
+                        <input type="hidden" name="flower_size" id="flower_size_input_{{forloop.counter}}" value="M">
+                        <button onclick="addToCart({{ flower.id }})" aria-expanded="false" class="addtocart" type="button">Add to Cart</button>
+                    </form>
                 </div>
             {% endfor %}
         </div>

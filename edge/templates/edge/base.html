@@ -48,7 +48,47 @@
                 />
                 <a href={% url "wishlist" %}>
                 <img src="{% static 'edge/images/heart-svgrepo-com.svg' %}" /></a>
-               <a> <img src="{% static 'edge/images/basket-svgrepo-com.svg' %}" /></a>
+               <a onclick="loadCart()"> <img src="{% static 'edge/images/basket-svgrepo-com.svg' %}" /></a>
+            </div>
+        </div>
+        <div class="checkout" aria-expanded="false">
+            <div>
+                <div class="row">
+                    <h2>Shopping Cart</h2>
+                    <a href="" onclick="hide()">
+                        <svg
+                            height="1vw"
+                            viewBox="-0.5 0 25 25"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M3 21.32L21 3.32001"
+                                stroke="#000000"
+                                stroke-width="3.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M3 3.32001L21 21.32"
+                                stroke="#000000"
+                                stroke-width="3.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </a>
+                </div>
+                <div class="checkoutlists">
+                    
+                </div>
+            </div>
+            <div class="subtotal">
+                <div class="row">
+                    <h2>Subtotal:</h2>
+                    <h2>647,00 zł</h2>
+                </div>
+                <button>Checkout</button>
             </div>
         </div>
         {% block content %}{% endblock content %}
