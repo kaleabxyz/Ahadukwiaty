@@ -57,7 +57,34 @@ function addToCart(productId) {
     xhr.send(formData);
 }
 
+function removeCart(flower_id, flower_size) {
+    console.log(flower_size);
+    fetch("/remove_from_cart/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": getCookie("csrftoken"),
+        },
+        body: JSON.stringify({
+            flower_id: flower_id,
+            flower_size: flower_size,
+        }),
+    })
+        .then((response) => {
+            if (response.ok) {
+                loadCart();
+            } else {
+                // Handle errors or display a message to the user
+                console.error("Error removing product from cart");
+            }
+        })
+        .catch((error) => {
+            console.error("Error removing product from cart:", error);
+        });
+}
+
 function loadCart() {
+    panel.setAttribute("aria-expanded", true);
     fetch("/get_cart/")
         .then((response) => response.json())
         .then((data) => {
