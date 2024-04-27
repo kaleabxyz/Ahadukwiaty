@@ -205,7 +205,7 @@ body {
         transform: scale(0);
         background: hsl(339, 69%, 73%);
     }
-    
+
     100% {
         transform: scale(1);
         background: hsl(339, 69%, 73%);
@@ -515,6 +515,10 @@ body {
 }
 .hits h4 {
     font-weight: 100;
+}
+.hits img {
+    width: 20rem;
+    height: 20rem;
 }
 .size {
     display: flex;
@@ -1252,11 +1256,11 @@ body {
     width: clamp(1rem, 16vw, 20vw);
 }
 .addtocart {
-  padding: 0.7rem;
-  font-size: clamp(0.5rem, 0.8vw, 2rem);
-  background: #cf4784;
-  color: white;
-  border: none;
+    padding: 0.7rem;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
+    background: #cf4784;
+    color: white;
+    border: none;
 }
 .checkout {
     position: fixed;

@@ -13,8 +13,8 @@ function showbtn(index, btn, id) {
     var price = document.querySelectorAll(".price");
     var size_btn = document.getElementById(id);
     var size_btns = document.querySelectorAll(".small");
-    console.log(element);
     size_btns.forEach((element) => {
+        console.log(element);
         if (index * 10 < element.id && element.id < (index + 1) * 10) {
             element.classList.remove("border");
         }
