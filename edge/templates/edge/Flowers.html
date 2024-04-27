@@ -1,4 +1,4 @@
-{% extends 'edge/base.html' %} {% block content %} {% load static %}
+{% extends 'edge/base.html' %} {% block content %} {% load static %}{% load custom_filters %}
 <div class="flowermain">
     <div class="search">
         <div class="searcher">
@@ -27,33 +27,31 @@
         <h1>Flowers</h1>
         <div class="top">
             <p>Showing 1-12 of 54 results</p>
-            <div class="flowerdropdown">
-                <p id="flowerdropdowncontent " onclick="drop()">
-                    Default sorting
-                </p>
-                <div class="flowerdropdowncontent">
-                    <a href="#1">Default sorting</a>
-                    <a href="#1">Sort by popularity</a>
-                    <a href="#1">Sort by average rating</a>
-                    <a href="#1">Sort by latest</a>
-                    <a href="#1">Sort by price:low to high</a>
-                    <a href="#1">Sort by price:high to low</a>
+            <div id="po" class="flowerdropdown">
+                <p onclick="openpopup()">Default sorting</p>
+                <div id="popup" class="flowerdropdowncontent">
+                    <p>Default sorting</p>
+                    <p>Sort by popularity</p>
+                    <p>Sort by average rating</p>
+                    <p>Sort by latest</p>
+                    <p>Sort by price:low to high</p>
+                    <p>Sort by price:high to low</p>
                 </div>
             </div>
         </div>
         <div class="flowergrid">
             {% for flower in flowers %}
                 <div class="hits">
-                    <a href={% url "products" %}><img src="{% static 'edge/images/new.jpg' %}" /></a>
+                    <a href={% url "products" %}><img src="/edge/media/{{flower.image}}" /></a>
                     <h3>{{ flower.name }}</h3>
                     <h4>Bouquet mix</h4>
-                    <h3>{{flower.price_s}} zi - {% if flower.price_xll %} {{ flower.price_xll }} {% else %} {{ flower.price_xl }} {% endif %} zi</h3>
+                    <h3 class="price" id="{{forloop.counter}}">{{flower.price_s}} zi - {% if flower.price_xll %} {{ flower.price_xll }} {% else %} {{ flower.price_xl }} {% endif %} zi</h3>
                     <div class="size">
-                        {% if flower.price_s %} <div class="small" onclick="showbtn(1)">S</div> {% else %} <div></div> {% endif %}
-                        {% if flower.price_m %} <div class="small" onclick="showbtn(1)">M</div> {% else %} <div></div> {% endif %}
-                        {% if flower.price_l %} <div class="small" onclick="showbtn(1)">L</div> {% else %} <div></div> {% endif %}
-                        {% if flower.price_xl %} <div class="small" onclick="showbtn(1)">XL</div> {% else %} <div></div> {% endif %}
-                        {% if flower.price_xll %} <div class="small" onclick="showbtn(1)">XXL</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_s %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_s}}, this.id)">S</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_m %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_m}}, this.id)">M</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_l %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_l}}, this.id)">L</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xl %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xl}}, this.id)">XL</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xll %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xll}}, this.id)">XXL</div> {% else %} <div></div> {% endif %}
                     </div>
                     <button aria-expanded="false" class="addtocart">
                         Add To Cart

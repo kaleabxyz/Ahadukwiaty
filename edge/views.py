@@ -7,6 +7,8 @@ def index(request):
 
 def flowers(request):
     flowers = Flower.objects.all()
+    for flower in flowers:
+        print(flower.image)
     return render(request, 'edge/Flowers.html', {'flowers': flowers})
 
 def aboutus(request):

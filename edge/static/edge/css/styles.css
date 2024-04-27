@@ -14,6 +14,7 @@ body {
 *[aria-expanded="false"] {
     visibility: hidden;
 }
+
 .navbar {
     height: 8.5vh;
     display: flex;
@@ -204,7 +205,7 @@ body {
         transform: scale(0);
         background: hsl(339, 69%, 73%);
     }
-    
+
     100% {
         transform: scale(1);
         background: hsl(339, 69%, 73%);
@@ -515,6 +516,10 @@ body {
 .hits h4 {
     font-weight: 100;
 }
+.hits img {
+    width: 20rem;
+    height: 20rem;
+}
 .size {
     display: flex;
     gap: 0.5rem;
@@ -524,6 +529,9 @@ body {
     border: 0.1px solid #dfdfdf;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+}
+.border {
+    border: 1px solid black;
 }
 .review h1 {
     font-size: 2.5rem;
@@ -711,12 +719,11 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
-.flowerdropdowncontent {
-    width: 14rem;
+#popup {
+    width: 12rem;
 
-    top: 60vh;
-
-    visibility: hidden;
+    top: 80vh;
+    display: block;
     background-color: white;
     position: absolute;
     z-index: 100;
@@ -725,19 +732,25 @@ body {
     border-top-style: solid;
     flex-direction: column;
     padding-bottom: 1rem;
+    cursor: pointer;
 }
-.drop-flowerdropdowncontent {
-    visibility: visible;
-}
-.flowerdropdown {
+#popup .flowerdropdown {
     /* height: 10vh; */
     display: flex;
     align-items: center;
+}
+#popup p {
+    margin-left: 1rem;
+}
+
+#popup p:hover {
+    color: #f83e91;
 }
 .flowerdropdown p {
     text-decoration: none;
     font-weight: 150;
     color: black;
+    cursor: pointer;
 }
 .flowerdropdowncontent a {
     margin-top: 1rem;
@@ -1149,14 +1162,21 @@ body {
 #review {
     margin-left: 2rem;
 }
+#reviewpart {
+    display: none;
+}
 .descriptionreview h5 {
     margin-top: 1rem;
     font-size: clamp(0.5rem, 1rem, 2rem);
     font-weight: 500;
 }
 
-#review {
-    border-top: 3px solid black;
+#description {
+    border-top: 1px solid black;
+}
+#descriptionpart p {
+    margin-bottom: 2rem;
+    font-weight: 300;
 }
 .wide h4 {
     width: 20ch;
@@ -1236,11 +1256,11 @@ body {
     width: clamp(1rem, 16vw, 20vw);
 }
 .addtocart {
-  padding: 0.7rem;
-  font-size: clamp(0.5rem, 0.8vw, 2rem);
-  background: #cf4784;
-  color: white;
-  border: none;
+    padding: 0.7rem;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
+    background: #cf4784;
+    color: white;
+    border: none;
 }
 .checkout {
     position: fixed;

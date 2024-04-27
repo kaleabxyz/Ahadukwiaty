@@ -119,7 +119,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR/'static/'
 
-MEDIA_URL = 'media/'
+MEDIA_URL = 'edge/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'edge/media')
 
 # Default primary key field type
