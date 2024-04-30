@@ -90,7 +90,8 @@ function loadCart() {
         .then((data) => {
             // Update the cart display on the page
             // For example, you can append the cart data to a <div> element
-            console.log(data.html);
+            console.log(data.total_price);
+            document.getElementById("total_price").innerHTML = data.total_price;
             document.querySelector(".checkoutlists").innerHTML = data.html;
         })
         .catch((error) => {

@@ -517,7 +517,7 @@ body {
     font-weight: 100;
 }
 .hits img {
-    width: 20vw;
+    width: clamp(14rem, 15vw, 20rem);
     height: auto;
 }
 .hits .flower_img {
@@ -1358,6 +1358,7 @@ body {
     background: #cf4784;
     color: white;
     border: none;
+    width: 100%;
 }
 .checkoutmain {
     padding-inline: clamp(16rem, 16vw, 20rem);
