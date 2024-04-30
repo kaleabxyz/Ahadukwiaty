@@ -160,7 +160,7 @@ body {
 }
 
 .hero {
-    width: 33%;
+    height: clamp(5rem, 5vw, 10rem);
     position: relative;
     display: flex;
     flex-direction: column;

@@ -24,7 +24,9 @@ body {
     justify-content: space-evenly;
     align-items: center;
 }
-
+.navbar a {
+    font-size: clamp(0.6rem, 1vw, 2rem);
+}
 .navcontents {
     display: flex;
     /* margin-left: 26rem; */
@@ -119,14 +121,13 @@ body {
     display: flex;
 }
 .icons {
-    width: 10rem;
+    width: clamp(1rem, 10vw, 11rem);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: clamp(0.6rem, 1vw, 2vw);
 }
 .icons img {
-    width: 2rem;
-    height: 1.5rem;
+    height: clamp(1rem, 1.5vw, 2rem);
     cursor: pointer;
 }
 .main {
@@ -160,11 +161,11 @@ body {
 }
 
 .hero {
-    width: 33%;
+    width: clamp(32rem, 33vw, 37rem);
     position: relative;
     display: flex;
     flex-direction: column;
-    margin-left: 5rem;
+    margin-left: clamp(1rem, 5rem, 6vw);
     margin-right: 10%;
 }
 .flower {
@@ -175,12 +176,14 @@ body {
 
 .flower img {
     width: 100%;
+    margin-top: clamp(1rem, 1vw, 2rem);
+    margin-left: clamp(-0.5rem, -1vw, -2rem);
 }
 .flower::after,
 .flower::before {
     content: "";
-    width: 84%;
-    height: 84%;
+    width: clamp(10rem, 34vw, 51rem);
+    height: clamp(9rem, 30vw, 51rem);
     position: absolute;
 
     top: 9%;
@@ -246,28 +249,31 @@ body {
 .hero h1 {
     font-family: serif;
     color: #470d38;
-    font-size: 5rem;
+    font-size: clamp(1rem, 4vw, 6rem);
 
-    margin-bottom: 4rem;
-    margin-top: 6rem;
+    margin-bottom: clamp(1rem, 4vw, 5rem);
+    margin-top: clamp(1rem, 6vw, 7rem);
 }
 .hero p {
     color: rgba(0, 0, 0, 0.541);
-    font-size: 1.4rem;
+    font-size: clamp(0.5rem, 1.5vw, 2rem);
     text-align: left;
     font-weight: 200;
     margin-bottom: 4rem;
 }
 .options {
-    width: 62%;
+    /* width: 62%; */
+    width: clamp(20rem, 70vw, 70rem);
+
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     margin-bottom: 5rem;
 }
 .bouquetsmix {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 20%;
+    margin-block: clamp(0rem, 1vw, 3rem);
+
+    width: clamp(9rem, 9vw, 20rem);
 
     background-image: url("../images/bouquetsmix.jpg");
     background-repeat: no-repeat;
@@ -308,9 +314,9 @@ body {
     transform: translateY(-2rem);
 }
 .bouquetsofroses {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 20%;
+    margin-block: clamp(0rem, 1vw, 3rem);
+    width: clamp(9rem, 9vw, 20rem);
+
     background-image: url("../images/bouquetsofroses.jpg");
     background-repeat: no-repeat;
     background-color: black;
@@ -321,9 +327,8 @@ body {
     padding-bottom: 10rem;
 }
 .flowercomp {
-    margin-top: 2%;
-    margin-bottom: 2%;
-    width: 20%;
+    margin-block: clamp(0rem, 1vw, 3rem);
+    width: clamp(9rem, 9vw, 20rem);
 
     background-image: url("../images/flowercomposition.jpg");
     background-repeat: no-repeat;
@@ -379,28 +384,28 @@ body {
     color: white;
 }
 .monobouquets {
-    width: 20%;
+    width: clamp(9rem, 9vw, 20rem);
 
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: clamp(1rem, 1vw, 3rem);
+    margin-right: clamp(0rem, 1vw, 3rem);
     background-image: url("../images/monobouquets.jpg");
     background-color: black;
     background-repeat: no-repeat;
-    padding-top: 12rem;
-    padding-bottom: 12rem;
+    padding-top: 11rem;
+    padding-bottom: 11rem;
     position: relative;
     z-index: 1;
 }
 .tulips {
-    width: 20%;
+    width: clamp(9rem, 9vw, 20rem);
 
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin-left: clamp(1rem, 1vw, 3rem);
+    margin-right: clamp(0rem, 1vw, 3rem);
     background-image: url("../images/calaful-prints-gMLfNd3iums-unsplash.jpg");
     background-color: black;
     background-repeat: no-repeat;
-    padding-top: 12rem;
-    padding-bottom: 12rem;
+    padding-top: 11rem;
+    padding-bottom: 11rem;
     position: relative;
     z-index: 1;
 }
@@ -486,11 +491,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: clamp(2rem, 5vw, 6rem);
 }
 .discriptions img {
-    width: 4rem;
-    height: 4rem;
+    width: clamp(3.5rem, 4vw, 5rem);
+}
+.discriptions h4 {
+    font-size: clamp(0.5rem, 1vw, 2rem);
 }
 .discription {
     display: flex;
@@ -504,12 +511,13 @@ body {
 .grid {
     display: grid;
     gap: 4rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 .hits {
     padding-top: 3rem;
     margin-bottom: 3rem;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 0.5rem;
 }
@@ -517,12 +525,12 @@ body {
     font-weight: 100;
 }
 .hits img {
-    width: 20vw;
+    width: clamp(14rem, 15vw, 20rem);
     height: auto;
 }
 .hits .flower_img {
-    width: 18vw;
-    height: 18vw;
+    height: clamp(14rem, 15vw, 20rem);
+
     overflow: hidden;
 }
 .size {
@@ -551,7 +559,7 @@ body {
     flex-grow: 1;
     margin-left: auto;
     margin-right: auto;
-    padding-inline: 12rem;
+    padding-inline: clamp(3rem, 12vw, 14rem);
 }
 .reviews img {
     width: 2rem;
@@ -562,7 +570,7 @@ body {
 .reviewcontainer {
     display: flex;
 
-    padding-inline: 8rem;
+    padding-inline: clamp(3rem, 8vw, 9rem);
     padding-top: 2rem;
     flex-grow: 1;
     margin-bottom: 5rem;
@@ -593,7 +601,7 @@ body {
 }
 .footer {
     background-color: #140610;
-    padding-inline: 20rem;
+    padding-inline: clamp(1rem, 20vw, 21rem);
     padding-block: 5rem;
     display: flex;
     justify-content: space-between;

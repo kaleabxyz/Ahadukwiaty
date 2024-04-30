@@ -76,6 +76,7 @@ def get_cart(request):
     # For simplicity, I'll just return the product IDs as JSON
     print(cart)
     cart_html = ''
+    cart_total_price = 0
     if cart:
         for flower in cart:
             cart_html += '<div class="checkoutlist">'
@@ -90,7 +91,18 @@ def get_cart(request):
             cart_html += '</div> <div class="checksecond"><h2>Size:</h2>'
             cart_html += '<h2>{0}</h2></div><div class="row2"><button class="minus">&#8210;</button><input type="text" placeholder="1" /><button class="plus">&plus;</button></div>'.format(flower_size)
             cart_html += '</div></div>'
-    return JsonResponse({'html': cart_html})
+            if flower_size == 'S':
+                flower_price = flower.price_s
+            elif flower_size == 'M':
+                flower_price = flower.price_m
+            elif flower_size == 'L':
+                flower_price = flower.price_l
+            elif flower_size == 'XL':
+                flower_price = flower.price_xl
+            elif flower_size == 'XXL':
+                flower_price = flower.price_xxl
+            cart_total_price += flower_price
+    return JsonResponse({'html': cart_html, 'total_price': cart_total_price})
 
 def checkout(request):
     cart = request.session.get('cart', [])
