@@ -267,20 +267,21 @@ body {
 
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     flex-direction: row;
     margin-bottom: 5rem;
 }
 .bouquetsmix {
-    margin-block: clamp(0rem, 1vw, 3rem);
+    margin-block: clamp(1rem, 1.5vw, 3rem);
 
     width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 2.5vw, 10rem);
+    padding-block: clamp(8rem, 7.5vw, 13rem);
 
     background-image: url("../images/bouquetsmix.jpg");
     background-repeat: no-repeat;
     background-color: black;
 
-    padding-top: 11rem;
-    padding-bottom: 11rem;
     position: relative;
     z-index: 1;
 }
@@ -314,8 +315,10 @@ body {
     transform: translateY(-2rem);
 }
 .bouquetsofroses {
-    margin-block: clamp(0rem, 1vw, 3rem);
+    margin-block: clamp(1rem, 1.5vw, 3rem);
     width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 2.5vw, 10rem);
+    padding-block: clamp(8rem, 7.5vw, 13rem);
 
     background-image: url("../images/bouquetsofroses.jpg");
     background-repeat: no-repeat;
@@ -323,12 +326,14 @@ body {
     position: relative;
     z-index: 1;
 
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    /* padding-top: 10rem;
+    padding-bottom: 10rem; */
 }
 .flowercomp {
-    margin-block: clamp(0rem, 1vw, 3rem);
+    margin-block: clamp(1rem, 1.5vw, 3rem);
     width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 2.5vw, 10rem);
+    padding-block: clamp(8rem, 7.5vw, 13rem);
 
     background-image: url("../images/flowercomposition.jpg");
     background-repeat: no-repeat;
@@ -336,8 +341,8 @@ body {
     position: relative;
     z-index: 1;
 
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    /* padding-top: 10rem;
+    padding-bottom: 10rem; */
 }
 .container1 {
     position: relative;
@@ -385,27 +390,33 @@ body {
 }
 .monobouquets {
     width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 1vw, 10rem);
+    padding-block: clamp(8rem, 9vw, 13rem);
 
+    margin-block: clamp(1rem, 0vw, 3rem);
     margin-left: clamp(1rem, 1vw, 3rem);
     margin-right: clamp(0rem, 1vw, 3rem);
     background-image: url("../images/monobouquets.jpg");
     background-color: black;
     background-repeat: no-repeat;
-    padding-top: 11rem;
-    padding-bottom: 11rem;
+    /* padding-top: 11rem;
+    padding-bottom: 11rem; */
     position: relative;
     z-index: 1;
 }
 .tulips {
     width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 3vw, 10rem);
+    padding-block: clamp(8rem, 8vw, 13rem);
 
+    margin-block: clamp(1rem, 1vw, 3rem);
     margin-left: clamp(1rem, 1vw, 3rem);
     margin-right: clamp(0rem, 1vw, 3rem);
     background-image: url("../images/calaful-prints-gMLfNd3iums-unsplash.jpg");
     background-color: black;
     background-repeat: no-repeat;
-    padding-top: 11rem;
-    padding-bottom: 11rem;
+    /* padding-top: 11rem;
+    padding-bottom: 11rem; */
     position: relative;
     z-index: 1;
 }
@@ -489,15 +500,16 @@ body {
     margin-bottom: 5rem;
     background-color: #f8f4f6;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: clamp(2rem, 5vw, 6rem);
+    gap: clamp(0.1rem, 5vw, 6rem);
 }
 .discriptions img {
-    width: clamp(3.5rem, 4vw, 5rem);
+    width: clamp(3rem, 4vw, 5rem);
 }
 .discriptions h4 {
-    font-size: clamp(0.5rem, 1vw, 2rem);
+    font-size: clamp(0.4rem, 1vw, 2rem);
 }
 .discription {
     display: flex;
@@ -569,7 +581,7 @@ body {
 }
 .reviewcontainer {
     display: flex;
-
+    flex-wrap: wrap;
     padding-inline: clamp(3rem, 8vw, 9rem);
     padding-top: 2rem;
     flex-grow: 1;
@@ -601,7 +613,7 @@ body {
 }
 .footer {
     background-color: #140610;
-    padding-inline: clamp(1rem, 20vw, 21rem);
+    padding-inline: clamp(0rem, 20vw, 21rem);
     padding-block: 5rem;
     display: flex;
     justify-content: space-between;
@@ -611,12 +623,14 @@ body {
 }
 .adress h2 {
     color: white;
+    font-size: clamp(1rem, 2vw, 3rem);
 }
 .adress h4 {
     color: white;
     font-weight: 200;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    font-size: clamp(0.5rem, 1vw, 2rem);
 }
 .shop {
     margin-top: 1.5rem;
@@ -633,6 +647,7 @@ body {
     font-weight: 150;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .join h4 {
     color: white;
@@ -640,6 +655,7 @@ body {
     font-weight: 150;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .join img {
     width: 1.5rem;
@@ -656,26 +672,27 @@ body {
     font-size: 1rem;
     font-weight: 150;
     margin: 0;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .flowermain {
-    padding-inline: 10rem;
-    padding-block: 6rem;
+    padding-inline: clamp(1rem, 10vw, 11rem);
+    padding-block: clamp(1rem, 6vw, 7rem);
     background: #f8f4f6;
     display: flex;
     flex-direction: row;
 }
 .search {
-    margin-top: 2rem;
-    margin-right: 4rem;
+    margin-top: clamp(1rem, 2vw, 3rem);
+    margin-right: clamp(1rem, 4vw, 5rem);
     background: #f8f4f6;
 }
 
 .search-input {
-    height: 1.7vw;
+    height: clamp(1rem, 2vw, 3rem);
     font-family: serif;
     font-size: clamp(0.5rem, 0.9vw, 1.2rem);
     padding-left: 0.3vw;
-    width: clamp(15rem, 10vw, 27rem);
+    width: clamp(7rem, 10vw, 27rem);
     border: 2px solid #dee2e6;
 
     color: #212529bf;
@@ -1523,4 +1540,28 @@ body {
 .column .row2 .check {
     margin-top: 0.3rem;
     border-radius: 100%;
+}
+@media (max-width: 50em) {
+    .reviewcontainer .review {
+        display: none;
+        width: 25ch;
+    }
+    .reviewcontainer .reviewp {
+        display: block;
+    }
+    .reviewcontainer > img {
+        top: 6rem;
+        margin-inline-start: -2rem;
+        margin-inline-end: -2rem;
+        height: 1.5rem;
+    }
+    .footer {
+        padding-inline: 1rem;
+    }
+    .hits {
+        padding-block: 0rem;
+    }
+    .grid {
+        gap: 0rem;
+    }
 }
