@@ -10,7 +10,10 @@ from django.shortcuts import redirect
 
 # Create your views here.
 def index(request):
-    return render(request, 'edge/index.html')
+    flowers = Flower.objects.all()
+    for flower in flowers:
+        print(flower.image)
+    return render(request, 'edge/index.html', {'flowers': flowers})
 
 def flowers(request):
     flowers = Flower.objects.all()
@@ -30,7 +33,8 @@ def delivery(request):
 def wishlist(request):
     return render(request, 'edge/wishlist.html')
 
-def products(request):
+def products(request, id):
+    print(id)
     return render(request, "edge/products.html")
 
 def add_to_cart(request):
