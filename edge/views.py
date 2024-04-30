@@ -34,8 +34,8 @@ def wishlist(request):
     return render(request, 'edge/wishlist.html')
 
 def products(request, id):
-    print(id)
-    return render(request, "edge/products.html")
+    flower = Flower.objects.get(pk=id)
+    return render(request, "edge/products.html", {'flower':  flower})
 
 def add_to_cart(request):
     if request.method == 'POST':

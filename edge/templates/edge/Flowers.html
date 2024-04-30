@@ -42,7 +42,7 @@
         <div class="flowergrid">
             {% for flower in flowers %}
                 <div class="hits">
-                    <a href={% url "products" id="{{flower.id}}" %}>
+                    <a href={% url "products" id=flower.id %}>
                         <div class="flower_img">
                             <img src="/edge/media/{{flower.image}}" />
                         </div>
