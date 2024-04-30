@@ -1,0 +1,202 @@
+{% extends 'edge/base.html' %} {% block content %} {% load static %}
+<div class="main">
+    <div class="herosection">
+        <div class="hero">
+            <h1>
+                Beautiful <br />
+                &ensp; &ensp; & Gorgeous Flowers
+            </h1>
+            <p>
+                Accessess our extraordinary collections of flowers with step
+                by-step guidance at every stage. Explore flowers that transform
+                your creative design into a floral masterpiece.
+            </p>
+        </div>
+        <div class="flower">
+            <img id="img" class="fl1" src="{% static 'edge/images/f.png' %}" />
+        </div>
+    </div>
+    <div class="options">
+        <div class="bouquetsmix">
+            <div class="container1">
+                <h3>Bouquets Mix</h3>
+            </div>
+        </div>
+        <div class="monobouquets">
+            <div class="container2">
+                <h3>Mono Bouquets</h3>
+            </div>
+        </div>
+        <div class="bouquetsofroses">
+            <div class="container3">
+                <h3>Bouquets of Roses</h3>
+            </div>
+        </div>
+        <div class="tulips">
+            <div class="container4">
+                <h3>Tulips</h3>
+            </div>
+        </div>
+        <div class="flowercomp">
+            <div class="container5">
+                <h3>Flower Cmpositions</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="discriptions">
+        <div class="discription">
+            <img src="{% static 'edge/images/disc1.png' %}" />
+            <h4>Delivery in krakow 24/7</h4>
+        </div>
+        <div class="discription">
+            <img src="{% static 'edge/images/disc2.png' %}" />
+            <h4>Only fresh flowers</h4>
+        </div>
+        <div class="discription">
+            <img src="{% static 'edge/images/disc3.png' %}" />
+            <h3>Quick order processing</h3>
+        </div>
+        <div class="discription">
+            <img src="{% static 'edge/images/disc4.png' %}" />
+            <h3>Indivdual approach to each client</h3>
+        </div>
+    </div>
+
+    <div class="sales">
+        <h1>Sales hits</h1>
+        <div class="grid">
+            <div class="hits">
+                <img src="{% static 'edge/images/new.jpg' %}" />
+                <h3>Bouquet "pink mix"</h3>
+                <h4>Bouquet mix</h4>
+                <h3>150,00 zi - 535,00 zi</h3>
+                <div class="size">
+                    <div class="small" onclick="showbtn(1)">S</div>
+                    <div class="small" onclick="showbtn(1)">M</div>
+                    <div class="small" onclick="showbtn(1)">L</div>
+                    <div class="small" onclick="showbtn(1)">XL</div>
+                    <div class="small" onclick="showbtn(1)">XXL</div>
+                </div>
+                <button aria-expanded="false" class="addtocart">
+                            Add To Cart
+                </button>
+            </div>
+            <div class="hits">
+                <img src="{% static 'edge/images/flower2.jpg' %}" />
+                <h3>Bouquet "pink mix"</h3>
+                <h4>Bouquet mix</h4>
+                <h3>150,00 zi - 535,00 zi</h3>
+                <div class="size">
+                    <div class="small" onclick="showbtn(2)">S</div>
+                    <div class="small" onclick="showbtn(2)">M</div>
+                    <div class="small" onclick="showbtn(2)">L</div>
+                    <div class="small" onclick="showbtn(2)">XL</div>
+                    <div class="small" onclick="showbtn(2)">XXL</div>
+                </div>
+                <button aria-expanded="false" class="addtocart">
+                            Add To Cart
+                </button>
+            </div>
+            <div class="hits">
+                <img src="{% static 'edge/images/flower3.jpg' %}" />
+                <h3>Bouquet "pink mix"</h3>
+                <h4>Bouquet mix</h4>
+                <h3>150,00 zi - 535,00 zi</h3>
+                <div class="size">
+                    <div class="small" onclick="showbtn(3)">S</div>
+                    <div class="small" onclick="showbtn(3)">M</div>
+                    <div class="small" onclick="showbtn(3)">L</div>
+                    <div class="small" onclick="showbtn(3)">XL</div>
+                    <div class="small" onclick="showbtn(3)">XXL</div>
+                </div>
+                <button aria-expanded="false" class="addtocart">
+                            Add To Cart
+                </button>
+            </div>
+            <div class="hits">
+                <img src="{% static 'edge/images/new.jpg' %}" />
+                <h3>Bouquet "pink mix"</h3>
+                <h4>Bouquet mix</h4>
+                <h3>150,00 zi - 535,00 zi</h3>
+                <div class="size">
+                    <div class="small" onclick="showbtn(4)">S</div>
+                    <div class="small" onclick="showbtn(4)">M</div>
+                    <div class="small" onclick="showbtn(4)">L</div>
+                    <div class="small" onclick="showbtn(4)">XL</div>
+                    <div class="small" onclick="showbtn(4)">XXL</div>
+                </div>
+                <button aria-expanded="false" class="addtocart">
+                            Add To Cart
+                </button>
+            </div>
+            <div class="hits">
+                <img src="{% static 'edge/images/flower4.jpg' %}" />
+                <h3>Bouquet "pink mix"</h3>
+                <h4>Bouquet mix</h4>
+                <h3>150,00 zi - 535,00 zi</h3>
+                <div class="size">
+                    <div class="small" onclick="showbtn(5)">S</div>
+                    <div class="small" onclick="showbtn(5)">M</div>
+                    <div class="small" onclick="showbtn(5)">L</div>
+                    <div class="small" onclick="showbtn(5)">XL</div>
+                    <div class="small" onclick="showbtn(5)">XXL</div>
+                </div>
+                <button aria-expanded="false" class="addtocart">
+                            Add To Cart
+                </button>
+            </div>
+            <div class="hits">
+                <img src="{% static 'edge/images/flower5.jpg' %}" />
+                <h3>Bouquet "pink mix"</h3>
+                <h4>Bouquet mix</h4>
+                <h3>150,00 zi - 535,00 zi</h3>
+                <div class="size">
+                    <div class="small" onclick="showbtn(6)">S</div>
+                    <div class="small" onclick="showbtn(6)">M</div>
+                    <div class="small" onclick="showbtn(6)">L</div>
+                    <div class="small" onclick="showbtn(6)">XL</div>
+                    <div class="small" onclick="showbtn(6)">XXL</div>
+                </div>
+                <button aria-expanded="false" class="addtocart">
+                            Add To Cart
+                </button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h1>Reviews</h1>
+    </div>
+    <div class="line"></div>
+    <div class="reviewmain">
+        <div class="reviews">
+            <img src="{% static 'edge/images/quoteleft.svg' %}" />
+            <img src="{% static 'edge/images/quoteleft.svg' %}" />
+        </div>
+        <div class="reviewcontainer">
+            <img src="{% static 'edge/images/arrow.svg' %}" />
+            <div class="review">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Doloremque tempore, nisi accusamus, ratione illo architecto
+                    deserunt quis aperiam saepe sed inventore fuga voluptas
+                    magni dignissimos ipsam? Et aperiam fuga nesciunt.
+                </p>
+                <h4>James bond</h4>
+                <h5>30.1.2024</h5>
+            </div>
+            <div class="review">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Doloremque tempore, nisi accusamus, ratione illo architecto
+                    deserunt quis aperiam saepe sed inventore fuga voluptas
+                    magni dignissimos ipsam? Et aperiam fuga nesciunt.
+                </p>
+                <h4>James bond</h4>
+                <h5>30.1.2024</h5>
+            </div>
+            <img src="{% static 'edge/images/arrow2.svg' %}" />
+        </div>
+    </div>
+</div>
+{% endblock %}

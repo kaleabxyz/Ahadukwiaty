@@ -1,0 +1,31 @@
+{% extends 'edge/base.html' %} {% block content %} {% load static %}
+<div class="wishlist">
+    <div class="delivery">
+        <h2>Wish List</h2>
+        <div class="deliverycontent">
+            <div class="productname">
+                <h3>Product Name</h3>
+                <div class="name">
+                    <img src="{% static "edge/images/wish.jpg" %}" />
+                    <h3>Bukiet "Crimson tulips</h3>
+                </div>
+            </div>
+            <div class="unitprice">
+                <h3>Unit Price</h3>
+                <div class="name">
+                    <h3>175,00 zł - 707,00 zł</h3>
+                </div>
+            </div>
+        </div>
+        <div class="share">
+            <h3>Share on</h3>
+            <img src="{% static 'edge/images/facebook-svgrepo-com.svg' %}" />
+            <img class="smaller" src="{% static 'edge/images/twitter-154-svgrepo-com.svg' %}" />
+            <img src="{% static 'edge/images/pintrest-svgrepo-com.svg' %}" />
+            <img src="{% static 'edge/images/whatsapp-svgrepo-com.svg' %}" />
+            <img class="smaller" src="{% static 'edge/images/copy-svgrepo-com.svg' %}" />
+            <img class="smaller" src="{% static 'edge/images/message-svgrepo-com.svg' %}" />
+        </div>
+    </div>
+</div>
+{% endblock %}

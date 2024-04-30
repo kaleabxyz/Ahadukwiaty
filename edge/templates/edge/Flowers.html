@@ -1,0 +1,88 @@
+{% extends 'edge/base.html' %} {% block content %} {% load static %}{% load custom_filters %}
+<div class="flowermain">
+    <div class="search">
+        <div class="searcher">
+            <input
+                class="search-input"
+                type="text"
+                placeholder="Search products..."
+            />
+            <button type="button" class="searchbtn">
+                <h2>Search</h2>
+            </button>
+        </div>
+        <div class="catagories">
+            <h2>Catagories</h2>
+            <p>Flowers</p>
+            <p class="second">Bouquets</p>
+            <p class="third">Bouquet smix</p>
+            <p class="third">Bouquet of roses</p>
+            <p class="third">MonoBouquets</p>
+            <p class="third">Tulips</p>
+            <p class="second">Flower compositions</p>
+        </div>
+    </div>
+    <div class="list">
+        <p>Home/Flowers</p>
+        <h1>Flowers</h1>
+        <div class="top">
+            <p>Showing 1-12 of 54 results</p>
+            <div id="po" class="flowerdropdown">
+                <p onclick="openpopup()">Default sorting</p>
+                <div id="popup" class="flowerdropdowncontent">
+                    <p>Default sorting</p>
+                    <p>Sort by popularity</p>
+                    <p>Sort by average rating</p>
+                    <p>Sort by latest</p>
+                    <p>Sort by price:low to high</p>
+                    <p>Sort by price:high to low</p>
+                </div>
+            </div>
+        </div>
+        <div class="flowergrid">
+            {% for flower in flowers %}
+                <div class="hits">
+                    <a href={% url "products" %}>
+                        <div class="flower_img">
+                            <img src="/edge/media/{{flower.image}}" />
+                        </div>
+                    </a>
+                    <h3>{{ flower.name }}</h3>
+                    <h4>{{flower.type}}</h4>
+                    <h3 class="price" id="{{forloop.counter}}">{{flower.price_s}} zi - {% if flower.price_xll %} {{ flower.price_xll }} {% else %} {{ flower.price_xl }} {% endif %} zi</h3>
+                    <div class="size">
+                        {% if flower.price_s %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_s}}, this.id, 'S')">S</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_m %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_m}}, this.id, 'M')">M</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_l %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_l}}, this.id, 'L')">L</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xl %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xl}}, this.id, 'XL')">XL</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xll %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xll}}, this.id, 'XXL')">XXL</div> {% else %} <div></div> {% endif %}
+                    </div>
+                    <form id="add-to-cart-form-{{ flower.id }}">
+                        {% csrf_token %}
+                        <input type="hidden" name="flower_id" value="{{ flower.id }}">
+                        <input type="hidden" name="flower_size" id="flower_size_input_{{forloop.counter}}" value="M">
+                        <button onclick="addToCart({{ flower.id }})" aria-expanded="false" class="addtocart" type="button">Add to Cart</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="pagecontainer">
+            <div class="page active">
+                <h3>1</h3>
+            </div>
+            <div class="page">
+                <h3>2</h3>
+            </div>
+            <div class="page">
+                <h3>3</h3>
+            </div>
+            <div class="page">
+                <h3>4</h3>
+            </div>
+            <div class="page">
+                <h3>&#8594;</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
