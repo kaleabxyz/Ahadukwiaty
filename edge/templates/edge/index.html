@@ -1,0 +1,131 @@
+{% extends 'edge/base.html' %} {% block content %} {% load static %} {% load custom_filters %}
+<div class="main">
+    <div class="herosection">
+        <div class="hero">
+            <h1>
+                Beautiful <br />
+                &ensp; &ensp; & Gorgeous Flowers
+            </h1>
+            <p>
+                Accessess our extraordinary collections of flowers with step
+                by-step guidance at every stage. Explore flowers that transform
+                your creative design into a floral masterpiece.
+            </p>
+        </div>
+        <div class="flower">
+            <img id="img" class="fl1" src="{% static 'edge/images/f.png' %}" />
+        </div>
+    </div>
+    <div class="options">
+        <div class="bouquetsmix">
+            <div class="container1">
+                <h3>Bouquets Mix</h3>
+            </div>
+        </div>
+        <div class="monobouquets">
+            <div class="container2">
+                <h3>Mono Bouquets</h3>
+            </div>
+        </div>
+        <div class="bouquetsofroses">
+            <div class="container3">
+                <h3>Bouquets of Roses</h3>
+            </div>
+        </div>
+        <div class="tulips">
+            <div class="container4">
+                <h3>Tulips</h3>
+            </div>
+        </div>
+        <div class="flowercomp">
+            <div class="container5">
+                <h3>Flower Cmpositions</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="discriptions">
+        <div class="discription">
+            <img src="{% static 'edge/images/disc1.png' %}" />
+            <h4>Delivery in krakow 24/7</h4>
+        </div>
+        <div class="discription">
+            <img src="{% static 'edge/images/disc2.png' %}" />
+            <h4>Only fresh flowers</h4>
+        </div>
+        <div class="discription">
+            <img src="{% static 'edge/images/disc3.png' %}" />
+            <h4>Quick order processing</h4>
+        </div>
+        <div class="discription">
+            <img src="{% static 'edge/images/disc4.png' %}" />
+            <h4>Indivdual approach to each client</h4>
+        </div>
+    </div>
+
+    <div class="sales">
+        <h1>Sales hits</h1>
+        <div class="grid">
+            {% for flower in flowers %}
+                <div class="hits">
+                    <a href={% url "products" id=flower.id %}>
+                        <div class="flower_img">
+                            <img src="/edge/media/{{flower.image}}" />
+                        </div>
+                    </a>
+                    <h3>{{ flower.name }}</h3>
+                    <h4>{{flower.type}}</h4>
+                    <h3 class="price" id="{{forloop.counter}}">{{flower.price_s}} zi - {% if flower.price_xll %} {{ flower.price_xll }} {% else %} {{ flower.price_xl }} {% endif %} zi</h3>
+                    <div class="size">
+                        {% if flower.price_s %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_s}}, this.id, 'S')">S</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_m %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_m}}, this.id, 'M')">M</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_l %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_l}}, this.id, 'L')">L</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xl %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xl}}, this.id, 'XL')">XL</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xll %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xll}}, this.id, 'XXL')">XXL</div> {% else %} <div></div> {% endif %}
+                    </div>
+                    <form id="add-to-cart-form-{{ flower.id }}">
+                        {% csrf_token %}
+                        <input type="hidden" name="flower_id" value="{{ flower.id }}">
+                        <input type="hidden" name="flower_size" id="flower_size_input_{{forloop.counter}}" value="M">
+                        <button onclick="addToCart({{ flower.id }})" aria-expanded="false" class="addtocart" type="button">Add to Cart</button>
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <h1>Reviews</h1>
+    </div>
+    <div class="line"></div>
+    <div class="reviewmain">
+        <div class="reviews">
+            <img src="{% static 'edge/images/quoteleft.svg' %}" />
+            <img src="{% static 'edge/images/quoteleft.svg' %}" />
+        </div>
+        <div class="reviewcontainer">
+            <img src="{% static 'edge/images/arrow.svg' %}" />
+            <div class="review">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Doloremque tempore, nisi accusamus, ratione illo architecto
+                    deserunt quis aperiam saepe sed inventore fuga voluptas
+                    magni dignissimos ipsam? Et aperiam fuga nesciunt.
+                </p>
+                <h4>James bond</h4>
+                <h5>30.1.2024</h5>
+            </div>
+            <div class="review">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Doloremque tempore, nisi accusamus, ratione illo architecto
+                    deserunt quis aperiam saepe sed inventore fuga voluptas
+                    magni dignissimos ipsam? Et aperiam fuga nesciunt.
+                </p>
+                <h4>James bond</h4>
+                <h5>30.1.2024</h5>
+            </div>
+            <img src="{% static 'edge/images/arrow2.svg' %}" />
+        </div>
+    </div>
+</div>
+{% endblock %}
