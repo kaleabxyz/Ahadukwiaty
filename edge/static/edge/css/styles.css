@@ -21,8 +21,10 @@ body {
     border-bottom-width: 1px;
     border-bottom-color: #eaeaea;
     border-bottom-style: solid;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
+    gap: 6rem;
+    margin-left: 18rem;
 }
 .navbar a {
     font-size: clamp(0.6rem, 1vw, 2rem);
@@ -45,8 +47,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 2rem;
-    width: clamp(13rem, 20vw, 21rem);
+    gap: 5rem;
+    width: clamp(13rem, 50vw, 51rem);
 }
 .dropdowncontent {
     width: 14rem;
@@ -173,12 +175,46 @@ body {
     z-index: 10;
     /* rotate: -30deg; */
 }
+.usr {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border: 0.5px solid #dfdfdf; */
+}
+.usr h2 {
+    font-size: 1rem;
+    margin-left: 1rem;
+    width: 15ch;
+}
 
 .flower img {
     width: 100%;
     margin-top: clamp(1rem, 1vw, 2rem);
     margin-left: clamp(-0.5rem, -1vw, -2rem);
 }
+.hits .flower_img svg:hover {
+    stroke: #cf4784;
+}
+.flower_img svg {
+    position: absolute;
+    background: white;
+    opacity: 0.7;
+    border-radius: 50%;
+    padding: 0.5rem;
+    margin: 0.7rem;
+}
+.hitbadge {
+    position: absolute;
+    background: #cf4784;
+    color: white;
+    font-size: 1rem;
+    padding-block: 0.3rem;
+    padding-inline: 0.3rem;
+    z-index: 100;
+    right: 2.8rem;
+    bottom: 0.1rem;
+}
+
 .flower::after,
 .flower::before {
     content: "";
@@ -542,7 +578,7 @@ body {
 }
 .hits .flower_img {
     height: clamp(14rem, 15vw, 20rem);
-
+    position: relative;
     overflow: hidden;
 }
 .size {
@@ -1085,9 +1121,11 @@ body {
 }
 .product > .row {
     margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 .product img {
-    width: clamp(1rem, 25vw, 42rem);
+    width: clamp(1rem, 22vw, 42rem);
     height: auto;
 }
 .productsimg {
@@ -1181,8 +1219,9 @@ body {
     background: #cf4784;
     font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
-.addcart h2 {
+.addtocart h2 {
     font-size: clamp(0.5rem, 0.8vw, 2rem);
+    margin-block: 0.5rem;
     width: 10ch;
 }
 .add h6 {
@@ -1290,20 +1329,28 @@ body {
 .shine:hover {
     color: #cf4784;
     fill: #cf4784;
+    stroke: #cf4784;
 }
 .shine:hover .shine {
     fill: #cf4784;
+    stroke: #cf4784;
 }
 .hit {
     width: clamp(1rem, 16vw, 20vw);
 }
 .addtocart {
-    padding: 0.7rem;
-    font-size: clamp(0.5rem, 0.8vw, 2rem);
+    /* padding: 0.7rem; */
+    padding-inline: clamp(5rem, 8vw, 10rem);
+    font-size: clamp(0.5rem, 0.7vw, 2rem);
     background: #cf4784;
     color: white;
     border: none;
     width: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.addtocartform {
+    display: flex;
 }
 .checkout {
     position: fixed;
@@ -1583,14 +1630,49 @@ body {
         padding-block: 0rem;
     }
     .grid {
-        gap: 0rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
     }
     .flowermain {
-        padding-inline: 1rem;
+        padding-inline: 2.1rem;
+
+        flex-wrap: wrap;
     }
     .flowergrid {
-        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        grid-template-columns: 1fr 1fr;
     }
+    .hits {
+        width: 7rem;
+
+        margin-bottom: 0;
+    }
+    .list h1 {
+        margin-bottom: 1rem;
+    }
+    .hits .flower_img {
+        height: 7rem;
+    }
+    .hits img {
+        width: 7rem;
+    }
+    .hits h3 {
+        font-size: 0.4rem;
+    }
+    .hits h4 {
+        font-size: 0.5rem;
+    }
+    .flowermain .addtocart {
+        padding-inline: 2rem;
+    }
+    .addtocart h2 {
+        font-size: 0.4rem;
+        margin-block: 0.5rem;
+        width: 10ch;
+    }
+    /* .flowergrid {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        
+    } */
     .deliverymain {
         padding-inline: 1rem;
     }
@@ -1676,15 +1758,78 @@ body {
         padding-block: 2rem;
     }
     .product img {
-        height: 7rem;
+        width: 20rem;
+        height: auto;
     }
     .productdetail {
-        padding-left: 0.7rem;
+        padding-block: 0.7rem;
+        padding-inline: 0;
     }
     .productdetail h3 {
-        font-size: 0.4rem;
+        font-size: 0.6rem;
     }
     .productdetail h2 {
+        font-size: 0.7rem;
+    }
+    .productsimg {
+        height: 20rem;
+        overflow: hidden;
+        padding-inline-end: 10rem;
+    }
+    .productdetail h1 {
+        font-size: 0.9rem;
+    }
+    .productdetail h4 {
+        font-size: 0.7rem;
+    }
+    .productdetail > h5 {
+        margin-left: 1rem;
         font-size: 0.5rem;
+    }
+    .productdetail .row h5 {
+        font-size: 0.6rem;
+    }
+    .row h6 {
+        font-size: 0.6rem;
+        width: 40ch;
+    }
+    .small {
+        font-size: 0.7rem;
+        padding-inline: 0.3rem;
+    }
+    .addtocart {
+        padding-inline: 3rem;
+    }
+    .descriptionreview h5 {
+        font-size: 0.7rem;
+    }
+    #descriptionpart p {
+        font-size: 0.5rem;
+    }
+    .wide h4 {
+        font-size: 0.5rem;
+    }
+    .wide p {
+        font-size: 0.5rem;
+        width: 45ch;
+    }
+    .befirst h2 {
+        margin-block: 0.5rem;
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    .befirst h3 {
+        font-size: 0.6rem;
+    }
+
+    .befirst .row h2 {
+        font-size: 0.7rem;
+    }
+    .befirst .input2 {
+        padding-block: 0.5rem;
+        font-size: 0.7rem;
+    }
+    .befirst input {
+        padding-block: 0rem;
     }
 }

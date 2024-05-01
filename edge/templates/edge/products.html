@@ -5,7 +5,7 @@
             <div class="row">
                 <div class = "productsimg"> 
                 <img src="/edge/media/{{flower.image}}"/>
-            </div>
+                </div>
                 <div class="productdetail">
                     <h3>
                         Home / Flowers / Bouquets / Bouquets mix / {{flower.type}}
@@ -31,13 +31,14 @@
                     <div class="add">
                         <h4 class="price" id="1"></h4>
                         <div class="row">
-                            <div class="row">
-                                <button class="minus">&#8210;</button>
-                                <input type="text" placeholder="1" />
-                                <button class="plus">&plus;</button>
-                            </div>
-                            <form id="add-to-cart-form-{{ flower.id }}">
+                            
+                            <form class = "addtocartform" id="add-to-cart-form-{{ flower.id }}">
                                 {% csrf_token %}
+                                <div class="row">
+                                    <button class="minus">&#8210;</button>
+                                    <input type="text" placeholder="1" />
+                                    <button class="plus">&plus;</button>
+                                </div>
                                 <input type="hidden" name="flower_id" value="{{ flower.id }}">
                                 <input type="hidden" name="flower_size" id="flower_size_input_1" value="NAN">
                                 <button onclick="addToCart({{ flower.id }})" aria-expanded="true"  class="addtocart" type="button"> <h2> Add to Cart </h2> </button>
