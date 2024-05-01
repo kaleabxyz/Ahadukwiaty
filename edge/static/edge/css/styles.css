@@ -42,11 +42,11 @@ body {
   list-style-type: none;
 }
 .content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  width: 20vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    width: clamp(13rem, 20vw, 21rem);
 }
 .dropdowncontent {
   width: 14rem;
@@ -265,24 +265,25 @@ body {
   /* width: 62%; */
   width: clamp(20rem, 70vw, 70rem);
 
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin-bottom: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 5rem;
 }
 .bouquetsmix {
-  margin-block: clamp(0rem, 1vw, 3rem);
+    margin-block: clamp(1rem, 1.5vw, 3rem);
 
-  width: clamp(9rem, 9vw, 20rem);
+    width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 2.5vw, 10rem);
+    padding-block: clamp(8rem, 7.5vw, 13rem);
 
   background-image: url("../images/bouquetsmix.jpg");
   background-repeat: no-repeat;
   background-color: black;
 
-  padding-top: 11rem;
-  padding-bottom: 11rem;
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
 }
 .bouquetsmix::after {
   content: "";
@@ -314,8 +315,10 @@ body {
   transform: translateY(-2rem);
 }
 .bouquetsofroses {
-  margin-block: clamp(0rem, 1vw, 3rem);
-  width: clamp(9rem, 9vw, 20rem);
+    margin-block: clamp(1rem, 1.5vw, 3rem);
+    width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 2.5vw, 10rem);
+    padding-block: clamp(8rem, 7.5vw, 13rem);
 
   background-image: url("../images/bouquetsofroses.jpg");
   background-repeat: no-repeat;
@@ -323,12 +326,14 @@ body {
   position: relative;
   z-index: 1;
 
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+    /* padding-top: 10rem;
+    padding-bottom: 10rem; */
 }
 .flowercomp {
-  margin-block: clamp(0rem, 1vw, 3rem);
-  width: clamp(9rem, 9vw, 20rem);
+    margin-block: clamp(1rem, 1.5vw, 3rem);
+    width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 2.5vw, 10rem);
+    padding-block: clamp(8rem, 7.5vw, 13rem);
 
   background-image: url("../images/flowercomposition.jpg");
   background-repeat: no-repeat;
@@ -336,8 +341,8 @@ body {
   position: relative;
   z-index: 1;
 
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+    /* padding-top: 10rem;
+    padding-bottom: 10rem; */
 }
 .container1 {
   position: relative;
@@ -384,30 +389,36 @@ body {
   color: white;
 }
 .monobouquets {
-  width: clamp(9rem, 9vw, 20rem);
+    width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 1vw, 10rem);
+    padding-block: clamp(8rem, 9vw, 13rem);
 
-  margin-left: clamp(1rem, 1vw, 3rem);
-  margin-right: clamp(0rem, 1vw, 3rem);
-  background-image: url("../images/monobouquets.jpg");
-  background-color: black;
-  background-repeat: no-repeat;
-  padding-top: 11rem;
-  padding-bottom: 11rem;
-  position: relative;
-  z-index: 1;
+    margin-block: clamp(1rem, 0vw, 3rem);
+    margin-left: clamp(1rem, 1vw, 3rem);
+    margin-right: clamp(0rem, 1vw, 3rem);
+    background-image: url("../images/monobouquets.jpg");
+    background-color: black;
+    background-repeat: no-repeat;
+    /* padding-top: 11rem;
+    padding-bottom: 11rem; */
+    position: relative;
+    z-index: 1;
 }
 .tulips {
-  width: clamp(9rem, 9vw, 20rem);
+    width: clamp(9rem, 9vw, 20rem);
+    height: clamp(1rem, 3vw, 10rem);
+    padding-block: clamp(8rem, 8vw, 13rem);
 
-  margin-left: clamp(1rem, 1vw, 3rem);
-  margin-right: clamp(0rem, 1vw, 3rem);
-  background-image: url("../images/calaful-prints-gMLfNd3iums-unsplash.jpg");
-  background-color: black;
-  background-repeat: no-repeat;
-  padding-top: 11rem;
-  padding-bottom: 11rem;
-  position: relative;
-  z-index: 1;
+    margin-block: clamp(1rem, 1vw, 3rem);
+    margin-left: clamp(1rem, 1vw, 3rem);
+    margin-right: clamp(0rem, 1vw, 3rem);
+    background-image: url("../images/calaful-prints-gMLfNd3iums-unsplash.jpg");
+    background-color: black;
+    background-repeat: no-repeat;
+    /* padding-top: 11rem;
+    padding-bottom: 11rem; */
+    position: relative;
+    z-index: 1;
 }
 .monobouquets::after {
   content: "";
@@ -484,20 +495,21 @@ body {
 }
 
 .discriptions {
-  width: 100%;
-  height: 25vh;
-  margin-bottom: 5rem;
-  background-color: #f8f4f6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: clamp(2rem, 5vw, 6rem);
+    width: 100%;
+    height: 25vh;
+    margin-bottom: 5rem;
+    background-color: #f8f4f6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.1rem, 5vw, 6rem);
 }
 .discriptions img {
-  width: clamp(3.5rem, 4vw, 5rem);
+    width: clamp(3rem, 4vw, 5rem);
 }
 .discriptions h4 {
-  font-size: clamp(0.5rem, 1vw, 2rem);
+    font-size: clamp(0.4rem, 1vw, 2rem);
 }
 .discription {
   display: flex;
@@ -525,8 +537,8 @@ body {
   font-weight: 100;
 }
 .hits img {
-  width: clamp(14rem, 15vw, 20rem);
-  height: auto;
+    width: clamp(10rem, 15vw, 20rem);
+    height: auto;
 }
 .hits .flower_img {
   height: clamp(14rem, 15vw, 20rem);
@@ -568,12 +580,12 @@ body {
   margin-right: auto;
 }
 .reviewcontainer {
-  display: flex;
-
-  padding-inline: clamp(3rem, 8vw, 9rem);
-  padding-top: 2rem;
-  flex-grow: 1;
-  margin-bottom: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding-inline: clamp(3rem, 8vw, 9rem);
+    padding-top: 2rem;
+    flex-grow: 1;
+    margin-bottom: 5rem;
 }
 
 .review {
@@ -600,23 +612,25 @@ body {
   top: -2rem;
 }
 .footer {
-  background-color: #140610;
-  padding-inline: clamp(1rem, 20vw, 21rem);
-  padding-block: 5rem;
-  display: flex;
-  justify-content: space-between;
+    background-color: #140610;
+    padding-inline: clamp(0rem, 20vw, 21rem);
+    padding-block: 5rem;
+    display: flex;
+    justify-content: space-between;
 }
 .adress {
   gap: 4rem;
 }
 .adress h2 {
-  color: white;
+    color: white;
+    font-size: clamp(1rem, 2vw, 3rem);
 }
 .adress h4 {
-  color: white;
-  font-weight: 200;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+    color: white;
+    font-weight: 200;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: clamp(0.5rem, 1vw, 2rem);
 }
 .shop {
   margin-top: 1.5rem;
@@ -628,18 +642,20 @@ body {
 }
 
 .shop h4 {
-  color: white;
-  font-size: 0.85rem;
-  font-weight: 150;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 150;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .join h4 {
-  color: white;
-  font-size: 1rem;
-  font-weight: 150;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: 150;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .join img {
   width: 1.5rem;
@@ -652,31 +668,32 @@ body {
   margin-top: 5rem;
 }
 .copywrite h4 {
-  color: white;
-  font-size: 1rem;
-  font-weight: 150;
-  margin: 0;
+    color: white;
+    font-size: 1rem;
+    font-weight: 150;
+    margin: 0;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .flowermain {
-  padding-inline: 10rem;
-  padding-block: 6rem;
-  background: #f8f4f6;
-  display: flex;
-  flex-direction: row;
+    padding-inline: clamp(1rem, 10vw, 11rem);
+    padding-block: clamp(1rem, 6vw, 7rem);
+    background: #f8f4f6;
+    display: flex;
+    flex-direction: row;
 }
 .search {
-  margin-top: 2rem;
-  margin-right: 4rem;
-  background: #f8f4f6;
+    margin-top: clamp(1rem, 2vw, 3rem);
+    margin-right: clamp(1rem, 4vw, 5rem);
+    background: #f8f4f6;
 }
 
 .search-input {
-  height: 1.7vw;
-  font-family: serif;
-  font-size: clamp(0.5rem, 0.9vw, 1.2rem);
-  padding-left: 0.3vw;
-  width: clamp(15rem, 10vw, 27rem);
-  border: 2px solid #dee2e6;
+    height: clamp(1rem, 2vw, 3rem);
+    font-family: serif;
+    font-size: clamp(0.5rem, 0.9vw, 1.2rem);
+    padding-left: 0.3vw;
+    width: clamp(7rem, 10vw, 27rem);
+    border: 2px solid #dee2e6;
 
   color: #212529bf;
   margin: 0;
@@ -698,29 +715,31 @@ body {
   flex-direction: row;
 }
 .catagories h2 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  /* font-size: clamp(1rem, 1vw, 1.2rem); */
-  font-family: serif;
-  font-weight: 400;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: clamp(1rem, 1.5vw, 4rem);
+    font-family: serif;
+    font-weight: 400;
 }
 .catagories p {
-  padding-left: 2rem;
-  font-family: serif;
-  font-weight: 200;
+    padding-left: clamp(0.1rem, 2vw, 3rem);
+    font-size: clamp(0.7rem, 1vw, 3rem);
+    font-family: serif;
+    font-weight: 200;
 }
 .catagories .third {
-  padding-left: 6rem;
+    padding-left: clamp(4rem, 6vw, 7rem);
 }
 .catagories .second {
-  padding-left: 4rem;
+    padding-left: clamp(3rem, 4vw, 5rem);
 }
 .list {
-  background: white;
-  padding: 7rem;
+    background: white;
+    padding: clamp(1rem, 7vw, 8rem);
 }
 .list p {
-  font-weight: 150;
+    font-weight: 150;
+    font-size: clamp(0.5rem, 1vw, 2rem);
 }
 .list h1 {
   font-size: clamp(1rem, 5vw, 6rem);
@@ -793,12 +812,12 @@ body {
   color: white;
 }
 .page {
-  border: 1.5px solid #2a0f21;
-  font-size: 0.8rem;
-  padding-block: 0.5rem;
-  padding-inline: 0.7rem;
-  width: 1rem;
-  margin: 0.2rem;
+    border: 1.5px solid #2a0f21;
+    font-size: 0.8rem;
+    padding-block: 0.5rem;
+    padding-inline: 0.7rem;
+    width: clamp(0.5rem, 0.9vw, 2rem);
+    margin: 0.2rem;
 }
 .page:hover {
   background: #2a0f21;
@@ -807,20 +826,20 @@ body {
   color: white;
 }
 .deliverymain {
-  padding-inline: 15rem;
-  padding-block: 4rem;
-  background: #f8f4f6;
-  display: flex;
-  flex-direction: row;
+    padding-inline: clamp(1rem, 15vw, 17rem);
+    padding-block: 4rem;
+    background: #f8f4f6;
+    display: flex;
+    flex-direction: row;
 }
 .delivery {
   background: white;
   padding: 5rem;
 }
 .delivery h2 {
-  font-size: clamp(1rem, 2vw, 3rem);
-  font-weight: 400;
-  margin-bottom: 5rem;
+    font-size: clamp(1rem, 2vw, 3rem);
+    font-weight: 400;
+    margin-bottom: clamp(1rem, 5vw, 6rem);
 }
 .deliverycontent {
   border: 1px solid #e0e0e0;
@@ -831,11 +850,11 @@ body {
   padding-left: 1rem;
 }
 .topic {
-  background: white;
-  padding-block: 0.5rem;
-  padding-inline: 0.8rem;
-  margin-bottom: 1rem;
-  margin-right: 2rem;
+    background: white;
+    padding-block: 0.5rem;
+    padding-inline: clamp(0.1rem, 0.8vw, 1rem);
+    margin-bottom: 1rem;
+    margin-right: 2rem;
 }
 .topicscontainer .active {
   background: #5a4a55;
@@ -847,49 +866,50 @@ body {
   color: white;
 }
 .topic h3 {
-  font-size: clamp(1rem, 1vw, 2rem);
-  font-weight: 400;
-  text-align: center;
-  color: #5a4a55;
-  margin-left: auto;
-  margin-right: auto;
+    font-size: clamp(0.4rem, 1vw, 2rem);
+    font-weight: 400;
+    text-align: center;
+    color: #5a4a55;
+    margin-left: auto;
+    margin-right: auto;
 }
 .details p {
-  width: 100ch;
-  line-height: 3ch;
-  margin-bottom: 1rem;
+    width: 100ch;
+    line-height: 3ch;
+    margin-bottom: clamp(0.5rem, 1vw, 2rem);
+    font-size: clamp(0.4rem, 0.8vw, 2rem);
 }
 .wishlist {
-  padding-inline: 24rem;
-  padding-block: 4rem;
-  background: #f8f4f6;
-  display: flex;
-  flex-direction: row;
+    padding-inline: clamp(1rem, 24vw, 25rem);
+    padding-block: 4rem;
+    background: #f8f4f6;
+    display: flex;
+    flex-direction: row;
 }
 .wishlist h2 {
-  font-size: clamp(1rem, 2.5rem, 3rem);
-  font-weight: 600;
-  margin-bottom: 5rem;
+    font-size: clamp(0.5rem, 2.5rem, 3rem);
+    font-weight: 600;
+    margin-bottom: 5rem;
 }
 .deliverycontent .productname h3,
 .deliverycontent .unitprice h3 {
-  font-size: clamp(1rem, 1vw, 2rem);
-  font-weight: 500;
-  text-align: center;
+    font-size: clamp(0.5rem, 1vw, 2rem);
+    font-weight: 500;
+    text-align: center;
 }
 .deliverycontent .productname h3 {
-  margin-left: 10rem;
+    margin-left: clamp(4rem, 5vw, 6rem);
 }
 .productname img,
 .deliverycontent .unitprice .name {
-  height: clamp(1rem, 4vw, 6rem);
-  margin-right: 3rem;
+    height: clamp(2rem, 4vw, 6rem);
+    margin-right: clamp(1rem, 3vw, 4rem);
 }
 .productname {
   margin-right: clamp(1rem, 20vw, 21rem);
 }
 .deliverycontent .unitprice > .h3 {
-  margin-left: 5rem;
+    margin-left: clamp(1rem, 5vw, 6rem);
 }
 .name {
   display: flex;
@@ -897,50 +917,50 @@ body {
 }
 .productname .name h3,
 .deliverycontent .name h3 {
-  font-size: clamp(1rem, 1vw, 2rem);
-  font-weight: 300;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
+    font-size: clamp(0.5rem, 1vw, 2rem);
+    font-weight: 300;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .share {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: clamp(0.3rem, 1vw, 2rem);
 }
 .share h3 {
-  font-size: clamp(1rem, 1vw, 2rem);
-  font-weight: 300;
+    font-size: clamp(0.7rem, 1vw, 2rem);
+    font-weight: 300;
 }
 .share img {
-  height: clamp(1rem, 1.5vw, 3rem);
+    height: clamp(0.9rem, 1.5vw, 3rem);
 }
 .share .smaller {
-  height: clamp(1rem, 1.3vw, 2rem);
-  margin-top: auto;
-  margin-bottom: auto;
+    height: clamp(0.6rem, 1.3vw, 2rem);
+    margin-top: auto;
+    margin-bottom: auto;
 }
 .aboutus {
-  padding-inline: 20rem;
-  padding-block: 5rem;
+    padding-inline: clamp(1rem, 20vw, 21rem);
+    padding-block: clamp(1rem, 4vw, 5rem);
 }
 .about {
-  display: flex;
-  flex-direction: row;
-  gap: 5rem;
-  margin-bottom: 4rem;
+    display: flex;
+    flex-direction: row;
+    gap: clamp(0rem, 5vw, 6rem);
+    margin-bottom: 4rem;
 }
 .welcome h1 {
-  font-size: clamp(1rem, 5vw, 6rem);
-  font-weight: 400;
-  margin-bottom: 1rem;
+    font-size: clamp(0.5rem, 5vw, 6rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
 }
 .aboutus img {
-  margin-top: 2rem;
-  height: clamp(18rem, 20vw, 25rem);
+    margin-top: 2rem;
+    width: clamp(8rem, 20vw, 25rem);
 }
 .aboutus .welcome .line {
   border: 1.5px solid #fa7cbb;
@@ -960,13 +980,14 @@ body {
   margin-bottom: 1.5rem;
 }
 .aboutus h2 {
-  font-size: clamp(1rem, 1.7vw, 3rem);
+    font-size: clamp(0.7rem, 1.7vw, 3rem);
 }
 .aboutus p {
-  margin-left: 1rem;
-  margin-top: 1rem;
-  font-weight: 170;
-  line-height: 4ch;
+    margin-left: clamp(0.4rem, 1vw, 2rem);
+    margin-top: 1rem;
+    font-size: clamp(0.48rem, 0.8vw, 1rem);
+    font-weight: 170;
+    line-height: 4ch;
 }
 .contactus {
   display: flex;
@@ -996,11 +1017,11 @@ body {
 }
 
 .left .contact h3 {
-  font-size: clamp(1rem, 1rem, 3rem);
-  width: 33ch;
-  font-weight: 500;
-  color: #cf4784;
-  margin-left: 0;
+    font-size: clamp(1rem, 1rem, 2rem);
+    width: 35ch;
+    font-weight: 500;
+    color: #cf4784;
+    margin-left: 0;
 }
 .left h3,
 .contactus a {
@@ -1050,23 +1071,23 @@ body {
   justify-content: flex-end;
 }
 .productsmain {
-  padding-inline: 18rem;
-  padding-block: 4rem;
-  background: #f8f4f6;
+    padding-inline: clamp(1rem, 18vw, 19rem);
+    padding-block: 4rem;
+    background: #f8f4f6;
 }
 .products {
   background: white;
 }
 .product {
-  display: flex;
-  flex-direction: column;
-  padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1rem, 6vw, 7rem);
 }
 .product > .row {
   margin: 0;
 }
 .product img {
-  height: clamp(20rem, 25vw, 42rem);
+    height: clamp(1rem, 25vw, 42rem);
 }
 .productdetail {
   padding-left: 3rem;
@@ -1147,13 +1168,17 @@ body {
   background: white;
 }
 .addcart {
-  border: none;
-  color: white;
-  padding-inline: clamp(1rem, 8vw, 10rem);
-  padding-block: 0;
-  margin-block: 1rem;
-  background: #cf4784;
-  font-size: clamp(0.5rem, 0.8vw, 2rem);
+    border: none;
+    color: white;
+    padding-inline: clamp(5rem, 8vw, 10rem);
+    padding-block: 0;
+    margin-block: 1rem;
+    background: #cf4784;
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
+}
+.addcart h2 {
+    font-size: clamp(0.5rem, 0.8vw, 2rem);
+    width: 10ch;
 }
 .add h6 {
   font-size: clamp(0.5rem, 0.8rem, 2rem);
@@ -1276,19 +1301,25 @@ body {
   width: 100%;
 }
 .checkout {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 30%;
-  background: white;
-  z-index: 10000;
-  padding-inline: 1rem;
-  padding-block: 1.5rem;
-  height: 96%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: clamp(11rem, 35vw, 41rem);
+    background: white;
+    z-index: 10000;
+    padding-inline: 1rem;
+    padding-block: 1.5rem;
+    height: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.checkoutimage {
+    height: clamp(5rem, 5vw, 20rem);
+    /* margin-right: 3rem; */
+    overflow: hidden;
 }
 .checkout .row {
   justify-content: space-between;
@@ -1299,21 +1330,23 @@ body {
   margin-bottom: 1rem;
 }
 .checkout .row h2 {
-  font-size: clamp(1rem, 0.8vw, 3rem);
-  font-weight: 200;
-  font-family: serif;
+    font-size: clamp(0.97em, 0.8vw, 3rem);
+    font-weight: 200;
+    font-family: serif;
 }
 .checkoutlist {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  border-bottom: 2px solid #e9e8ea;
-  padding-bottom: 1.5rem;
-  margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 2px solid #e9e8ea;
+    flex-grow: 1;
+    padding-bottom: clamp(0.7rem, 1.5vw, 2rem);
+    margin-bottom: clamp(0.6rem, 1vw, 2rem);
 }
 .checkoutlist img {
-  width: clamp(1rem, 4vw, 6rem);
-  padding: 1.5rem;
+    width: clamp(4rem, 4vw, 6rem);
+    padding: 1.5rem;
 }
 .checkfirst {
   display: flex;
@@ -1323,9 +1356,9 @@ body {
   width: 23.5vw;
 }
 .checkfirst h2 {
-  font-size: clamp(1rem, 0.8vw, 3rem);
-  font-weight: 400;
-  font-family: serif;
+    font-size: clamp(0.7rem, 0.8vw, 3rem);
+    font-weight: 400;
+    font-family: serif;
 }
 .checksecond {
   display: flex;
@@ -1335,12 +1368,12 @@ body {
   margin-block: 1rem;
 }
 .checksecond h2 {
-  font-size: clamp(1rem, 0.8vw, 3rem);
-  font-weight: 400;
-  font-family: serif;
-  color: #71636d;
-  margin-right: 2rem;
-  margin-left: 1rem;
+    font-size: clamp(0.8rem, 0.8vw, 3rem);
+    font-weight: 400;
+    font-family: serif;
+    color: #71636d;
+    margin-right: 2rem;
+    margin-left: 1rem;
 }
 .checkout input {
   border: 2px solid #e9e8ea;
@@ -1523,4 +1556,131 @@ body {
 .column .row2 .check {
   margin-top: 0.3rem;
   border-radius: 100%;
+}
+@media (max-width: 50em) {
+    .reviewcontainer .review {
+        display: none;
+        width: 25ch;
+    }
+    .reviewcontainer .reviewp {
+        display: block;
+    }
+    .reviewcontainer > img {
+        top: 6rem;
+        margin-inline-start: -2rem;
+        margin-inline-end: -2rem;
+        height: 1.5rem;
+    }
+    .footer {
+        padding-inline: 1rem;
+    }
+    .hits {
+        padding-block: 0rem;
+    }
+    .grid {
+        gap: 0rem;
+    }
+    .flowermain {
+        padding-inline: 1rem;
+    }
+    .flowergrid {
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    }
+    .deliverymain {
+        padding-inline: 1rem;
+    }
+    .delivery {
+        padding: 1rem;
+    }
+    .details p {
+        width: 40ch;
+    }
+    .aboutus {
+        padding-inline: 1rem;
+    }
+    .about {
+        gap: 0;
+    }
+    .wishlist {
+        padding-inline: 2rem;
+    }
+    .wishlist h2 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .productname {
+        margin-right: 0.6rem;
+    }
+    .checkoutlist img {
+        padding: 0rem;
+        margin: 0rem;
+    }
+    .icons {
+        display: none;
+    }
+    .content {
+        gap: 0.5rem;
+    }
+    .navbar {
+        justify-content: flex-start;
+        margin-left: 2rem;
+        gap: 2rem;
+    }
+    .contactus {
+        padding-inline: 1rem;
+        padding-block: 1rem;
+    }
+    .contactus h2 {
+        font-size: 1rem;
+    }
+    .contact img {
+        width: 0.7rem;
+    }
+    .left .contact h3 {
+        font-size: 0.7rem;
+    }
+    .contact {
+        margin-top: 0.7rem;
+    }
+    .left h3,
+    .contactus a {
+        margin-left: 1rem;
+        font-size: 0.7rem;
+    }
+    .left .contact h3 {
+        font-size: 0.6rem;
+    }
+    .right h2 {
+        margin-right: 1rem;
+    }
+    .right h3 {
+        font-size: 1rem;
+    }
+    .right {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .right input,
+    .input {
+        padding-inline: 0.3rem;
+        font-size: 0.5rem;
+        padding-block: 0.3rem;
+    }
+    .productsmain {
+        padding-inline: 1rem;
+        padding-block: 2rem;
+    }
+    .product img {
+        height: 7rem;
+    }
+    .productdetail {
+        padding-left: .7rem;
+    }
+    .productdetail h3{
+        font-size: .4rem;
+    }
+    .productdetail h2{
+        font-size: .5rem;
+    }
+    
 }
