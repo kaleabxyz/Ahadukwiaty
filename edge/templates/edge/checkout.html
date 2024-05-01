@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="column">
                     <img src="/edge/media/{{flower.image}}" alt="" />
-                    <h4>&#215; 1</h4>
+                    <h4>&#215; {{flower_num|get_item:forloop.counter0}}</h4>
                     <h4>Size: {{flower_sizes|get_item:forloop.counter0}}</h4>
                 </div>
                 <h4>{{flower.name}}</h4>
