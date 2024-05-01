@@ -38,6 +38,18 @@ function showbtn(index, btn, id, size) {
   buttons[index - 1].setAttribute("disabled", "enabled");
 }
 
+function add(id) {
+  input = document.getElementById("input_" + id);
+  input.value = Number(input.value) + 1;
+}
+
+function sub(id) {
+    input = document.getElementById("input_" + id);
+    if (Number(input.value) > 1) {
+        input.value = Number(input.value) - 1;
+    }
+}
+
 function addToCart(productId) {
   var formData = new FormData(
     document.getElementById("add-to-cart-form-" + productId)
@@ -48,7 +60,6 @@ function addToCart(productId) {
   xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
   xhr.onload = function () {
     if (xhr.status === 200) {
-      // Handle success, e.g., show a message to the user
       alert("Product added to cart successfully!");
     } else {
       // Handle errors
