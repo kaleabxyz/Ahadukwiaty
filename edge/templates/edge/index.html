@@ -1,4 +1,4 @@
-{% extends 'edge/base.html' %} {% block content %} {% load static %}
+{% extends 'edge/base.html' %} {% block content %} {% load static %} {% load custom_filters %}
 <div class="main">
     <div class="herosection">
         <div class="hero">
@@ -66,102 +66,31 @@
     <div class="sales">
         <h1>Sales hits</h1>
         <div class="grid">
-            <div class="hits">
-                <img src="{% static 'edge/images/new.jpg' %}" />
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(1)">S</div>
-                    <div class="small" onclick="showbtn(1)">M</div>
-                    <div class="small" onclick="showbtn(1)">L</div>
-                    <div class="small" onclick="showbtn(1)">XL</div>
-                    <div class="small" onclick="showbtn(1)">XXL</div>
+            {% for flower in flowers %}
+                <div class="hits">
+                    <a href={% url "products" id=flower.id %}>
+                        <div class="flower_img">
+                            <img src="/edge/media/{{flower.image}}" />
+                        </div>
+                    </a>
+                    <h3>{{ flower.name }}</h3>
+                    <h4>{{flower.type}}</h4>
+                    <h3 class="price" id="{{forloop.counter}}">{{flower.price_s}} zi - {% if flower.price_xll %} {{ flower.price_xll }} {% else %} {{ flower.price_xl }} {% endif %} zi</h3>
+                    <div class="size">
+                        {% if flower.price_s %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_s}}, this.id, 'S')">S</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_m %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_m}}, this.id, 'M')">M</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_l %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_l}}, this.id, 'L')">L</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xl %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xl}}, this.id, 'XL')">XL</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xll %} <div class="small" id="{{forloop.counter|calculate_id}}" onclick="showbtn({{forloop.counter}}, {{flower.price_xll}}, this.id, 'XXL')">XXL</div> {% else %} <div></div> {% endif %}
+                    </div>
+                    <form id="add-to-cart-form-{{ flower.id }}">
+                        {% csrf_token %}
+                        <input type="hidden" name="flower_id" value="{{ flower.id }}">
+                        <input type="hidden" name="flower_size" id="flower_size_input_{{forloop.counter}}" value="M">
+                        <button onclick="addToCart({{ flower.id }})" aria-expanded="false" class="addtocart" type="button">Add to Cart</button>
+                    </form>
                 </div>
-                <button aria-expanded="false" class="addtocart">
-                            Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <img src="{% static 'edge/images/flower2.jpg' %}" />
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(2)">S</div>
-                    <div class="small" onclick="showbtn(2)">M</div>
-                    <div class="small" onclick="showbtn(2)">L</div>
-                    <div class="small" onclick="showbtn(2)">XL</div>
-                    <div class="small" onclick="showbtn(2)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                            Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <img src="{% static 'edge/images/flower3.jpg' %}" />
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(3)">S</div>
-                    <div class="small" onclick="showbtn(3)">M</div>
-                    <div class="small" onclick="showbtn(3)">L</div>
-                    <div class="small" onclick="showbtn(3)">XL</div>
-                    <div class="small" onclick="showbtn(3)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                            Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <img src="{% static 'edge/images/new.jpg' %}" />
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(4)">S</div>
-                    <div class="small" onclick="showbtn(4)">M</div>
-                    <div class="small" onclick="showbtn(4)">L</div>
-                    <div class="small" onclick="showbtn(4)">XL</div>
-                    <div class="small" onclick="showbtn(4)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                            Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <img src="{% static 'edge/images/flower4.jpg' %}" />
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(5)">S</div>
-                    <div class="small" onclick="showbtn(5)">M</div>
-                    <div class="small" onclick="showbtn(5)">L</div>
-                    <div class="small" onclick="showbtn(5)">XL</div>
-                    <div class="small" onclick="showbtn(5)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                            Add To Cart
-                </button>
-            </div>
-            <div class="hits">
-                <img src="{% static 'edge/images/flower5.jpg' %}" />
-                <h3>Bouquet "pink mix"</h3>
-                <h4>Bouquet mix</h4>
-                <h3>150,00 zi - 535,00 zi</h3>
-                <div class="size">
-                    <div class="small" onclick="showbtn(6)">S</div>
-                    <div class="small" onclick="showbtn(6)">M</div>
-                    <div class="small" onclick="showbtn(6)">L</div>
-                    <div class="small" onclick="showbtn(6)">XL</div>
-                    <div class="small" onclick="showbtn(6)">XXL</div>
-                </div>
-                <button aria-expanded="false" class="addtocart">
-                            Add To Cart
-                </button>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <div>

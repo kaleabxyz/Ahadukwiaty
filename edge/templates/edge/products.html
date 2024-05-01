@@ -1,17 +1,16 @@
-{% extends 'edge/base.html' %} {% block content %} {% load static %}
+{% extends 'edge/base.html' %} {% block content %} {% load static %} {% load custom_filters %}
 <div class="productsmain">
     <div class="products">
         <div class="product">
             <div class="row">
-                <img src={% static "edge/images/product.jpg" %}/>
+                <img src="/edge/media/{{flower.image}}"/>
                 <div class="productdetail">
                     <h3>
-                        Home / Flowers / Bouquets / Bouquets mix / Bukiet
-                        “Blissful”
+                        Home / Flowers / Bouquets / Bouquets mix / {{flower.type}}
                     </h3>
-                    <h2>Bouquets mix</h2>
-                    <h1>Bukiet “Blissful”</h1>
-                    <h4>126,00 zł - 392,00 zł</h4>
+                    <h2>{{ flower.name }}</h2>
+                    <h1>{{flower.type}}</h1>
+                    <h4>{{flower.price_s}} zi - {% if flower.price_xll %} {{ flower.price_xll }} {% else %} {{ flower.price_xl }} {% endif %} zi</h4>
                     <h5>&#8226;Na zdjęciu bukiet razmiar M</h5>
                     <div class="row">
                         <h5>Skład bukietu:</h5>
@@ -21,25 +20,26 @@
                         </h6>
                     </div>
                     <div class="size">
-                        <div class="small">S</div>
-                        <div class="small">M</div>
-                        <div class="small">L</div>
-                        <div class="small">XL</div>
-                        <div class="small">XXL</div>
+                        {% if flower.price_s %} <div class="small" id="11" onclick="showbtn(1, {{flower.price_s}}, this.id, 'S')">S</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_m %} <div class="small" id="12" onclick="showbtn(1, {{flower.price_m}}, this.id, 'M')">M</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_l %} <div class="small" id="13" onclick="showbtn(1, {{flower.price_l}}, this.id, 'L')">L</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xl %} <div class="small" id="14" onclick="showbtn(1, {{flower.price_xl}}, this.id, 'XL')">XL</div> {% else %} <div></div> {% endif %}
+                        {% if flower.price_xll %} <div class="small" id="15" onclick="showbtn(1, {{flower.price_xll}}, this.id, 'XXL')">XXL</div> {% else %} <div></div> {% endif %}
                     </div>
                     <div class="add">
-                        <h4>392,00 zł</h4>
-                        <h6>Available on backorder</h6>
+                        <h4 class="price" id="1"></h4>
                         <div class="row">
                             <div class="row">
                                 <button class="minus">&#8210;</button>
                                 <input type="text" placeholder="1" />
                                 <button class="plus">&plus;</button>
                             </div>
-                            <button class="addcart">
-                                <h2> Add To Cart</h2>
-
-                                </button>
+                            <form id="add-to-cart-form-{{ flower.id }}">
+                                {% csrf_token %}
+                                <input type="hidden" name="flower_id" value="{{ flower.id }}">
+                                <input type="hidden" name="flower_size" id="flower_size_input_1" value="NAN">
+                                <button onclick="addToCart({{ flower.id }})" aria-expanded="true"  class="addtocart" type="button"> <h2> Add to Cart </h2> </button>
+                            </form>
                         </div>
                     </div>
                     <h5>Add to Wish List</h5>

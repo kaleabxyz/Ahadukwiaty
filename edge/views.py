@@ -10,7 +10,10 @@ from django.shortcuts import redirect
 
 # Create your views here.
 def index(request):
-    return render(request, 'edge/index.html')
+    flowers = Flower.objects.all()
+    for flower in flowers:
+        print(flower.image)
+    return render(request, 'edge/index.html', {'flowers': flowers})
 
 def flowers(request):
     flowers = Flower.objects.all()
@@ -30,8 +33,9 @@ def delivery(request):
 def wishlist(request):
     return render(request, 'edge/wishlist.html')
 
-def products(request):
-    return render(request, "edge/products.html")
+def products(request, id):
+    flower = Flower.objects.get(pk=id)
+    return render(request, "edge/products.html", {'flower':  flower})
 
 def add_to_cart(request):
     if request.method == 'POST':
@@ -89,7 +93,7 @@ def get_cart(request):
             cart_html += '<h2>{0}</h2>'.format(flower.name)
             cart_html += '<svg  onclick="removeCart({0},\'{1}\')" fill="#B7B0B5" height="clamp(1rem, 1.5vw, 2rem)" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"> <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM21.657 10.344c-0.39-0.39-1.023-0.39-1.414 0l-4.242 4.242-4.242-4.242c-0.39-0.39-1.024-0.39-1.415 0s-0.39 1.024 0 1.414l4.242 4.242-4.242 4.242c-0.39 0.39-0.39 1.024 0 1.414s1.024 0.39 1.415 0l4.242-4.242 4.242 4.242c0.39 0.39 1.023 0.39 1.414 0s0.39-1.024 0-1.414l-4.242-4.242 4.242-4.242c0.391-0.391 0.391-1.024 0-1.414z"></path> </svg>'.format(flower_id, flower_size)
             cart_html += '</div> <div class="checksecond"><h2>Size:</h2>'
-            cart_html += '<h2>{0}</h2></div><div class="row2"><button class="minus">&#8210;</button><input type="text" placeholder="1" /><button class="plus">&plus;</button></div>'.format(flower_size)
+            cart_html += '<h2>{0}</h2></div><div class="row2"><button class="minus" id="{1}" onclick="sub(this.id)">&#8210;</button><input id="input_{1}" type="text" value=1 /><button class="plus" id="{1}" onclick="add(this.id)">&plus;</button></div>'.format(flower_size, flower_id)
             cart_html += '</div></div>'
             if flower_size == 'S':
                 flower_price = flower.price_s
