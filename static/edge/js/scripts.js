@@ -14,13 +14,13 @@ function showbtn(index, btn, id, size) {
     var size_btn = document.getElementById(id);
     var size_btns = document.querySelectorAll(".small");
     size_btns.forEach((element) => {
-        console.log(element);
         if (index * 10 < element.id && element.id < (index + 1) * 10) {
             element.classList.remove("border");
         }
     });
 
     price.forEach((element) => {
+        console.log(element);
         if (element.id == index) {
             element.innerHTML = btn;
             size_btn.classList.add("border");
@@ -37,7 +37,23 @@ function showbtn(index, btn, id, size) {
     buttons[index - 1].setAttribute("aria-expanded", true);
 }
 
+function add(id) {
+    flower_size = document.getElementById("flower_size_input_1");
+    if (flower_size.value == "NaN") return;
+    input = document.getElementById("input_" + id);
+    input.value = Number(input.value) + 1;
+}
+
+function sub(id) {
+    input = document.getElementById("input_" + id);
+    if (Number(input.value) > 1) {
+        input.value = Number(input.value) - 1;
+    }
+}
+
 function addToCart(productId) {
+    flower_size = document.getElementById("flower_size_input_1");
+    if (flower_size.value == "NaN") return;
     var formData = new FormData(
         document.getElementById("add-to-cart-form-" + productId)
     );
@@ -47,7 +63,6 @@ function addToCart(productId) {
     xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
     xhr.onload = function () {
         if (xhr.status === 200) {
-            // Handle success, e.g., show a message to the user
             alert("Product added to cart successfully!");
         } else {
             // Handle errors
