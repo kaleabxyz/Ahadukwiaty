@@ -829,7 +829,7 @@ body {
 }
 .flowergrid {
     display: grid;
-    gap: 2rem;
+    column-gap: 4vw;
     grid-template-columns: 1fr 1fr 1fr;
 }
 .pagecontainer {
@@ -1339,9 +1339,10 @@ body {
     width: clamp(1rem, 16vw, 20vw);
 }
 .addtocart {
-    /* padding: 0.7rem; */
-    padding-inline: clamp(5rem, 8vw, 10rem);
     font-size: clamp(0.5rem, 0.7vw, 2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #cf4784;
     color: white;
     border: none;
