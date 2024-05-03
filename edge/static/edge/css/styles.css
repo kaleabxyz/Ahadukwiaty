@@ -711,7 +711,7 @@ body {
     font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .flowermain {
-    padding-inline: clamp(1rem, 10vw, 11rem);
+    padding-left: clamp(1rem, 2vw, 11rem);
     padding-block: clamp(1rem, 6vw, 7rem);
     background: #f8f4f6;
     display: flex;
