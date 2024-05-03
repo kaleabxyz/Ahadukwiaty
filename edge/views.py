@@ -7,6 +7,15 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import redirect
 
+import paypalrestsdk
+
+
+# Initialize PayPal SDK
+paypalrestsdk.configure({
+    "mode": "sandbox",  # Use 'sandbox' for testing and 'live' for production
+    "client_id": 'AV5W7joFIbxEhZI-7N0s7GdP7Hi9uTa4vGc-Z1ygLBQCW0nbQifUQvRKVYJFS-pe46yHeHBC-oNT-clE',
+    "client_secret": 'EEa8JJO4UpQfkllJctcEOaool1Lcl5UgVvZigAHhdQLN4MfcNATMSgj3PNscZIwjVfKKkE01ZVjgDoE1'
+})
 
 # Create your views here.
 def index(request):
@@ -95,7 +104,7 @@ def get_cart(request):
             cart_html += '<h2>{0}</h2>'.format(flower.name)
             cart_html += '<svg  onclick="removeCart({0},\'{1}\')" fill="#B7B0B5" height="clamp(1rem, 1.5vw, 2rem)" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"> <path d="M16 0c-8.836 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 30.032c-7.72 0-14-6.312-14-14.032s6.28-14 14-14 14 6.28 14 14-6.28 14.032-14 14.032zM21.657 10.344c-0.39-0.39-1.023-0.39-1.414 0l-4.242 4.242-4.242-4.242c-0.39-0.39-1.024-0.39-1.415 0s-0.39 1.024 0 1.414l4.242 4.242-4.242 4.242c-0.39 0.39-0.39 1.024 0 1.414s1.024 0.39 1.415 0l4.242-4.242 4.242 4.242c0.39 0.39 1.023 0.39 1.414 0s0.39-1.024 0-1.414l-4.242-4.242 4.242-4.242c0.391-0.391 0.391-1.024 0-1.414z"></path> </svg>'.format(flower_id, flower_size)
             cart_html += '</div> <div class="checksecond"><h2>Size:</h2>'
-            cart_html += '<h2>{0}</h2></div><div class="row2"><button class="minus" id="{1}" onclick="sub(this.id)">&#8210;</button><input id="input_{1}" type="text" value={2} /><button class="plus" id="{1}" onclick="add(this.id)">&plus;</button></div>'.format(flower_size, flower_id, flower_num)
+            cart_html += '<h2>{0}</h2></div><div class="row2"><button class="minus" id="{1}" onclick="sub(this.id, \'{0}\')">&#8210;</button><input id="input_{1}" type="text" value={2} /><button class="plus" id="{1}" onclick="add(this.id, \'{0}\')">&plus;</button></div>'.format(flower_size, flower_id, flower_num)
             cart_html += '</div></div>'
             if flower_size == 'S':
                 flower_price = flower.price_s
@@ -114,8 +123,6 @@ def checkout(request):
     cart = request.session.get('cart', [])
     # You may want to retrieve the actual product objects based on the product IDs in the cart
     # For simplicity, I'll just return the product IDs as JSON
-    print(cart)
-    cart_html = ''
     flowers = []
     flower_sizes = []
     flower_price = []
@@ -142,5 +149,60 @@ def checkout(request):
         total_price = 0
         for price in flower_price:
             total_price += price
-        return render(request, "edge/checkout.html", {'flowers': flowers, 'flower_sizes': flower_sizes, 'flower_num': flower_num, 'flower_price': flower_price,'total_price': total_price})
+        return render(request, "edge/checkout.html", {'client_id': 'AV5W7joFIbxEhZI-7N0s7GdP7Hi9uTa4vGc-Z1ygLBQCW0nbQifUQvRKVYJFS-pe46yHeHBC-oNT-clE','flowers': flowers, 'flower_sizes': flower_sizes, 'flower_num': flower_num, 'flower_price': flower_price,'total_price': total_price})
     return redirect("edge/Flowers.html")
+
+def create_payment(request):
+    # Calculate the total amount on the server-side
+    total_amount = calc_total_price(request)  # Example amount
+    
+    # Create Payment object
+    payment = paypalrestsdk.Payment({
+        "intent": "sale",
+        "payer": {
+            "payment_method": "paypal"
+        },
+        "redirect_urls": {
+            "return_url": "http://localhost:8000/payment/execute/",
+            "cancel_url": "http://localhost:8000/payment/cancel/"
+        },
+        "transactions": [{
+            "amount": {
+                "total": str(total_amount),
+                "currency": "USD"
+            },
+            "description": "Test Transaction"
+        }]
+    })
+
+    # Create payment
+    if payment.create():
+        return JsonResponse({"payment_id": payment.id, "total_amount": total_amount})
+    else:
+        return JsonResponse({"error": payment.error})
+    
+# utility functions
+def calc_total_price(request):
+    cart = request.session.get('cart', [])
+    flower_price = []
+
+    if cart:
+        for flower in cart:
+            flower = flower.split(',')
+            flower_id = flower[0]
+            flower_size = flower[1]
+            flower = Flower.objects.get(pk=flower_id)
+            if flower_size == 'S':
+                flower_price.append(flower.price_s)
+            elif flower_size == 'M':
+                flower_price.append(flower.price_m)
+            elif flower_size == 'L':
+                flower_price.append(flower.price_l)
+            elif flower_size == 'XL':
+                flower_price.append(flower.price_xl)
+            elif flower_size == 'XXL':
+                flower_price.append(flower.price_xxl)
+        total_price = 0
+        for price in flower_price:
+            total_price += price
+    return total_price

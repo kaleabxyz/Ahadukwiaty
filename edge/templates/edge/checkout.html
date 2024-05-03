@@ -1,5 +1,40 @@
-{% extends 'edge/base.html' %} {% block content %} {% load static %} 
-{% load custom_filters %}
+{% extends 'edge/base.html' %} {% block content %} {% load static %} {% load custom_filters %}
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    paypal.Button.render(
+        {
+            env: "sandbox",
+            client: {
+                sandbox: "{{ client_id }}",
+            },
+            commit: true,
+            payment: function (data, actions) {
+                return fetch("/payment/create_payment/")
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        return actions.payment.create({
+                            transactions: [
+                                {
+                                    amount: {
+                                        total: data.total_amount,
+                                        currency: "USD",
+                                    },
+                                },
+                            ],
+                        });
+                    });
+            },
+            onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function () {
+                    window.alert("Payment Complete!");
+                });
+            },
+        },
+        "#paypal-button"
+    );
+</script>
 <div class="checkoutmain">
     <div class="checkleft">
         <h2>Checkout</h2>
@@ -75,6 +110,7 @@
             </svg>
             Place an order
         </button>
+        <div id="paypal-button"></div>
     </div>
     <div class="checkright">
         <h3 class="short">Your order</h3>
