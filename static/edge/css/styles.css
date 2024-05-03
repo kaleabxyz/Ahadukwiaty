@@ -24,14 +24,15 @@ body {
     justify-content: flex-start;
     align-items: center;
     gap: 6rem;
-    margin-left: 18rem;
+    margin-left: 4vw;
 }
 .navbar a {
     font-size: clamp(0.6rem, 1vw, 2rem);
 }
 .navcontents {
     display: flex;
-    /* margin-left: 26rem; */
+    margin-left: auto;
+    margin-right: auto;
     gap: 2rem;
 }
 
@@ -48,7 +49,6 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 5rem;
-    width: clamp(13rem, 50vw, 51rem);
 }
 .dropdowncontent {
     width: 14rem;
@@ -711,7 +711,7 @@ body {
     font-size: clamp(0.5rem, 0.8vw, 2rem);
 }
 .flowermain {
-    padding-inline: clamp(1rem, 10vw, 11rem);
+    padding-left: clamp(1rem, 2vw, 11rem);
     padding-block: clamp(1rem, 6vw, 7rem);
     background: #f8f4f6;
     display: flex;
@@ -829,7 +829,7 @@ body {
 }
 .flowergrid {
     display: grid;
-    gap: 2rem;
+    column-gap: 4vw;
     grid-template-columns: 1fr 1fr 1fr;
 }
 .pagecontainer {
@@ -1339,9 +1339,10 @@ body {
     width: clamp(1rem, 16vw, 20vw);
 }
 .addtocart {
-    /* padding: 0.7rem; */
-    padding-inline: clamp(5rem, 8vw, 10rem);
     font-size: clamp(0.5rem, 0.7vw, 2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #cf4784;
     color: white;
     border: none;
