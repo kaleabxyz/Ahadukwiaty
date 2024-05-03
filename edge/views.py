@@ -67,7 +67,8 @@ def remove_from_cart(request):
         data = json.loads(request.body)
         flower_id = data.get('flower_id')
         flower_size = data.get('flower_size')
-        flower = (str(flower_id) + ',' + flower_size)
+        flower_num = data.get('flower_num')
+        flower = (str(flower_id) + ',' + flower_size + ',' + flower_num)
 
         # Remove the product from the session
         if 'cart' in request.session:
@@ -83,6 +84,21 @@ def remove_from_cart(request):
             return JsonResponse({'error': 'Cart not found in session'}, status=400)
     else:
         return JsonResponse({'error': 'Invalid request'}, status=400)
+
+def update_cart(request):
+    if request.method == 'POST':
+
+        data = json.loads(request.body)
+        flower_id = data.get('flower_id')
+        flower_size = data.get('flower_size')
+        flower_num = data.get('flower_num')
+        flower = (str(flower_id) + ',' + flower_size + ',' + flower_num)
+
+        if 'cart' in request.session:
+            cart = request.session['cart']
+            cart[flower]['size'] = flower_size
+
+
 
 def get_cart(request):
     cart = request.session.get('cart', [])

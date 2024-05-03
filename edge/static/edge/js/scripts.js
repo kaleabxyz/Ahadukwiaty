@@ -74,8 +74,8 @@ function addToCart(productId) {
     xhr.send(formData);
 }
 
-function removeCart(flower_id, flower_size) {
-    console.log(flower_size);
+function removeCart(flower_id, flower_size, flower_num) {
+    console.log(document.getElementById("input_" + flower_id).value);
     fetch("/remove_from_cart/", {
         method: "POST",
         headers: {
@@ -85,6 +85,7 @@ function removeCart(flower_id, flower_size) {
         body: JSON.stringify({
             flower_id: flower_id,
             flower_size: flower_size,
+            flower_num: document.getElementById("input_" + flower_id).value,
         }),
     })
     .then((response) => {
