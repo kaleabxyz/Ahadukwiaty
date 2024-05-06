@@ -1687,10 +1687,10 @@ body {
 }
 .signupright input {
     padding-block: 0.7rem;
-    /* padding-inline: 1rem; */
+    padding-inline-start: 0.5rem;
     font-size: clamp(0.4rem, 0.8rem, 3rem);
     width: 95%;
-    border: 2px solid hsl(270, 4%, 91%);
+    border: 2px solid #da71a0;
     border-radius: 0.5rem;
 }
 .signupright div svg {
@@ -1706,6 +1706,7 @@ body {
 
 .signupright div h3 {
     width: auto;
+    margin-left: 0.5rem;
 }
 
 .signupright div .check {
