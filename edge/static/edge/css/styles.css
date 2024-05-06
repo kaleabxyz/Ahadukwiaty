@@ -1768,6 +1768,17 @@ input[type="text"]:focus {
 .signupright .google h3 {
     margin-block: auto;
 }
+.login {
+    background: #e0c4ce;
+    display: flex;
+    flex-direction: row;
+    padding-block: 4rem;
+}
+.login .signupright {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 @media (max-width: 50em) {
     .reviewcontainer .review {
         display: none;
