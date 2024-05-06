@@ -1666,7 +1666,8 @@ body {
     height: clamp(9rem, 15vw, 51rem);
 }
 .signupright {
-    padding-block: clamp(1rem, 4vw, 5rem);
+    padding-block-start: clamp(1rem, 4vw, 5rem);
+    padding-block-end: clamp(1rem, 2.8vw, 5rem);
     padding-inline: clamp(1rem, 6vw, 5rem);
 }
 .signupright h2 {
@@ -1680,6 +1681,10 @@ body {
     font-weight: 200;
     width: 40ch;
     margin-block: clamp(1rem, 1.5vw, 3rem);
+}
+.signupright div h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .signupright h4 {
     font-size: clamp(0.5rem, 0.9vw, 2rem);
