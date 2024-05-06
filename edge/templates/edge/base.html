@@ -5,55 +5,90 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{% static 'edge/css/styles.css' %}" />
-        <script src={% static "edge/js/scripts.js" %} defer></script>
+        <script src="{% static 'edge/js/scripts.js' %}" defer></script>
         <title>Document</title>
     </head>
     <body>
         <div class="navbar">
-            <div class="logo"><a href="{% url "home" %}">Ahadu</a></div>
+            <div class="logo"><a href="{% url 'home' %}">Ahadu</a></div>
             <div class="navcontents">
-                <li>    
+                <li>
                     <div class="dropdown">
-                        <a href="{% url "flower" %}">Flowers</a>
+                        <a href="{% url 'flower' %}">Flowers</a>
                         <div class="dropdowncontent">
                             <div class="dropdown2">
-                                <a href="{% url "flower" %}#1">Bouquets</a>
+                                <a href="{% url 'flower' %}#1">Bouquets</a>
                                 <div class="dropdowncontent2">
-                                    <a href="{% url "flower" %}#1">Bouquets of roses</a>
-                                    <a href="{% url "flower" %}#1">Bouquets mix</a>
-                                    <a href="{% url "flower" %}#1">Monobouquets</a>
-                                    <a href="{% url "flower" %}#1">Tulips</a>
+                                    <a href="{% url 'flower' %}#1"
+                                        >Bouquets of roses</a
+                                    >
+                                    <a href="{% url 'flower' %}#1"
+                                        >Bouquets mix</a
+                                    >
+                                    <a href="{% url 'flower' %}#1"
+                                        >Monobouquets</a
+                                    >
+                                    <a href="{% url 'flower' %}#1">Tulips</a>
                                 </div>
                             </div>
-                            <a href="{% url "flower" %}#1">Flower compositions</a>
+                            <a href="{% url 'flower' %}#1"
+                                >Flower compositions</a
+                            >
                             <div class="dropdown3">
-                                <a href="{% url "flower" %}#1">Wedding floristry</a>
+                                <a href="{% url 'flower' %}#1"
+                                    >Wedding floristry</a
+                                >
                                 <div class="dropdowncontent3">
-                                    <a href="{% url "flower" %}#1">Wedding bouquets</a>
-                                    <a href="{% url "flower" %}#1">Decorations</a>
+                                    <a href="{% url 'flower' %}#1"
+                                        >Wedding bouquets</a
+                                    >
+                                    <a href="{% url 'flower' %}#1"
+                                        >Decorations</a
+                                    >
                                 </div>
                             </div>
                         </div>
                     </div>
                 </li>
                 <div class="content">
-                    <li><a href="{% url "delivery" %}">Delivery and payment</a></li>
-                    <li><a href="{% url "aboutus" %}">About us</a></li>
-                    <li><a href="{% url "contactus" %}">Contact</a></li>
+                    <li>
+                        <a href="{% url 'delivery' %}">Delivery and payment</a>
+                    </li>
+                    <li><a href="{% url 'aboutus' %}">About us</a></li>
+                    <li><a href="{% url 'contactus' %}">Contact</a></li>
                 </div>
             </div>
             <div class="icons">
                 <img
                     src="{% static 'edge/images/phone-call-svgrepo-com.svg' %}"
                 />
-                <a href={% url "wishlist" %}>
-                <img src="{% static 'edge/images/heart-svgrepo-com.svg' %}" /></a>
-               <a onclick="loadCart()"> <img src="{% static 'edge/images/basket-svgrepo-com.svg' %}" /></a>
+                <a href="{% url 'wishlist' %}">
+                    <img src="{% static 'edge/images/heart-svgrepo-com.svg' %}"
+                /></a>
+                <a onclick="loadCart()">
+                    <img
+                        src="{% static 'edge/images/basket-svgrepo-com.svg' %}"
+                /></a>
             </div>
-            <div class = "usr">
-            <svg xmlns="http://www.w3.org/2000/svg"  height="clamp(1rem, 2vw, 3rem)" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3"/><circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/></svg>
-            <h2> Kalab kassa </h2>
-        </div>
+            <div class="usr">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="clamp(1rem, 2vw, 3rem)"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="M5.52 19c.64-2.2 1.84-3 3.22-3h6.52c1.38 0 2.58.8 3.22 3"
+                    />
+                    <circle cx="12" cy="10" r="3" />
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+                <h2>Kalab kassa</h2>
+            </div>
         </div>
         <div class="checkout" aria-expanded="false">
             <div>
@@ -83,16 +118,14 @@
                         </svg>
                     </a>
                 </div>
-                <div class="checkoutlists">
-                    
-                </div>
+                <div class="checkoutlists"></div>
             </div>
             <div class="subtotal">
                 <div class="row">
                     <h2>Subtotal:</h2>
                     <h2 id="total_price">0 zł</h2>
                 </div>
-                <a href="{% url "checkout" %}"><button>Checkout</button></a>
+                <a href="{% url 'checkout' %}"><button>Checkout</button></a>
             </div>
         </div>
         {% block content %}{% endblock content %}

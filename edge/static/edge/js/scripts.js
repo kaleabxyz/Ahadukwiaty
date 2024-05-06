@@ -37,15 +37,17 @@ function showbtn(index, btn, id, size) {
     buttons[index - 1].setAttribute("aria-expanded", true);
 }
 
-function add(id) {
+function add(id, size) {
     flower_size = document.getElementById("flower_size_input_1");
-    if (flower_size.value == "NaN") return;
+    flower_size = size
+    if (flower_size == "NaN") return;
     input = document.getElementById("input_" + id);
     input.value = Number(input.value) + 1;
 }
 
-function sub(id) {
+function sub(id, size) {
     input = document.getElementById("input_" + id);
+    flower_size = size
     if (Number(input.value) > 1) {
         input.value = Number(input.value) - 1;
     }
@@ -72,8 +74,8 @@ function addToCart(productId) {
     xhr.send(formData);
 }
 
-function removeCart(flower_id, flower_size) {
-    console.log(flower_size);
+function removeCart(flower_id, flower_size, flower_num) {
+    console.log(document.getElementById("input_" + flower_id).value);
     fetch("/remove_from_cart/", {
         method: "POST",
         headers: {
@@ -83,19 +85,20 @@ function removeCart(flower_id, flower_size) {
         body: JSON.stringify({
             flower_id: flower_id,
             flower_size: flower_size,
+            flower_num: document.getElementById("input_" + flower_id).value,
         }),
     })
-        .then((response) => {
-            if (response.ok) {
-                loadCart();
-            } else {
-                // Handle errors or display a message to the user
-                console.error("Error removing product from cart");
-            }
-        })
-        .catch((error) => {
-            console.error("Error removing product from cart:", error);
-        });
+    .then((response) => {
+        if (response.ok) {
+            loadCart();
+        } else {
+            // Handle errors or display a message to the user
+            console.error("Error removing product from cart");
+        }
+    })
+    .catch((error) => {
+        console.error("Error removing product from cart:", error);
+    });
 }
 
 function loadCart() {

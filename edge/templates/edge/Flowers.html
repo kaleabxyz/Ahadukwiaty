@@ -61,6 +61,7 @@
                         {% csrf_token %}
                         <input type="hidden" name="flower_id" value="{{ flower.id }}">
                         <input type="hidden" name="flower_size" id="flower_size_input_{{forloop.counter}}" value="M">
+                        <input type="hidden" name="flower_num" id="input_{{flower.id}}" value="1" />
                         <button onclick="addToCart({{ flower.id }})" aria-expanded="false" class="addtocart" type="button"> <h2> Add to Cart </h2></button>
                     </form>
                 </div>

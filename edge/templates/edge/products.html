@@ -34,9 +34,9 @@
                             <form class = "addtocartfrom" id="add-to-cart-form-{{ flower.id }}">
                                 {% csrf_token %}
                                 <div class="row">
-                                    <button class="minus" id="{{flower.id}}" onclick="sub(this.id)" type="button">&#8210;</button>
+                                    <button class="minus" id="{{flower.id}}" onclick="sub(this.id, this.value)" type="button">&#8210;</button>
                                     <input type="text" name="flower_num" id="input_{{flower.id}}" value="1" />
-                                    <button class="plus" id="{{flower.id}}" onclick="add(this.id)" type="button">&plus;</button>
+                                    <button class="plus" id="{{flower.id}}" onclick="add(this.id, this.value)" type="button">&plus;</button>
                                 </div>
                                 <input type="hidden" name="flower_id" value="{{ flower.id }}">
                                 <input type="hidden" name="flower_size" id="flower_size_input_1" value="NaN">
