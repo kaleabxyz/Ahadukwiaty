@@ -1694,13 +1694,19 @@ body {
 .signupright input {
     padding-block: clamp(0.4rem, 0.7vw, 1rem);
     padding-inline-start: clamp(0.3rem, 0.5vw, 1rem);
-    font-size: clamp(0.4rem, 0.7rem, 3rem);
+    font-size: clamp(0.4rem, 0.8rem, 3rem);
     width: 95%;
     border: 2px solid #e8e7e9;
     border-radius: 0.5rem;
 }
 input[type="text"]:focus {
     outline: 2px solid #da71a0; /* oranges! yey */
+}
+.signupright .first {
+    margin-top: 1rem;
+}
+.signupright .second {
+    margin-bottom: 1rem;
 }
 .signupright div svg {
     position: absolute;
