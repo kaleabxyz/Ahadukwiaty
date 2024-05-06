@@ -225,3 +225,5 @@ def calc_total_price(request):
 
 def signup(request):
     return render(request, "edge/signup.html")
+def login(request):
+    return render(request,"edge/login.html")
