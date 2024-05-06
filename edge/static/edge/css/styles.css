@@ -1657,7 +1657,7 @@ body {
 }
 
 .signupleft img {
-    height: clamp(20rem, 54.2vw, 65rem);
+    height: clamp(20rem, 51.2vw, 65rem);
     width: clamp(1rem, 44rem, 45rem);
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
