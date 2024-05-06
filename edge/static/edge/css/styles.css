@@ -1657,7 +1657,8 @@ body {
 }
 
 .signupleft img {
-    height: 50rem;
+    height: clamp(20rem, 54.2vw, 65rem);
+    width: clamp(10rem, 34.5rem, 35rem);
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
 }
@@ -1691,17 +1692,20 @@ body {
     margin-block: 1rem;
 }
 .signupright input {
-    padding-block: 0.7rem;
-    padding-inline-start: 0.5rem;
-    font-size: clamp(0.4rem, 0.8rem, 3rem);
+    padding-block: clamp(0.4rem, 0.7vw, 1rem);
+    padding-inline-start: clamp(0.3rem, 0.5vw, 1rem);
+    font-size: clamp(0.4rem, 0.5rem, 3rem);
     width: 95%;
-    border: 2px solid #da71a0;
+    border: 2px solid #e8e7e9;
     border-radius: 0.5rem;
+}
+input[type="text"]:focus {
+    outline: 2px solid #da71a0; /* oranges! yey */
 }
 .signupright div svg {
     position: absolute;
     right: 0;
-    margin: 0.8rem;
+    margin: 0.6rem;
 }
 .signupright div {
     display: flex;
@@ -1722,7 +1726,7 @@ body {
 .signupright button {
     font-size: clamp(0.4rem, 0.8rem, 3rem);
 
-    border: 2px solid hsl(270, 4%, 91%);
+    border: 2px solid #e8e7e9;
     border-radius: 0.5rem;
     background: #da71a0;
     margin-right: 1rem;
@@ -1972,5 +1976,8 @@ body {
     }
     .befirst input {
         padding-block: 0rem;
+    }
+    .usr h2 {
+        display: none;
     }
 }
