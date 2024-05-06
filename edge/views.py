@@ -222,3 +222,6 @@ def calc_total_price(request):
         for price in flower_price:
             total_price += price
     return total_price
+
+def signup(request):
+    return render(request, "edge/signup.html")
