@@ -1779,6 +1779,9 @@ input[type="text"]:focus {
     justify-content: center;
     flex-direction: column;
 }
+.login .signupright button{
+    padding-inline: 7rem;
+}
 @media (max-width: 50em) {
     .reviewcontainer .review {
         display: none;
