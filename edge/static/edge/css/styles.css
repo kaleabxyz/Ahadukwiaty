@@ -1671,6 +1671,13 @@ body {
     padding-block-end: clamp(1rem, 2.8vw, 5rem);
     padding-inline: clamp(1rem, 6vw, 5rem);
 }
+.signupright a {
+    text-decoration: none;
+    color: #140610;
+}
+.signupright a:hover {
+    color: #da71a0;
+}
 .signupright h2 {
     font-size: clamp(1rem, 1.5vw, 3rem);
 }
@@ -1694,7 +1701,7 @@ body {
 .signupright input {
     padding-block: clamp(0.4rem, 0.7vw, 1rem);
     padding-inline-start: clamp(0.3rem, 0.5vw, 1rem);
-    font-size: clamp(0.4rem, 0.8rem, 3rem);
+    font-size: clamp(0.4rem, 0.9rem, 3rem);
     width: 95%;
     border: 2px solid #e8e7e9;
     border-radius: 0.5rem;
