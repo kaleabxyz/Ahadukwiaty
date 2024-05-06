@@ -59,7 +59,7 @@ body {
     color: #f83e91;
 }
 
-.nav #mainmenu:hover .mainmenu,
+.nav .mainmenu:hover .mainmenu,
 .nav .mainmenu2:hover #second,
 .nav .mainmenu3:hover #third {
     display: flex;
