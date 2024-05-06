@@ -1666,7 +1666,8 @@ body {
     height: clamp(9rem, 15vw, 51rem);
 }
 .signupright {
-    padding-block: clamp(1rem, 4vw, 5rem);
+    padding-block-start: clamp(1rem, 4vw, 5rem);
+    padding-block-end: clamp(1rem, 2.8vw, 5rem);
     padding-inline: clamp(1rem, 6vw, 5rem);
 }
 .signupright h2 {
@@ -1681,16 +1682,20 @@ body {
     width: 40ch;
     margin-block: clamp(1rem, 1.5vw, 3rem);
 }
+.signupright div h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 .signupright h4 {
     font-size: clamp(0.5rem, 0.9vw, 2rem);
     margin-block: 1rem;
 }
 .signupright input {
     padding-block: 0.7rem;
-    /* padding-inline: 1rem; */
+    padding-inline-start: 0.5rem;
     font-size: clamp(0.4rem, 0.8rem, 3rem);
     width: 95%;
-    border: 2px solid hsl(270, 4%, 91%);
+    border: 2px solid #da71a0;
     border-radius: 0.5rem;
 }
 .signupright div svg {
@@ -1706,6 +1711,7 @@ body {
 
 .signupright div h3 {
     width: auto;
+    margin-left: 0.5rem;
 }
 
 .signupright div .check {
